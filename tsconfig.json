@@ -13,7 +13,10 @@
     // определяет какие ноды будут использоваться во время компиляции
     "moduleResolution": "node",
     // для абсолютных импортов
-    // "baseUrl": ".",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
     // если какая либо библиотека не имеет default import, лоадеры вроде ts-loader или babel-loader создают их вместо такого импорта.
     // import as React from 'react' можно писать import React from 'react'
     "allowSyntheticDefaultImports": true,
