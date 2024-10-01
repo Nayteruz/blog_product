@@ -8,6 +8,15 @@
   background: var(--bg-color);
   color: var(--primary-color);
 
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer"
+  ;
+
+  grid-template-columns: var(--sidebar-width) 1fr;
+  grid-template-rows: var(--navbar-height) 1fr var(--footer-height);
 
   a {
     color: var(--link-color);
@@ -15,4 +24,9 @@
   
 
   min-height: 100vh;
+}
+
+.page-wrapper {
+  padding: 20px;
+  grid-area: content;
 }
