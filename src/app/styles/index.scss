@@ -15,7 +15,7 @@
     "footer footer";
 
   grid-template-columns: auto 1fr;
-  grid-template-rows: var(--navbar-height) 1fr var(--footer-height);
+  grid-template-rows: var(--navbar-height) 1fr auto;
 
   a {
     color: var(--link-color);

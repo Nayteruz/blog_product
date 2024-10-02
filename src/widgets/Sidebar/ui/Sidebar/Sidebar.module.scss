@@ -6,10 +6,22 @@
   gap: 16px;
 
   position: relative;
+  transition: width 0.2s;
 
   grid-area: sidebar;
 }
 
 .collapsed {
   --sidebar-width: 80px;
+}
+
+.switchers {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
 }

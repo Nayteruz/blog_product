@@ -1,10 +1,17 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import { WebpackPluginInstance, ProgressPlugin } from "webpack";
+import ReactRefreshPlugin from "@pmmmwh/react-refresh-webpack-plugin";
+import {
+  WebpackPluginInstance,
+  ProgressPlugin,
+  DefinePlugin,
+  HotModuleReplacementPlugin,
+} from "webpack";
 import { BuildOptions } from "./types/config";
 
 export const buildPlugins = ({
   paths,
+  isDev,
 }: BuildOptions): WebpackPluginInstance[] => {
   const { html } = paths;
   return [
@@ -16,5 +23,10 @@ export const buildPlugins = ({
       filename: "css/[name].[contenthash:8].css",
       chunkFilename: "css/[name].[contenthash:8].css",
     }),
+    new DefinePlugin({
+      __IS_DEV__: JSON.stringify(isDev),
+    }),
+    new HotModuleReplacementPlugin(),
+    new ReactRefreshPlugin(),
   ];
 };

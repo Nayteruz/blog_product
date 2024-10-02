@@ -1,0 +1,35 @@
+.lang {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.button {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: 0 0 0 2px var(--primary-color);
+    transform: scale(1.2);
+  }
+
+  img {
+    width: 150%;
+    height: 150%;
+    object-fit: cover;
+  }
+}
+
+.active {
+  box-shadow: 0 0 0 2px var(--primary-color);
+}

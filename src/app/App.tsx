@@ -2,17 +2,22 @@ import { cn } from "@/shared/lib";
 import { useTheme } from "./providers/ThemeProvider";
 import { AppRouter } from "./providers/router";
 import { Navbar } from "@/widgets/Navbar";
-import './styles/index.scss';
 import { Sidebar } from "@/widgets/Sidebar";
+import { Footer } from "@/widgets/Footer";
+import { Suspense } from "react";
+import './styles/index.scss';
 
 const App = () => {
   const {theme} = useTheme();
 
   return (
     <div className={cn("app", theme)}>
-      <Navbar />
-      <Sidebar />
-      <AppRouter />
+      <Suspense fallback="">
+        <Navbar />
+        <Sidebar />
+        <AppRouter />
+        <Footer />
+      </Suspense>
     </div>
   )
 }

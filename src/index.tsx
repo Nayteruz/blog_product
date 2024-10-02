@@ -6,6 +6,8 @@ import App from "./app/App";
 const domNode = document.getElementById("root");
 const root = createRoot(domNode!);
 
+import "./shared/config/i18n/i18n";
+
 root.render(
   <BrowserRouter>
     <ThemeProvider>
