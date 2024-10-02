@@ -12,16 +12,14 @@
   grid-template-areas:
     "header header"
     "sidebar content"
-    "footer footer"
-  ;
+    "footer footer";
 
-  grid-template-columns: var(--sidebar-width) 1fr;
+  grid-template-columns: auto 1fr;
   grid-template-rows: var(--navbar-height) 1fr var(--footer-height);
 
   a {
     color: var(--link-color);
   }
-  
 
   min-height: 100vh;
 }

@@ -1,23 +1,15 @@
-:global(.app) {
-  --sidebar-width: 300px;
+.sidebar {
+  display: flex;
+  width: var(--sidebar-width);
+  background: var(--inverted-bg-color);
+  flex-direction: column;
+  gap: 16px;
 
-  .sidebar {
-    display: flex;
-    width: var(--sidebar-width);
-    background: var(--inverted-bg-color);
-    flex-direction: column;
-    gap: 16px;
+  position: relative;
 
-    position: relative;
-
-    grid-area: sidebar;
-  }
-
-  .collapsed {
-    --sidebar-width: 80px;
-  }
-
-  grid-template-columns: var(--sidebar-width) 1fr;
+  grid-area: sidebar;
 }
 
-
+.collapsed {
+  --sidebar-width: 80px;
+}
