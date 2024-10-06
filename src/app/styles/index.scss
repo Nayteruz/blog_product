@@ -1,21 +1,14 @@
-@import "reset";
-@import "variables/global";
-@import "themes/normal";
-@import "themes/dark";
+@import 'reset';
+@import 'variables/global';
+@import 'themes/normal';
+@import 'themes/dark';
 
 .app {
   font: var(--font-m);
   background: var(--bg-color);
   color: var(--primary-color);
-
   display: grid;
-  grid-template-areas:
-    "header header"
-    "sidebar content"
-    "footer footer";
-
-  grid-template-columns: auto 1fr;
-  grid-template-rows: var(--navbar-height) 1fr auto;
+  grid-template: 'header header' var(--navbar-height) 'sidebar content' 1fr 'footer footer' auto / auto 1fr;
 
   a {
     color: var(--link-color);
@@ -24,7 +17,7 @@
   min-height: 100vh;
 }
 
-.page-wrapper {
+.pageWrapper {
   padding: 20px;
   grid-area: content;
 }

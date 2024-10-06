@@ -4,10 +4,8 @@
   background: var(--inverted-bg-color);
   flex-direction: column;
   gap: 16px;
-
   position: relative;
   transition: width 0.2s;
-
   grid-area: sidebar;
 }
 

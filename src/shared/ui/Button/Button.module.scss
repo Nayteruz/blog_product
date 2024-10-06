@@ -3,8 +3,9 @@
 }
 
 .primary {
-    color: var(--primary-color);
-  }
+  color: var(--primary-color);
+  padding: 50 0 0;
+}
 
 .secondary {
   color: var(--inverted-primary-color);
@@ -16,4 +17,3 @@
   background: none;
   outline: none;
 }
-
