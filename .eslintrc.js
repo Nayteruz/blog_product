@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
   extends: [
     'plugin:react/recommended',
@@ -40,6 +41,8 @@ module.exports = {
     ],
     'react/jsx-props-no-spreading': 'warn',
     'no-underscore-dangle': [2, { allow: ['_d', '__IS_DEV__'] }],
+    quotes: ['error', 'single'],
+    'max-len': [2, { ignoreComments: true }],
   },
   globals: {
     __IS_DEV__: true,

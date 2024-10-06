@@ -12,7 +12,7 @@ type TClassNames = Record<string, boolean | string> | string;
  * cn({a: true, b: false}, {c: true}) // returns "a c"
  * cn('a', 'b', {c: true, d: false}) // returns "a b c"
  */
-export function cn(...classes: TClassNames[]): string {
+export const cn = (...classes: TClassNames[]): string => {
   const checkedClasses: string[] = [];
 
   const checkValue = (cls: TClassNames) => {
@@ -32,4 +32,4 @@ export function cn(...classes: TClassNames[]): string {
   classes.forEach(checkValue);
 
   return checkedClasses.join(' ');
-}
+};

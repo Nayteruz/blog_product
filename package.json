@@ -9,7 +9,8 @@
     "lint:ts": "eslint \"src/**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"src/**/*.{ts,tsx}\" --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
-    "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix"
+    "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
+    "jest": "jest --config ./config/jest/jest.config.ts"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +19,8 @@
   "devDependencies": {
     "@babel/core": "^7.25.7",
     "@babel/preset-env": "^7.25.7",
+    "@babel/preset-typescript": "^7.25.7",
+    "@jest/globals": "^29.7.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
     "@svgr/webpack": "^8.1.0",
     "@types/html-webpack-plugin": "^3.2.9",
@@ -29,6 +32,7 @@
     "@types/webpack-dev-server": "^4.7.1",
     "@typescript-eslint/eslint-plugin": "^8.8.0",
     "@typescript-eslint/parser": "^8.8.0",
+    "babel-jest": "^29.7.0",
     "babel-loader": "^9.2.1",
     "css-loader": "^7.1.2",
     "eslint": "^8.57.1",
@@ -39,6 +43,8 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.6.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "mini-css-extract-plugin": "^2.9.1",
     "react-refresh": "^0.14.2",
     "sass": "^1.79.4",
@@ -46,6 +52,7 @@
     "style-loader": "^4.0.0",
     "stylelint": "^16.9.0",
     "stylelint-config-standard-scss": "^13.1.0",
+    "ts-jest": "^29.2.5",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
     "type-fest": "^4.26.1",
@@ -55,6 +62,7 @@
     "webpack-dev-server": "^5.1.0"
   },
   "dependencies": {
+    "@types/jest": "^29.5.13",
     "i18next": "^23.15.1",
     "i18next-http-backend": "^2.6.1",
     "react": "^18.3.1",
