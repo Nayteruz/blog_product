@@ -13,18 +13,23 @@ type TClassNames = Record<string, boolean | string> | string;
  * cn('a', 'b', {c: true, d: false}) // returns "a b c"
  */
 export function cn(...classes: TClassNames[]): string {
-  const checkedClasses = [];
-  for (let cls of classes) {
-    if (typeof cls === "string") {
+  const checkedClasses: string[] = [];
+
+  const checkValue = (cls: TClassNames) => {
+    if (typeof cls === 'string') {
       checkedClasses.push(cls);
     } else if (cls instanceof Object) {
-      for (let [key, value] of Object.entries(cls)) {
-        if (Boolean(value)) {
+      const list = Object.entries(cls);
+
+      list.forEach(([key, value]) => {
+        if (value) {
           checkedClasses.push(key);
         }
-      }
+      });
     }
-  }
+  };
 
-  return checkedClasses.join(" ");
+  classes.forEach(checkValue);
+
+  return checkedClasses.join(' ');
 }

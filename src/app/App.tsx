@@ -1,17 +1,17 @@
-import { cn } from "@/shared/lib";
-import { useTheme } from "./providers/ThemeProvider";
-import { AppRouter } from "./providers/router";
-import { Navbar } from "@/widgets/Navbar";
-import { Sidebar } from "@/widgets/Sidebar";
-import { Footer } from "@/widgets/Footer";
-import { Suspense } from "react";
+import { Suspense } from 'react';
+import { cn } from '@/shared/lib';
+import { useTheme } from './providers/ThemeProvider';
+import { AppRouter } from './providers/router';
+import { Navbar } from '@/widgets/Navbar';
+import { Sidebar } from '@/widgets/Sidebar';
+import { Footer } from '@/widgets/Footer';
 import './styles/index.scss';
 
-const App = () => {
-  const {theme} = useTheme();
+function App() {
+  const { theme } = useTheme();
 
   return (
-    <div className={cn("app", theme)}>
+    <div className={cn('app', theme)}>
       <Suspense fallback="">
         <Navbar />
         <Sidebar />
@@ -19,7 +19,7 @@ const App = () => {
         <Footer />
       </Suspense>
     </div>
-  )
+  );
 }
 
 export default App;
