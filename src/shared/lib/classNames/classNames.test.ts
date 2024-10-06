@@ -10,7 +10,8 @@ describe('classNames', () => {
   });
 
   test('with many classes', () => {
-    expect(cn('someClass', { test: true }, 'class1', 'class2')).toBe('someClass test class1 class2');
+    expect(cn('someClass', { test: true }, 'class1', 'class2'))
+      .toBe('someClass test class1 class2');
   });
 
   test('with mod undefined', () => {
