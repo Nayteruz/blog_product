@@ -18,7 +18,11 @@ export const Button: FC<IButtonProps> = (props) => {
     className, children, theme = ThemeButton.PRIMARY, ...other
   } = props;
   return (
-    <button type="button" className={cn(s.button, s[theme], className)} {...other}>
+    <button
+      type="button"
+      className={cn(s.button, s[theme], className)}
+      {...other}
+    >
       {children}
     </button>
   );

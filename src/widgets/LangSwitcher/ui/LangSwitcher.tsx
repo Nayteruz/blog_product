@@ -22,7 +22,11 @@ export const LangSwitcher: FC<ILangProps> = ({ className }) => {
     <ul className={cn(s.lang)}>
       {languageList.map(({ lang, name, icon }) => (
         <li key={lang}>
-          <Button className={cn(s.button, { [s.active]: i18n.language === lang })} theme="clear" onClick={() => i18n.changeLanguage(lang)}>
+          <Button
+            className={cn(s.button, { [s.active]: i18n.language === lang })}
+            theme="clear"
+            onClick={() => i18n.changeLanguage(lang)}
+          >
             <img src={icon} alt={name} title={name} />
           </Button>
         </li>
