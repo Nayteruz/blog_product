@@ -5,6 +5,7 @@ import s from './Button.module.scss';
 const ThemeButton = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
+  LINK: 'link',
   CLEAR: 'clear',
 } as const;
 

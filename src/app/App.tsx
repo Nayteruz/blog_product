@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import { cn } from '@/shared/lib';
 import { useTheme } from './providers/ThemeProvider';
 import { AppRouter } from './providers/router';
@@ -9,6 +9,12 @@ import './styles/index.scss';
 
 function App() {
   const { theme } = useTheme();
+
+  useEffect(() => {
+    if (Math.random() > 0.5) {
+      throw new Error('test error');
+    }
+  }, [theme]);
 
   return (
     <div className={cn('app', theme)}>
