@@ -44,7 +44,7 @@ module.exports = {
     'react/jsx-props-no-spreading': 'warn',
     'no-underscore-dangle': [2, { allow: ['_d', '__IS_DEV__'] }],
     quotes: ['error', 'single'],
-    'max-len': [2, { ignoreComments: true }],
+    'max-len': [2, { ignoreComments: true, code: 100 }],
   },
   globals: {
     __IS_DEV__: true,
