@@ -19,7 +19,7 @@ export const LangSwitcher: FC<ILangProps> = ({ className }) => {
   const { i18n } = useTranslation();
 
   return (
-    <ul className={cn(s.lang)}>
+    <ul className={cn(s.lang, className)}>
       {languageList.map(({ lang, name, icon }) => (
         <li key={lang}>
           <Button

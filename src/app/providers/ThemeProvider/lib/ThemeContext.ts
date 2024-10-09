@@ -1,13 +1,16 @@
 import { createContext } from 'react';
 
-export enum Theme {
-  LIGHT = 'light',
-  DARK = 'dark',
-}
+export const Theme = {
+  LIGHT: 'light',
+  DARK: 'dark',
+} as const;
+
+export type TTheme = typeof Theme[keyof typeof Theme];
 
 export interface ThemeContextProps {
-  theme?: Theme;
-  setTheme?: (theme: Theme) => void;
+  theme?: TTheme;
+  // eslint-disable-next-line no-unused-vars
+  setTheme?: (theme: TTheme) => void;
 }
 
 export const ThemeContext = createContext<ThemeContextProps>({});

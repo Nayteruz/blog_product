@@ -1,4 +1,4 @@
-import { Suspense, useEffect } from 'react';
+import { Suspense } from 'react';
 import { cn } from '@/shared/lib';
 import { useTheme } from './providers/ThemeProvider';
 import { AppRouter } from './providers/router';
