@@ -45,6 +45,7 @@ module.exports = {
     'no-underscore-dangle': [2, { allow: ['_d', '__IS_DEV__'] }],
     quotes: ['error', 'single'],
     'max-len': [2, { ignoreComments: true, code: 100 }],
+    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid'] }],
     'import/no-extraneous-dependencies': [
       'error',
       {
@@ -62,4 +63,12 @@ module.exports = {
   globals: {
     __IS_DEV__: true,
   },
+  overrides: [
+    {
+      files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off',
+      },
+    }
+  ]
 };
