@@ -98,6 +98,7 @@
     "webpack": "^5.95.0"
   },
   "loki": {
+    "diffingEngine": "pixelmatch",
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.docker",
