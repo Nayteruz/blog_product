@@ -1,12 +1,9 @@
-
-
 .button {
   cursor: pointer;
 }
 
 .primary {
   color: var(--primary-color);
-  padding: 50 0 0;
 }
 
 .secondary {
@@ -16,13 +13,13 @@
 .link {
   padding: 10px 20px;
   border: none;
-  background: #0f172a;
+  background: var(--link-button-bg);
   outline: none;
-  color: #fff;
+  color: var(--link-button-color);
   border-radius: 5px;
 
   &:hover {
-    background: #1e293b;
+    background: var(--link-button-bg-hover);
   }
 }
 
@@ -31,4 +28,11 @@
   border: none;
   background: none;
   outline: none;
+}
+
+.outline {
+  padding: 10px 15px;
+  border: 1px solid var(--primary-color);
+  background: none;
+  color: var(--primary-color);
 }

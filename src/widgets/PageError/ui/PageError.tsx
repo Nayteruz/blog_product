@@ -7,7 +7,7 @@ export const PageError: FC = () => {
   const { t } = useTranslation();
 
   return (
-    <>
+    <div className={s.pageError}>
       <Loader />
       <div className={s.text}>{t('page error')}</div>
       <Button
@@ -16,6 +16,6 @@ export const PageError: FC = () => {
       >
         {t('try again')}
       </Button>
-    </>
+    </div>
   );
 };

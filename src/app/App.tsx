@@ -12,12 +12,14 @@ function App() {
 
   return (
     <div className={cn('app', theme)}>
-      <Suspense fallback="">
-        <Navbar />
-        <Sidebar />
-        <AppRouter />
-        <Footer />
-      </Suspense>
+      <div className="wrapper">
+        <Suspense fallback="">
+          <Navbar />
+          <Sidebar />
+          <AppRouter />
+          <Footer />
+        </Suspense>
+      </div>
     </div>
   );
 }

@@ -7,6 +7,7 @@ const ThemeButton = {
   SECONDARY: 'secondary',
   LINK: 'link',
   CLEAR: 'clear',
+  OUTLINE: 'outline',
 } as const;
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
