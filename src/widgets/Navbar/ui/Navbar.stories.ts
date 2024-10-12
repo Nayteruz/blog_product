@@ -11,7 +11,7 @@ const meta = {
   args: {
     style: {
       minWidth: 500,
-    }
+    },
   },
 } satisfies Meta<typeof Navbar>;
 

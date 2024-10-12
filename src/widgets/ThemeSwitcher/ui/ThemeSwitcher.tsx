@@ -15,7 +15,7 @@ interface IThemeSwitcherProps {
 export const ThemeSwitcher: FC<IThemeSwitcherProps> = ({ className, themeDefault }) => {
   const { theme, toggleTheme } = useTheme();
 
-  const ThemeIcon = themeDefault ||theme === Theme.LIGHT ? SunIcon : MoonIcon;
+  const ThemeIcon = themeDefault || theme === Theme.LIGHT ? SunIcon : MoonIcon;
 
   return (
     <Button

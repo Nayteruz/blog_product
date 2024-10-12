@@ -10,8 +10,8 @@ const meta = {
   argTypes: {},
   args: {
     style: {
-      minHeight: 200
-    }
+      minHeight: 200,
+    },
   },
 } satisfies Meta<typeof PageError>;
 
