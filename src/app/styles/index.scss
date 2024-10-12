@@ -12,6 +12,7 @@
 .wrapper {
   display: grid;
   grid-template: 'header header' var(--navbar-height) 'sidebar content' 1fr 'footer footer' auto / auto 1fr;
+  
   a {
     color: var(--link-color);
   }
