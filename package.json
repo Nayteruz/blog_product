@@ -27,6 +27,7 @@
     "@babel/preset-typescript": "^7.25.7",
     "@chromatic-com/storybook": "^1.9.0",
     "@jest/globals": "^29.7.0",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
     "@storybook/addon-essentials": "^8.3.5",
     "@storybook/addon-interactions": "^8.3.5",
     "@storybook/addon-links": "^8.3.5",
@@ -85,7 +86,6 @@
     "webpack-dev-server": "^5.1.0"
   },
   "dependencies": {
-    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
     "html-webpack-plugin": "^5.6.0",
     "i18next": "^23.15.1",
     "i18next-http-backend": "^2.6.1",
