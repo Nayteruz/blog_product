@@ -11,8 +11,20 @@ const meta = {
   argTypes: {
     theme: {
       control: 'radio',
-      options: ['primary', 'secondary', 'link', 'clear', 'outline'],
+      options: [
+        'primary',
+        'secondary',
+        'link',
+        'clear',
+        'outline',
+        'background',
+        'backgroundInverted',
+      ],
       defaultValue: 'primary',
+    },
+    size: {
+      control: 'radio',
+      options: ['M', 'L', 'XL'],
     },
     children: { control: 'text', defaultValue: 'Button' },
   },
@@ -93,4 +105,55 @@ export const DarkOutline: Story = {
     theme: 'outline',
   },
   decorators: [ThemeDecorator('dark')],
+};
+
+export const OutlineSizeL: Story = {
+  args: {
+    theme: 'outline',
+    size: 'L',
+  },
+};
+
+export const OutlineSizeXL: Story = {
+  args: {
+    theme: 'outline',
+    size: 'XL',
+  },
+};
+
+export const SquareSizeM: Story = {
+  args: {
+    square: true,
+    children: '>',
+    size: 'M',
+  },
+};
+
+export const SquareSizeL: Story = {
+  args: {
+    square: true,
+    children: 'L',
+    size: 'L',
+  },
+};
+
+export const SquareSizeXL: Story = {
+  args: {
+    square: true,
+    children: 'XL',
+    size: 'XL',
+  },
+};
+
+export const Background: Story = {
+  ...defaultDark,
+  args: {
+    theme: 'background',
+  },
+};
+
+export const BackgroundInverted: Story = {
+  args: {
+    theme: 'backgroundInverted',
+  },
 };
