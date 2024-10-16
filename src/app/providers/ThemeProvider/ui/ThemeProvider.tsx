@@ -14,10 +14,11 @@ export const defaultTheme = localStorage.getItem(
 
 interface IThemeProps {
   children: ReactNode
+  initialTheme?: TTheme
 }
 
-const ThemeProvider: FC<IThemeProps> = ({ children }) => {
-  const [theme, setTheme] = useState<TTheme>(defaultTheme);
+const ThemeProvider: FC<IThemeProps> = ({ children, initialTheme }) => {
+  const [theme, setTheme] = useState<TTheme>(initialTheme || defaultTheme);
 
   const defaultProps = useMemo(() => ({ theme, setTheme }), [theme]);
 

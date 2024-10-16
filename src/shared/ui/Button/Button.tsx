@@ -7,6 +7,7 @@ const ButtonTheme = {
   SECONDARY: 'secondary',
   LINK: 'link',
   CLEAR: 'clear',
+  CLEAR_INVERTED: 'clearInverted',
   OUTLINE: 'outline',
   BACKGROUND: 'background',
   BACKGROUND_INVERTED: 'backgroundInverted',

@@ -12,10 +12,20 @@ interface IThemeSwitcherProps {
   themeDefault?: TTheme
 }
 
+const toggleBodyTheme = (theme: TTheme) => {
+  const documentBody = document.body;
+  const removeTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
+  const addTheme = theme === Theme.DARK ? Theme.DARK : Theme.LIGHT;
+
+  documentBody.classList.add(addTheme);
+  documentBody.classList.remove(removeTheme);
+};
+
 export const ThemeSwitcher: FC<IThemeSwitcherProps> = ({ className, themeDefault }) => {
   const { theme, toggleTheme } = useTheme();
 
   const ThemeIcon = themeDefault || theme === Theme.LIGHT ? SunIcon : MoonIcon;
+  toggleBodyTheme(themeDefault || theme);
 
   return (
     <Button

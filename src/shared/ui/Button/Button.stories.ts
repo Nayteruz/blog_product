@@ -16,6 +16,7 @@ const meta = {
         'secondary',
         'link',
         'clear',
+        'clearInverted',
         'outline',
         'background',
         'backgroundInverted',
@@ -91,6 +92,12 @@ export const DarkClear: Story = {
     theme: 'clear',
   },
   decorators: [ThemeDecorator('dark')],
+};
+
+export const ClearInverted: Story = {
+  args: {
+    theme: 'clearInverted',
+  },
 };
 
 export const NormalOutline: Story = {

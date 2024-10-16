@@ -30,6 +30,9 @@ const configStorybook: StorybookConfig = {
   }),
   webpackFinal(config) {
     return webpackConfig(config);
-  }
+  },
+  previewBody: (body) => `
+    <div class="theme">${body}</div>
+    `,
 };
 export default configStorybook;
