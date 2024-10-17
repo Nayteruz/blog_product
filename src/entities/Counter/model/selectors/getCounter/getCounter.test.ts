@@ -1,7 +1,6 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { getCounter } from './getCounter';
 import { DeepPartial } from '@/shared/lib';
-import { webworker } from 'webpack';
 
 describe('getCounter', () => {
   test('should return counter value', () => {
