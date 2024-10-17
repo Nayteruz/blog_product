@@ -1,46 +1,46 @@
-import path from "path";
-import { BuildPaths } from "../build/types/config";
-import { buildCssLoader } from "../build/loaders/buildCssLoader";
-import { buildSVGLoader } from "../build/loaders/buildSVGLoader";
-import { RuleSetRule } from "webpack";
+import path from 'path';
+import { RuleSetRule } from 'webpack';
+import { BuildPaths } from '../build/types/config';
+import { buildCssLoader } from '../build/loaders/buildCssLoader';
+import { buildSVGLoader } from '../build/loaders/buildSVGLoader';
 
 export const webpackConfig = ((config) => {
   const paths: BuildPaths = {
-      build: '',
-      html: '',
-      entry: '',
-      src: path.resolve(__dirname, '..', '..', 'src'),
-    };
-    
-    const updatedConfig = { ...config };
-    updatedConfig.module = updatedConfig.module || {};
-    updatedConfig.module.rules = updatedConfig.module.rules || [];
-    updatedConfig.module.rules = updatedConfig.module.rules.map((rule: RuleSetRule) => {
-      if (rule.test instanceof RegExp && /css/.test(rule.test.source)) {
-        return false;
-      }
+    build: '',
+    html: '',
+    entry: '',
+    src: path.resolve(__dirname, '..', '..', 'src'),
+  };
 
-      if (rule.test instanceof RegExp && /svg/.test(rule.test.source)) {
-        return { ...rule, exclude: /\.svg$/i };
-      }
+  const updatedConfig = { ...config };
+  updatedConfig.module = updatedConfig.module || {};
+  updatedConfig.module.rules = updatedConfig.module.rules || [];
+  updatedConfig.module.rules = updatedConfig.module.rules.map((rule: RuleSetRule) => {
+    if (rule.test instanceof RegExp && /css/.test(rule.test.source)) {
+      return false;
+    }
 
-      return rule;
-    })
+    if (rule.test instanceof RegExp && /svg/.test(rule.test.source)) {
+      return { ...rule, exclude: /\.svg$/i };
+    }
 
-    return {
-      ...updatedConfig,
-      resolve: {
-        ...updatedConfig.resolve,
-        modules: [...(updatedConfig.resolve?.modules || []), paths.src],
-        extensions: [...(updatedConfig.resolve?.extensions || []), '.ts', '.tsx'],
-        alias: {
-          ...updatedConfig.resolve?.alias,
-          '@': paths.src,
-        },
+    return rule;
+  });
+
+  return {
+    ...updatedConfig,
+    resolve: {
+      ...updatedConfig.resolve,
+      modules: [paths.src, ...(updatedConfig.resolve?.modules || [])],
+      extensions: [...(updatedConfig.resolve?.extensions || []), '.ts', '.tsx'],
+      alias: {
+        '@': paths.src,
+        ...updatedConfig.resolve?.alias,
       },
-      module: {
-        ...updatedConfig.module,
-        rules: [...(updatedConfig.module?.rules || []), buildSVGLoader(), buildCssLoader(true)],
-      },
-    };
-})
+    },
+    module: {
+      ...updatedConfig.module,
+      rules: [...(updatedConfig.module?.rules || []), buildSVGLoader(), buildCssLoader(true)],
+    },
+  };
+});
