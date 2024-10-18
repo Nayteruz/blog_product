@@ -19,8 +19,6 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm install
-      # - name: Rebuild SWC
-      #   run: npm rebuild @swc/core
       - name: build production project
         run: npm run build:prod
         if: always()
