@@ -2,11 +2,14 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import Backend from 'i18next-http-backend';
 
-i18n
+const appI18n = i18n.createInstance();
+
+appI18n
   .use(Backend)
   .use(initReactI18next)
   .init({
-    fallbackLng: 'en',
+    fallbackLng: 'ru',
+    lng: 'ru',
     debug: __IS_DEV__,
 
     interpolation: {
@@ -17,4 +20,4 @@ i18n
     },
   });
 
-export default i18n;
+export default appI18n;
