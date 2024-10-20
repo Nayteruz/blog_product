@@ -3,6 +3,9 @@
     // место сборки, но тут не важно так как используется webpack
     "outDir": "./dist/",
 
+    // игнорирует проверку библиотек
+    "skipLibCheck": true,
+
     // подсвечивает все места где используется any, то есть где совсем без указания типа используется
     "noImplicitAny": true,
     "module": "ESNext",
@@ -29,5 +32,6 @@
       "module": "commonjs"
     }
   },
+  "exclude": ["/node_modules"],
   "include": ["src/**/*", "./config/jest/setupTests.ts", "./src/**/*.{ts, tsx}"]
 }
