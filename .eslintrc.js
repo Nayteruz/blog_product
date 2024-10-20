@@ -34,7 +34,17 @@ module.exports = {
     'import/extensions': 'off',
     'import/prefer-default-export': 'off',
     'import/no-unresolved': 'off',
-    'no-unused-vars': 'warn',
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': [
+      'warn',
+      {
+        args: 'none',
+        vars: 'all',
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+        ignoreRestSiblings: true,
+      },
+    ],
     'react/require-default-props': 'off',
     'react/function-component-definition': [
       2,
@@ -43,7 +53,9 @@ module.exports = {
         unnamedComponents: 'arrow-function',
       },
     ],
-    'react/jsx-props-no-spreading': 'warn',
+    'react/jsx-props-no-spreading': ['warn', {
+      exceptions: ['input', 'button'],
+    }],
     'no-underscore-dangle': [2, { allow: ['_d', '__IS_DEV__'] }],
     quotes: ['error', 'single'],
     'max-len': [2, { ignoreComments: true, code: 100 }],
@@ -64,6 +76,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
     'no-param-reassign': 'off',
+    'react/prop-types': 'off',
   },
   globals: {
     __IS_DEV__: true,

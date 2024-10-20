@@ -2,7 +2,8 @@ import { CSSProperties, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { cn } from '@/shared/lib';
 import s from './Navbar.module.scss';
-import { Button, Modal } from '@/shared/ui';
+import { Button } from '@/shared/ui';
+import { LoginModal } from '@/features/AuthByUserName';
 
 interface INavbarProps {
   className?: string;
@@ -31,10 +32,7 @@ export const Navbar = ({ className, style }: INavbarProps) => {
       >
         {t('Enter')}
       </Button>
-      <Modal isOpen={isAuthModal} onClose={onClose}>
-        {/* eslint-disable-next-line max-len */}
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat in vel eos assumenda architecto deserunt illum nam culpa nihil eligendi, molestias voluptas ipsum consequuntur unde tenetur repudiandae beatae consectetur veniam?
-      </Modal>
+      <LoginModal isOpen={isAuthModal} onClose={onClose} />
     </nav>
   );
 };

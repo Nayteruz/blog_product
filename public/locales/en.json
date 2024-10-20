@@ -6,5 +6,7 @@
   "Page not found": "Page not found",
   "page error": "Something whent wrong",
   "try again": "Try again",
-  "Enter": "Sign In"
+  "Enter": "Sign In",
+  "Username": "Username",
+  "Password": "Password"
 }
