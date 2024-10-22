@@ -1,9 +1,12 @@
-import { CSSProperties, useState } from 'react';
+import { CSSProperties, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { cn } from '@/shared/lib';
 import s from './Navbar.module.scss';
 import { Button } from '@/shared/ui';
 import { LoginModal } from '@/features/AuthByUserName';
+import { getUserAuthData, userActions } from '@/entities/User';
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 
 interface INavbarProps {
   className?: string;
@@ -11,6 +14,8 @@ interface INavbarProps {
 }
 
 export const Navbar = ({ className, style }: INavbarProps) => {
+  const dispatch = useAppDispatch();
+  const authData = useSelector(getUserAuthData);
   const [isAuthModal, setIsAuthModal] = useState(false);
   const { t } = useTranslation();
 
@@ -22,6 +27,26 @@ export const Navbar = ({ className, style }: INavbarProps) => {
     setIsAuthModal(true);
   };
 
+  const onLogout = useCallback(() => {
+    dispatch(userActions.logout());
+    onClose();
+  }, [dispatch]);
+
+  if (authData) {
+    return (
+      <nav className={cn(s.navbar, className)}>
+        <Button
+          className={s.links}
+          theme="clearInverted"
+          style={style}
+          onClick={onLogout}
+        >
+          {t('Sign out')}
+        </Button>
+      </nav>
+    );
+  }
+
   return (
     <nav className={cn(s.navbar, className)}>
       <Button
@@ -30,7 +55,7 @@ export const Navbar = ({ className, style }: INavbarProps) => {
         style={style}
         onClick={onOpen}
       >
-        {t('Enter')}
+        {t('Sign in')}
       </Button>
       <LoginModal isOpen={isAuthModal} onClose={onClose} />
     </nav>

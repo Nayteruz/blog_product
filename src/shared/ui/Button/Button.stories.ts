@@ -164,3 +164,9 @@ export const BackgroundInverted: Story = {
     theme: 'backgroundInverted',
   },
 };
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+  },
+};

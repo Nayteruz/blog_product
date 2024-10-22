@@ -6,7 +6,10 @@
   "Page not found": "Page not found",
   "page error": "Something whent wrong",
   "try again": "Try again",
-  "Enter": "Sign In",
+  "Sign in": "Sign In",
   "Username": "Username",
-  "Password": "Password"
+  "Password": "Password",
+  "Login title": "Authorization",
+  "Incorect login or password": "Incorect login or password",
+  "Sign out": "Sign Out"
 }

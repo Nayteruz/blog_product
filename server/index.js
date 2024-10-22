@@ -31,13 +31,13 @@ server.post('/login', (req, res) => {
       (user) => user.username === username && user.password === password,
     );
 
-    if (userFromBd) {
+    if (!userFromBd) {
       return res.status(403).json({ message: 'User not found' });
     }
 
     return res.json(userFromBd);
   } catch (e) {
-    console.log(e);
+    console.error(e);
     return res.status(500).json({ message: e.message });
   }
 });
@@ -56,5 +56,6 @@ server.use(router);
 
 // запуск сервера
 server.listen(PORT, () => {
+  // eslint-disable-next-line no-console
   console.log('server is running on 8000 port');
 });

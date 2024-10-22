@@ -7,7 +7,10 @@
   "Page not found": "Страница не найдена",
   "page error": "Что то пошло не так",
   "try again": "Попробовать еще раз",
-  "Enter": "Войти",
+  "Sign in": "Войти",
   "Username": "Имя пользователя",
-  "Password": "Пароль"
+  "Password": "Пароль",
+  "Login title": "Авторизация",
+  "Incorect login or password": "Неверный логин или пароль",
+  "Sign out": "Выйти"
 }

@@ -77,6 +77,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'error',
     'no-param-reassign': 'off',
     'react/prop-types': 'off',
+    'no-console': ['error', { allow: ["warn", "error"] }]
   },
   globals: {
     __IS_DEV__: true,
