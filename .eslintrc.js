@@ -66,6 +66,7 @@ module.exports = {
           '**/*.stories.ts',
           '**/*.stories.tsx',
           '**/*.test.tsx',
+          '/config/**',
           '**/*.test.ts',
           '**/storybook/**',
         ],
@@ -77,7 +78,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'error',
     'no-param-reassign': 'off',
     'react/prop-types': 'off',
-    'no-console': ['error', { allow: ["warn", "error"] }]
+    'no-console': ['error', { allow: ['warn', 'error'] }],
   },
   globals: {
     __IS_DEV__: true,

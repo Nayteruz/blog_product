@@ -57,7 +57,7 @@ export const Navbar = ({ className, style }: INavbarProps) => {
       >
         {t('Sign in')}
       </Button>
-      <LoginModal isOpen={isAuthModal} onClose={onClose} />
+      {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onClose} />}
     </nav>
   );
 };

@@ -4,23 +4,33 @@ import { useSelector } from 'react-redux';
 import { cn } from '@/shared/lib';
 import { Button } from '@/shared/ui';
 import { Input } from '@/shared/ui/Input/ui/Input';
-import { loginActions } from '../../model/slice/loginSlice';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { Text } from '@/shared/ui/Text';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
+import { ReducersList, useDynamicReducer } from '@/shared/hooks/useDynamicReducer';
 import s from './LoginForm.module.scss';
 
-interface ILoginFormProps {
+export interface ILoginFormProps {
   className?: string;
 }
 
-export const LoginForm: FC<ILoginFormProps> = memo(({ className }) => {
+const initialReducers: ReducersList = {
+  loginForm: loginReducer,
+};
+
+const LoginForm: FC<ILoginFormProps> = memo(({ className }) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
+
+  // const store = useStore() as ReduxStoreWithManager;
+
   const {
     username, password, error, isLoading,
   } = useSelector(getLoginState);
+
+  useDynamicReducer(initialReducers, true);
 
   const onChangeUsername = useCallback((value: string) => {
     dispatch(loginActions.setUsername(value));
@@ -31,7 +41,6 @@ export const LoginForm: FC<ILoginFormProps> = memo(({ className }) => {
   }, [dispatch]);
 
   const onLogin = useCallback(() => {
-    // console.log('login', username, password);
     dispatch(loginByUsername({ username, password }));
   }, [dispatch, password, username]);
 
@@ -59,8 +68,10 @@ export const LoginForm: FC<ILoginFormProps> = memo(({ className }) => {
         theme="outline"
         className={s.loginBtn}
       >
-        {t('Enter')}
+        {t('Sign in')}
       </Button>
     </div>
   );
 });
+
+export default LoginForm;
