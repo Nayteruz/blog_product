@@ -8,8 +8,8 @@ import s from './ThemeSwitcher.module.scss';
 import { TTheme } from '@/app/providers/ThemeProvider/lib/ThemeContext';
 
 interface IThemeSwitcherProps {
-  className?: string
-  themeDefault?: TTheme
+  className?: string;
+  themeDefault?: TTheme;
 }
 
 const toggleBodyTheme = (theme: TTheme) => {

@@ -10,9 +10,7 @@ export const buildCssLoader = (isDev: boolean): RuleSetRule => ({
       options: {
         modules: {
           auto: /\.module\./,
-          localIdentName: isDev
-            ? '[path][name]__[local]--[hash:base64:5]'
-            : '[hash:base64:8]',
+          localIdentName: isDev ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:8]',
           namedExport: false,
         },
       },

@@ -1,7 +1,5 @@
 import {
-  CSSProperties,
-  memo, MouseEvent, ReactNode, useCallback, useEffect,
-  useState,
+  CSSProperties, memo, MouseEvent, ReactNode, useCallback, useEffect, useState,
 } from 'react';
 import { cn } from '@/shared/lib';
 import { Portal } from '@/shared/ui/Portal/Portal';
@@ -61,16 +59,8 @@ export const Modal = memo(({
   return (
     <Portal container={container} modalKey={modalKey}>
       <div className={cn(s.modal, { [s.opened]: isOpen }, className)} style={style}>
-        <div
-          className={s.overlay}
-          onClick={onCloseHandler}
-          role="presentation"
-        >
-          <div
-            role="presentation"
-            className={s.content}
-            onClick={clickStop}
-          >
+        <div className={s.overlay} onClick={onCloseHandler} role="presentation">
+          <div role="presentation" className={s.content} onClick={clickStop}>
             <span role="presentation" className={s.close} onClick={onCloseHandler}>
               <CloseIcon />
             </span>

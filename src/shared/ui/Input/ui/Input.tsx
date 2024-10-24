@@ -1,12 +1,10 @@
 import {
-  ChangeEvent, FC, InputHTMLAttributes, memo,
-  useEffect,
-  useRef,
+  ChangeEvent, FC, InputHTMLAttributes, memo, useEffect, useRef,
 } from 'react';
 import { cn } from '@/shared/lib';
 import s from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>;
 
 interface IInputProps extends HTMLInputProps {
   className?: string;
@@ -35,14 +33,7 @@ export const Input: FC<IInputProps> = memo((props) => {
   return (
     <div className={cn(s.inputWrapper, className)}>
       {title && <div className={s.placeholder}>{title}</div>}
-      <input
-        value={value}
-        type={type}
-        className={s.input}
-        onChange={onChangeHandler}
-        ref={inputRef}
-        {...otherProps}
-      />
+      <input value={value} type={type} className={s.input} onChange={onChangeHandler} ref={inputRef} {...otherProps} />
     </div>
   );
 });

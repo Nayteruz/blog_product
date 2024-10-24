@@ -1,15 +1,15 @@
 name: linting, testing, building
-on: 
+on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 jobs:
   pipeline:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ 18.x ]
+        node-version: [18.x]
     steps:
       - uses: actions/checkout@v3
       - name: Stating Node.js ${{ matrix.node-version }}
@@ -35,4 +35,4 @@ jobs:
       #   run: npm run storybook:build
       #   if: always()
       # - name: screenshot testing
-      #   run: npm run test:ui:ci 
+      #   run: npm run test:ui:ci

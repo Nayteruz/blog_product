@@ -4,20 +4,20 @@
 
 .titleParagraph {
   font: var(--font-l);
-  color: var(--primary-color)
+  color: var(--primary-color);
 }
 
 .textParagraph {
   font: var(--font-m);
-  color: var(--secondary-color)
+  color: var(--secondary-color);
 }
 
 .error {
-  .titleParagraph{
+  .titleParagraph {
     color: var(--red-light);
   }
 
-  .textParagraph{
+  .textParagraph {
     color: var(--red-dark);
   }
 }

@@ -8,9 +8,9 @@ import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 import { DeepPartial } from '../../deepPartial';
 
 export interface IComponentRenderOptions {
-  component: ReactNode
-  route?: string
-  initialState?: DeepPartial<StateSchema>
+  component: ReactNode;
+  route?: string;
+  initialState?: DeepPartial<StateSchema>;
 }
 
 export const componentRender = (options?: IComponentRenderOptions) => {
@@ -19,9 +19,7 @@ export const componentRender = (options?: IComponentRenderOptions) => {
   render(
     <StoreProvider initialState={initialState}>
       <MemoryRouter initialEntries={[route]}>
-        <I18nextProvider i18n={testI18n}>
-          {component}
-        </I18nextProvider>
+        <I18nextProvider i18n={testI18n}>{component}</I18nextProvider>
       </MemoryRouter>
     </StoreProvider>,
   );

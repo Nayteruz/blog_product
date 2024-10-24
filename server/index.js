@@ -14,7 +14,7 @@ server.use(jsonServer.bodyParser);
 // Нужно для небольшой задержки, чтобы запрос проходил не мгновенно, имитация реального апи
 server.use(async (req, res, next) => {
   // eslint-disable-next-line no-shadow
-  await new Promise((res) => {
+  await new Promise(res => {
     setTimeout(res, 800);
   });
   next();
@@ -27,9 +27,7 @@ server.post('/login', (req, res) => {
     const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'));
     const { users = [] } = db;
 
-    const userFromBd = users.find(
-      (user) => user.username === username && user.password === password,
-    );
+    const userFromBd = users.find(user => user.username === username && user.password === password);
 
     if (!userFromBd) {
       return res.status(403).json({ message: 'User not found' });

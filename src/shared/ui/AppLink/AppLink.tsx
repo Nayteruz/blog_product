@@ -9,9 +9,9 @@ const AppLinkTheme = {
 } as const;
 
 interface IAppLinkProps extends LinkProps {
-  children: ReactNode
+  children: ReactNode;
   className?: string;
-  theme?: typeof AppLinkTheme[keyof typeof AppLinkTheme];
+  theme?: (typeof AppLinkTheme)[keyof typeof AppLinkTheme];
 }
 
 export const AppLink: FC<IAppLinkProps> = (props: IAppLinkProps) => {

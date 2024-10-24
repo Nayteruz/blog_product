@@ -32,13 +32,19 @@ const LoginForm: FC<ILoginFormProps> = memo(({ className }) => {
 
   useDynamicReducer(initialReducers, true);
 
-  const onChangeUsername = useCallback((value: string) => {
-    dispatch(loginActions.setUsername(value));
-  }, [dispatch]);
+  const onChangeUsername = useCallback(
+    (value: string) => {
+      dispatch(loginActions.setUsername(value));
+    },
+    [dispatch],
+  );
 
-  const onChangePassword = useCallback((value: string) => {
-    dispatch(loginActions.setPassword(value));
-  }, [dispatch]);
+  const onChangePassword = useCallback(
+    (value: string) => {
+      dispatch(loginActions.setPassword(value));
+    },
+    [dispatch],
+  );
 
   const onLogin = useCallback(() => {
     dispatch(loginByUsername({ username, password }));
@@ -48,13 +54,7 @@ const LoginForm: FC<ILoginFormProps> = memo(({ className }) => {
     <div className={cn(s.loginForm, className)}>
       <Text title={t('Login title')} />
       {error && <Text text={t(error)} theme="error" />}
-      <Input
-        placeholder={t('Username')}
-        title={t('Username')}
-        autofocus
-        onChange={onChangeUsername}
-        value={username}
-      />
+      <Input placeholder={t('Username')} title={t('Username')} autofocus onChange={onChangeUsername} value={username} />
       <Input
         type="password"
         placeholder={t('Password')}
@@ -62,12 +62,7 @@ const LoginForm: FC<ILoginFormProps> = memo(({ className }) => {
         onChange={onChangePassword}
         value={password}
       />
-      <Button
-        disabled={isLoading}
-        onClick={onLogin}
-        theme="outline"
-        className={s.loginBtn}
-      >
+      <Button disabled={isLoading} onClick={onLogin} theme="outline" className={s.loginBtn}>
         {t('Sign in')}
       </Button>
     </div>

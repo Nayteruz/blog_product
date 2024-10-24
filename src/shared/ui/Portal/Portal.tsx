@@ -7,13 +7,7 @@ interface IPortalProps {
   modalKey?: string;
 }
 
-export const Portal: FC<IPortalProps> = (
-  {
-    children,
-    container,
-    modalKey,
-  },
-) => {
+export const Portal: FC<IPortalProps> = ({ children, container, modalKey }) => {
   const target = container instanceof HTMLElement ? container : document.body;
 
   if (container === null) {

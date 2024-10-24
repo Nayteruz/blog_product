@@ -11,7 +11,6 @@ const meta = {
     // title: { control: 'text', defaultValue: '' },
     // text: { control: 'text', defaultValue: '' },
   },
-
 } satisfies Meta<typeof Text>;
 
 export default meta;

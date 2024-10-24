@@ -14,7 +14,8 @@ const meta = {
     },
   },
   args: {
-    children: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat in vel eos assumenda architecto deserunt illum nam culpa nihil eligendi, molestias voluptas ipsum consequuntur unde tenetur repudiandae beatae consectetur veniam?',
+    children:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat in vel eos assumenda architecto deserunt illum nam culpa nihil eligendi, molestias voluptas ipsum consequuntur unde tenetur repudiandae beatae consectetur veniam?',
     // @ts-ignore
     container: null,
     isOpen: true,

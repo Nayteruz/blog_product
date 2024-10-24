@@ -10,7 +10,6 @@ const meta = {
   argTypes: {
     children: { control: 'text', defaultValue: '' },
   },
-
 } satisfies Meta<typeof Input>;
 
 export default meta;

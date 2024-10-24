@@ -35,12 +35,7 @@ export const Navbar = ({ className, style }: INavbarProps) => {
   if (authData) {
     return (
       <nav className={cn(s.navbar, className)}>
-        <Button
-          className={s.links}
-          theme="clearInverted"
-          style={style}
-          onClick={onLogout}
-        >
+        <Button className={s.links} theme="clearInverted" style={style} onClick={onLogout}>
           {t('Sign out')}
         </Button>
       </nav>
@@ -49,12 +44,7 @@ export const Navbar = ({ className, style }: INavbarProps) => {
 
   return (
     <nav className={cn(s.navbar, className)}>
-      <Button
-        className={s.links}
-        theme="clearInverted"
-        style={style}
-        onClick={onOpen}
-      >
+      <Button className={s.links} theme="clearInverted" style={style} onClick={onOpen}>
         {t('Sign in')}
       </Button>
       {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onClose} />}

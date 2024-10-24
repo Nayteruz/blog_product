@@ -10,7 +10,7 @@ export const AppRoutes = {
   STATIC_NOT_FOUND: 'static_not_found',
 } as const;
 
-type TAppRoutes = typeof AppRoutes[keyof typeof AppRoutes];
+type TAppRoutes = (typeof AppRoutes)[keyof typeof AppRoutes];
 
 export const RoutePath: Record<TAppRoutes, string> = {
   [AppRoutes.MAIN]: '/',

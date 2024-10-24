@@ -10,8 +10,8 @@
 }
 
 .loader::before,
-.loader::after {    
-  content: "";
+.loader::after {
+  content: '';
   grid-area: 1/1;
   margin: 2px;
   border: inherit;
@@ -20,8 +20,8 @@
 
 .loader::before {
   border-color: #f03355 #0000;
-  animation: inherit; 
-  animation-duration: .5s;
+  animation: inherit;
+  animation-duration: 0.5s;
   animation-direction: reverse;
 }
 
@@ -29,6 +29,8 @@
   margin: 8px;
 }
 
-@keyframes l16 { 
-  100%{transform: rotate(1turn)}
+@keyframes l16 {
+  100% {
+    transform: rotate(1turn);
+  }
 }

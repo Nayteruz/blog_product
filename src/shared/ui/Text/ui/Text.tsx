@@ -11,7 +11,7 @@ interface ITextProps {
   className?: string;
   title?: string;
   text?: string;
-  theme?: typeof TextTheme[keyof typeof TextTheme];
+  theme?: (typeof TextTheme)[keyof typeof TextTheme];
 }
 
 export const Text: FC<ITextProps> = ({

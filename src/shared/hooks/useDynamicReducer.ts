@@ -1,22 +1,16 @@
 import { Reducer } from '@reduxjs/toolkit';
 import { useStore } from 'react-redux';
 import { useEffect } from 'react';
-import {
-  ReduxStoreWithManager,
-  StateSchemaKey,
-} from '@/app/providers/StoreProvider/config/StateSchema';
+import { ReduxStoreWithManager, StateSchemaKey } from '@/app/providers/StoreProvider/config/StateSchema';
 import { useAppDispatch } from './useAppDispatch';
 
 export type ReducersList = {
-  [name in StateSchemaKey]?: Reducer
-}
+  [name in StateSchemaKey]?: Reducer;
+};
 
-type ReducerListEntry = [StateSchemaKey, Reducer]
+type ReducerListEntry = [StateSchemaKey, Reducer];
 
-export const useDynamicReducer = (
-  reducer: ReducersList,
-  removeAfterUnmount:boolean = true,
-) => {
+export const useDynamicReducer = (reducer: ReducersList, removeAfterUnmount: boolean = true) => {
   const store = useStore() as ReduxStoreWithManager;
   const dispatch = useAppDispatch();
 
@@ -35,6 +29,6 @@ export const useDynamicReducer = (
       }
     };
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };

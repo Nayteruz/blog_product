@@ -5,7 +5,7 @@ export const Theme = {
   DARK: 'dark',
 } as const;
 
-export type TTheme = typeof Theme[keyof typeof Theme];
+export type TTheme = (typeof Theme)[keyof typeof Theme];
 
 export interface ThemeContextProps {
   theme?: TTheme;

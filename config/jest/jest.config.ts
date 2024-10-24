@@ -27,25 +27,17 @@ const config: Config = {
     '\\.s?css$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
     // eslint-disable-next-line max-len
-    '\\.(jpg|jpeg|gif|png|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>/config/jest/__mocks__/fileMock.js',
+    '\\.(jpg|jpeg|gif|png|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+      '<rootDir>/config/jest/__mocks__/fileMock.js',
     '@/(.*)': '<rootDir>src/$1',
   },
 
-  moduleFileExtensions: [
-    'js',
-    'jsx',
-    'ts',
-    'tsx',
-    'json',
-    'node',
-  ],
+  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
 
   // The root directory that Jest should scan for tests and modules within
   rootDir: '../../',
 
-  modulePaths: [
-    '<rootDir>src',
-  ],
+  modulePaths: ['<rootDir>src'],
 
   // The glob patterns Jest uses to detect test files
   testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],

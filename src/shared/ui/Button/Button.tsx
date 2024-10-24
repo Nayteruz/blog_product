@@ -21,7 +21,7 @@ const ButtonSize = {
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
-  theme?: typeof ButtonTheme[keyof typeof ButtonTheme];
+  theme?: (typeof ButtonTheme)[keyof typeof ButtonTheme];
   square?: boolean;
   size?: keyof typeof ButtonSize;
   disabled?: boolean;
