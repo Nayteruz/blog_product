@@ -3,12 +3,7 @@ import { User, userActions } from '@/entities/User';
 import { STORAGE_KEYS } from '@/shared/const/storageKeys';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 
-interface ILoginByUsername {
-  username: string;
-  password: string;
-}
-
-export const loginByUsername = createAsyncThunk<User, ILoginByUsername, ThunkConfig<string>>(
+export const fetchProfileData = createAsyncThunk<User, void, ThunkConfig<string>>(
   'login/loginByUsername',
   async (authData, thunkAPI) => {
     const { extra, dispatch, rejectWithValue } = thunkAPI;
@@ -18,9 +13,6 @@ export const loginByUsername = createAsyncThunk<User, ILoginByUsername, ThunkCon
         throw new Error();
       }
 
-      localStorage.setItem(STORAGE_KEYS.AUTH, JSON.stringify(response.data));
-      dispatch(userActions.setAuthData(response.data));
-      extra.navigate('/about');
       return response.data;
     } catch (err) {
       console.error(err);

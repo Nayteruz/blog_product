@@ -17,10 +17,10 @@ export const componentRender = (options?: IComponentRenderOptions) => {
   const { component, route = '/', initialState } = options;
 
   render(
-    <StoreProvider initialState={initialState}>
-      <MemoryRouter initialEntries={[route]}>
+    <MemoryRouter initialEntries={[route]}>
+      <StoreProvider initialState={initialState}>
         <I18nextProvider i18n={testI18n}>{component}</I18nextProvider>
-      </MemoryRouter>
-    </StoreProvider>,
+      </StoreProvider>
+    </MemoryRouter>,
   );
 };

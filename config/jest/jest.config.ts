@@ -8,7 +8,7 @@ import type { Config } from 'jest';
 const config: Config = {
   globals: {
     __IS_DEV__: true,
-    __API__: '',
+    __API__: 'https://test.ru/api',
     __PROJECT__: 'jest',
   },
   // The test environment that will be used for testing
