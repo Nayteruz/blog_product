@@ -10,7 +10,7 @@ const meta = {
   argTypes: {},
   args: {
     style: {
-      minHeight: 200,
+      minHeight: 400,
     },
   },
 } satisfies Meta<typeof Sidebar>;

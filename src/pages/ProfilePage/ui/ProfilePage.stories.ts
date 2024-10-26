@@ -1,12 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import ProfilePage from './ProfilePage';
-import { defaultDark, ThemeDecorator } from '@/shared/config/storybook';
+import { defaultDark, StoryDecorator, ThemeDecorator } from '@/shared/config/storybook';
 
 const meta = {
   title: 'Pages/ProfilePage',
   component: ProfilePage,
   tags: ['autodocs'],
+  decorators: [StoryDecorator({})],
 } satisfies Meta<typeof ProfilePage>;
 
 export default meta;
