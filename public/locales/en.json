@@ -11,5 +11,8 @@
   "Password": "Password",
   "Login title": "Authorization",
   "Incorect login or password": "Incorect login or password",
-  "Sign out": "Sign Out"
+  "Sign out": "Sign Out",
+  "Main": "Main",
+  "About": "About",
+  "Profile": "Profile"
 }

@@ -1,5 +1,5 @@
 import {
-  CSSProperties, memo, MouseEvent, ReactNode, useCallback, useEffect, useState,
+  CSSProperties, MouseEvent, ReactNode, useCallback, useEffect, useState,
 } from 'react';
 import { cn } from '@/shared/lib';
 import { Portal } from '@/shared/ui/Portal/Portal';
@@ -17,7 +17,7 @@ interface IModalProps {
   lazy?: boolean;
 }
 
-export const Modal = memo(({
+export const Modal = ({
   className, children, isOpen, onClose, container, modalKey, style, lazy,
 }: IModalProps) => {
   const [isMounted, setIsMounted] = useState(false);
@@ -70,4 +70,4 @@ export const Modal = memo(({
       </div>
     </Portal>
   );
-});
+};

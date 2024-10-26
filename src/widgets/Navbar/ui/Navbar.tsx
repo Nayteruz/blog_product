@@ -1,4 +1,6 @@
-import { CSSProperties, useCallback, useState } from 'react';
+import {
+  CSSProperties, FC, memo, useCallback, useState,
+} from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { cn } from '@/shared/lib';
@@ -13,7 +15,7 @@ interface INavbarProps {
   style?: CSSProperties;
 }
 
-export const Navbar = ({ className, style }: INavbarProps) => {
+export const Navbar: FC<INavbarProps> = memo(({ className, style }) => {
   const dispatch = useAppDispatch();
   const authData = useSelector(getUserAuthData);
   const [isAuthModal, setIsAuthModal] = useState(false);
@@ -50,4 +52,4 @@ export const Navbar = ({ className, style }: INavbarProps) => {
       {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onClose} />}
     </nav>
   );
-};
+});

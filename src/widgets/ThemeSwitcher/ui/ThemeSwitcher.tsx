@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { cn } from '@/shared/lib';
 import { Theme, useTheme } from '@/app/providers/ThemeProvider';
 import SunIcon from '@/shared/assets/icons/sun.svg';
@@ -21,7 +21,7 @@ const toggleBodyTheme = (theme: TTheme) => {
   documentBody.classList.remove(removeTheme);
 };
 
-export const ThemeSwitcher: FC<IThemeSwitcherProps> = ({ className, themeDefault }) => {
+export const ThemeSwitcher: FC<IThemeSwitcherProps> = memo(({ className, themeDefault }) => {
   const { theme, toggleTheme } = useTheme();
 
   const ThemeIcon = themeDefault || theme === Theme.LIGHT ? SunIcon : MoonIcon;
@@ -36,4 +36,4 @@ export const ThemeSwitcher: FC<IThemeSwitcherProps> = ({ className, themeDefault
       <ThemeIcon />
     </Button>
   );
-};
+});

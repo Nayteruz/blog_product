@@ -12,5 +12,8 @@
   "Password": "Пароль",
   "Login title": "Авторизация",
   "Incorect login or password": "Неверный логин или пароль",
-  "Sign out": "Выйти"
+  "Sign out": "Выйти",
+  "Main": "Главная",
+  "About": "О нас",
+  "Profile": "Профиль"
 }

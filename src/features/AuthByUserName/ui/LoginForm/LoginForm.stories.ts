@@ -8,7 +8,9 @@ const meta = {
   component: LoginForm,
   tags: ['autodocs'],
   argTypes: {},
-  args: {},
+  args: {
+    onSuccess: () => {},
+  },
   decorators: [StoryDecorator({})],
 } satisfies Meta<typeof LoginForm>;
 

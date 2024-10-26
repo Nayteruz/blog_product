@@ -14,23 +14,22 @@ import s from './LoginForm.module.scss';
 
 export interface ILoginFormProps {
   className?: string;
+  onSuccess: () => void;
 }
 
 const initialReducers: ReducersList = {
   loginForm: loginReducer,
 };
 
-const LoginForm: FC<ILoginFormProps> = memo(({ className }) => {
+const LoginForm: FC<ILoginFormProps> = memo(({ className, onSuccess }) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
-
-  // const store = useStore() as ReduxStoreWithManager;
 
   const {
     username, password, error, isLoading,
   } = useSelector(getLoginState);
 
-  useDynamicReducer(initialReducers, true);
+  useDynamicReducer(initialReducers);
 
   const onChangeUsername = useCallback(
     (value: string) => {
@@ -46,9 +45,13 @@ const LoginForm: FC<ILoginFormProps> = memo(({ className }) => {
     [dispatch],
   );
 
-  const onLogin = useCallback(() => {
-    dispatch(loginByUsername({ username, password }));
-  }, [dispatch, password, username]);
+  const onLogin = useCallback(async () => {
+    const result = await dispatch(loginByUsername({ username, password }));
+
+    if (result.meta.requestStatus === 'fulfilled') {
+      onSuccess();
+    }
+  }, [dispatch, password, username, onSuccess]);
 
   return (
     <div className={cn(s.loginForm, className)}>

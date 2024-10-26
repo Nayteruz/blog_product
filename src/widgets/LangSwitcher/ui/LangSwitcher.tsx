@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { cn } from '@/shared/lib';
 import { Button } from '@/shared/ui';
@@ -15,7 +15,7 @@ const languageList = [
   { lang: 'en', name: 'EN', icon: EnIcon },
 ];
 
-export const LangSwitcher: FC<ILangProps> = ({ className }) => {
+export const LangSwitcher: FC<ILangProps> = memo(({ className }) => {
   const { i18n } = useTranslation();
 
   return (
@@ -33,4 +33,4 @@ export const LangSwitcher: FC<ILangProps> = ({ className }) => {
       ))}
     </ul>
   );
-};
+});

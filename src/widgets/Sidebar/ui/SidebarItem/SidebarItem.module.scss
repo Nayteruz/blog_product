@@ -1,0 +1,50 @@
+.item {
+  position: relative;
+  padding: 10px;
+  text-decoration: none;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: var(--inverted-primary-color);
+  transition: all 0.1s linear;
+
+  &:hover {
+    text-decoration: underline;
+    color: var(--inverted-primary-hover-color);
+  }
+
+  &.collapsed {
+    justify-content: center;
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s linear;
+}
+
+.linkText {
+  color: inherit;
+  font: var(--font-m);
+  transition: all 0.2s linear;
+  opacity: 1;
+}
+
+.collapsed {
+  .icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .linkText {
+    opacity: 0;
+    position: absolute;
+    left: -100px;
+  }
+}
