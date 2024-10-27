@@ -76,6 +76,7 @@ module.exports = {
     'no-param-reassign': 'off',
     'react/prop-types': 'off',
     'no-console': ['error', { allow: ['warn', 'error'] }],
+    'no-undef': 'off',
   },
   globals: {
     __IS_DEV__: true,

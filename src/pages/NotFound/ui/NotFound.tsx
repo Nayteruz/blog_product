@@ -7,7 +7,7 @@ interface INotFoundProps {
   className?: string;
 }
 
-export const NotFoundPage: FC<INotFoundProps> = ({ className }) => {
+export const NotFoundPage: FC<INotFoundProps> = ({ className = '' }) => {
   const { t } = useTranslation();
 
   return <div className={cn(s.notFoundPage, className)}>{t('Page not found')}</div>;

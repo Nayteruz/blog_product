@@ -15,5 +15,9 @@
   "Sign out": "Выйти",
   "Main": "Главная",
   "About": "О нас",
-  "Profile": "Профиль"
+  "Profile": "Профиль",
+  "Profile title": "Профиль пользователя",
+  "Edit profile": "Редактировать профиль",
+  "Your name": "Ваше имя",
+  "Your lastname": "Ваша фамилия"
 }

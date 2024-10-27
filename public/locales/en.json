@@ -14,5 +14,9 @@
   "Sign out": "Sign Out",
   "Main": "Main",
   "About": "About",
-  "Profile": "Profile"
+  "Profile": "Profile",
+  "Profile title": "Profile user",
+  "Edit profile": "Edit profile",
+  "Your name": "Your name",
+  "Your lastname": "Your lastname"
 }

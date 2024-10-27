@@ -1,0 +1,26 @@
+.profileCard {
+  width: 100%;
+  padding: 20px;
+  border: 2px solid var(--inverted-bg-color);
+}
+
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.editBtn {
+  display: flex;
+}
+
+.data {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input {
+  width: 100%;
+}

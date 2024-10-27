@@ -14,7 +14,7 @@ import s from './LoginForm.module.scss';
 
 export interface ILoginFormProps {
   className?: string;
-  onSuccess: () => void;
+  onSuccess?: () => void;
 }
 
 const initialReducers: ReducersList = {
@@ -49,7 +49,7 @@ const LoginForm: FC<ILoginFormProps> = memo(({ className, onSuccess }) => {
     const result = await dispatch(loginByUsername({ username, password }));
 
     if (result.meta.requestStatus === 'fulfilled') {
-      onSuccess();
+      onSuccess?.();
     }
   }, [dispatch, password, username, onSuccess]);
 

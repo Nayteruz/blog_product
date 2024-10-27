@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "strict": true,
+
     // место сборки, но тут не важно так как используется webpack
     "outDir": "./dist/",
 

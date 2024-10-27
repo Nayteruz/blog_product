@@ -25,12 +25,12 @@ export const ThemeSwitcher: FC<IThemeSwitcherProps> = memo(({ className, themeDe
   const { theme, toggleTheme } = useTheme();
 
   const ThemeIcon = themeDefault || theme === Theme.LIGHT ? SunIcon : MoonIcon;
-  toggleBodyTheme(themeDefault || theme);
+  toggleBodyTheme(themeDefault || theme || Theme.LIGHT);
 
   return (
     <Button
       theme="clear"
-      className={cn(s.themeSwitcher, className, s[theme])}
+      className={cn(s.themeSwitcher, className, s[theme || Theme.LIGHT])}
       onClick={() => toggleTheme()}
     >
       <ThemeIcon />

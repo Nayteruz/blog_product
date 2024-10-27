@@ -1,6 +1,6 @@
 import { AsyncThunkAction } from '@reduxjs/toolkit';
-import axios, { AxiosInstance } from 'axios';
-import { StateSchema, ThunkConfig } from '@/app/providers/StoreProvider';
+import axios from 'axios';
+import { StateSchema, ThunkConfig } from '@/app/providers/StoryProvider';
 
 type ActionCreatorType<ReturnValue, Arg, RejectValue> = (
   arg: Arg,
@@ -14,7 +14,6 @@ export function createTestAsyncThunk<Return, Arg, RejectedValue>(
 
   const extra: ThunkConfig<RejectedValue>['extra'] = {
     api: axios as jest.Mocked<typeof axios>,
-    navigate: jest.fn(),
   };
 
   const callThunk = async (arg: Arg) => {

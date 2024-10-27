@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { StateSchema } from '@/app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoryProvider';
 
 export const getLoginState = createSelector(
   (state: StateSchema) => state?.loginForm,

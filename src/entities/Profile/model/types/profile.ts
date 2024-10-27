@@ -8,7 +8,10 @@ export interface IProfile {
   country: typeof Country[keyof typeof Country]
   city: string
   username: string
-  avatar: URL
+  /**
+   * URL to the user's avatar image.
+   */
+  avatar: string
 }
 
 export interface IProfileSchema {

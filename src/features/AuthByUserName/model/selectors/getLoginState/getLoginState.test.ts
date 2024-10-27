@@ -1,5 +1,4 @@
-import { StateSchema } from '@/app/providers/StoreProvider';
-import { DeepPartial } from '@/shared/lib';
+import { StateSchema } from '@/app/providers/StoryProvider';
 import { getLoginState } from './getLoginState';
 
 describe('getLoginState', () => {

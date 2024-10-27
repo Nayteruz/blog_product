@@ -1,4 +1,4 @@
-type TClassNames = Record<string, boolean | string> | string;
+type TClassNames = Record<string, boolean | string | undefined> | string | undefined;
 
 /**
  * Получает список имен классов и возвращает строку, состоящую из этих имен,
