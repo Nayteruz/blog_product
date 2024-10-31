@@ -19,5 +19,17 @@
   "Profile title": "Профиль пользователя",
   "Edit profile": "Редактировать профиль",
   "Your name": "Ваше имя",
-  "Your lastname": "Ваша фамилия"
+  "Your lastname": "Ваша фамилия",
+  "Profile error": "Ошибка загрузки профиля",
+  "Profile error message": "Попробуйте перезагрузить страницу",
+  "Cancel edit profile": "Отменить редактирование",
+  "Save profile": "Сохранить профиль",
+  "Your age": "Ваш возраст",
+  "Your city": "Ваш город",
+  "Your username": "Ваше имя пользователя",
+  "Your avatar": "Ссылка на аватар",
+  "Your country": "Ваша страна",
+  "Your currency": "Ваша валюта",
+  "Select currency": "Выберите валюту",
+  "Select country": "Выберите страну"
 }

@@ -18,5 +18,17 @@
   "Profile title": "Profile user",
   "Edit profile": "Edit profile",
   "Your name": "Your name",
-  "Your lastname": "Your lastname"
+  "Your lastname": "Your lastname",
+  "Profile error": "Error loading profile",
+  "Profile error message": "Please reload page",
+  "Cancel edit profile": "Cancel",
+  "Save profile": "Save profile",
+  "Your age": "Your age",
+  "Your city": "Your city",
+  "Your username": "Your username",
+  "Your avatar": "Your avatar link",
+  "Your country": "Your country",
+  "Your currency": "Your currency",
+  "Select currency": "Select currency",
+  "Select country": "Select country"
 }

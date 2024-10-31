@@ -19,5 +19,6 @@ export const listMenu: ISidebarItem[] = [
     path: RoutePath.profile,
     text: 'Profile',
     icon: <ProfileIcon />,
+    authOnly: true,
   },
 ];

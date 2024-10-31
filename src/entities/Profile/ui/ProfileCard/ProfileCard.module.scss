@@ -4,23 +4,33 @@
   border: 2px solid var(--inverted-bg-color);
 }
 
-.header{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.editBtn {
-  display: flex;
-}
-
 .data {
-  margin-top: 30px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
+.avatarWrapper {
+  display: grid;
+  place-content: center;
+}
+
 .input {
   width: 100%;
+}
+
+.loading {
+  display: grid;
+  place-content: center;
+  min-height: 200px;
+}
+
+.error {
+  display: grid;
+  place-content: center;
+  min-height: 200px;
+}
+
+.editing {
+  border-color: var(--inverted-primary-color);
 }

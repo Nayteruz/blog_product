@@ -76,6 +76,12 @@
   color: var(--primary-color);
 }
 
+.outlineRed {
+  border: 1px solid var(--primary-color-red);
+  background: none;
+  color: var(--primary-color);
+}
+
 .background {
   background: var(--bg-color);
   color: var(--primary-color);

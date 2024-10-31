@@ -1,13 +1,28 @@
 {
   "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 }
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    }
   ],
   "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
   ],
-
   "users": [
     {
       "id": "1",
@@ -20,15 +35,14 @@
       "password": "guess"
     }
   ],
-
   "profile": {
     "first": "Alex",
     "lastname": "Pankov",
-    "age": 36,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Barnaul",
-    "username": "admin",
+    "age": 3633333,
+    "currency": "EUR",
+    "country": "UK",
+    "city": "Barnaul333333",
+    "username": "admin333333",
     "avatar": "https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg"
   }
 }

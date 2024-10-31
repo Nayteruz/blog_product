@@ -1,4 +1,6 @@
-import { FC, memo, useCallback } from 'react';
+import {
+  ChangeEvent, FC, memo, useCallback,
+} from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { cn } from '@/shared/lib';
@@ -32,15 +34,15 @@ const LoginForm: FC<ILoginFormProps> = memo(({ className, onSuccess }) => {
   useDynamicReducer(initialReducers);
 
   const onChangeUsername = useCallback(
-    (value: string) => {
-      dispatch(loginActions.setUsername(value));
+    (e: ChangeEvent<HTMLInputElement>) => {
+      dispatch(loginActions.setUsername(e.target.value));
     },
     [dispatch],
   );
 
   const onChangePassword = useCallback(
-    (value: string) => {
-      dispatch(loginActions.setPassword(value));
+    (e: ChangeEvent<HTMLInputElement>) => {
+      dispatch(loginActions.setPassword(e.target.value));
     },
     [dispatch],
   );
