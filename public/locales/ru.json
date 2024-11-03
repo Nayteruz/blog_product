@@ -31,5 +31,12 @@
   "Your country": "Ваша страна",
   "Your currency": "Ваша валюта",
   "Select currency": "Выберите валюту",
-  "Select country": "Выберите страну"
+  "Select country": "Выберите страну",
+  "Incorrect data": "Не корректные данные",
+  "Incorrect username": "Некорретный никнейм",
+  "Incorrect age": "Некорректный возраст",
+  "Incorrect currency": "Некорретная валюта",
+  "Incorrect country": "Не выбрана страна",
+  "No data": "Нет данных",
+  "Server error": "Серверная ошибка"
 }

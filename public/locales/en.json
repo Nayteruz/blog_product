@@ -30,5 +30,12 @@
   "Your country": "Your country",
   "Your currency": "Your currency",
   "Select currency": "Select currency",
-  "Select country": "Select country"
+  "Select country": "Select country",
+  "Incorrect data": "Incorrect data",
+  "Incorrect username": "Incorrect username",
+  "Incorrect age": "Incorrect age",
+  "Incorrect currency": "Incorrect currency",
+  "Incorrect country": "Incorrect country",
+  "No data": "No data",
+  "Server error": "Server error"
 }
