@@ -25,7 +25,7 @@ export const updateProfileData = createAsyncThunk<
       const response = await extra.api.put<IProfile>('/profile', formData);
 
       if (!response.data) {
-        throw new Error('failed fetch profile');
+        throw new Error('failed update profile');
       }
 
       return response.data;

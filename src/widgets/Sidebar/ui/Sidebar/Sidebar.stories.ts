@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Sidebar } from './Sidebar';
-import { defaultDark, ThemeDecorator } from '@/shared/config/storybook';
+import { defaultDark, ThemeDecorator, StoryDecorator } from '@/shared/config/storybook';
 
 const meta = {
   title: 'Widgets/Sidebar',
@@ -13,6 +13,7 @@ const meta = {
       minHeight: 400,
     },
   },
+  decorators: [StoryDecorator({ user: { authData: {} } })],
 } satisfies Meta<typeof Sidebar>;
 
 export default meta;
@@ -25,4 +26,8 @@ export const Normal: Story = {
 export const Dark: Story = {
   ...defaultDark,
   decorators: [ThemeDecorator('dark')],
+};
+
+export const NoAuth: Story = {
+  decorators: [StoryDecorator({ user: {} })],
 };

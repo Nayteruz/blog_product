@@ -33,14 +33,6 @@ const ProfilePage: FC = () => {
   const isReadOnly = useSelector(getProfileReadOnly);
   const validateErrors = useSelector(getProfileValidateError);
 
-  // INCORRECT_DATA: 'INCORRECT_DATA',
-  //   INCORRECT_USERNAME: 'INCORRECT_USERNAME',
-  //   INCORRECT_AGE: 'INCORRECT_AGE',
-  //   INCORRECT_CURRENCY: 'INCORRECT_CURRENCY',
-  //   INCORRECT_COUNTRY: 'INCORRECT_COUNTRY',
-  //   NO_DATA: 'NO_DATA',
-  //   SERVER_ERROR: 'SERVER_ERROR',
-
   const validateTranslates = {
     [ValidateProfileError.INCORRECT_DATA]: t('Incorrect data'),
     [ValidateProfileError.INCORRECT_USERNAME]: t('Incorrect username'),
@@ -54,7 +46,9 @@ const ProfilePage: FC = () => {
   useDynamicReducer(reducers);
 
   useEffect(() => {
-    dispatch(fetchProfileData());
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchProfileData());
+    }
   }, [dispatch]);
 
   interface IChangeData {
