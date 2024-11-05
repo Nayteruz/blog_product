@@ -3,6 +3,7 @@ import { createContext } from 'react';
 export const Theme = {
   LIGHT: 'light',
   DARK: 'dark',
+  PURPLE: 'purple',
 } as const;
 
 export type TTheme = (typeof Theme)[keyof typeof Theme];
