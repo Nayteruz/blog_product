@@ -1,14 +1,16 @@
 import { Suspense, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { cn } from '@/shared/lib';
 import { AppRouter } from './providers/router';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
 import { Footer } from '@/widgets/Footer';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
-import { userActions } from '@/entities/User';
+import { getUserInited, userActions } from '@/entities/User';
 
 function App() {
   const dispatch = useAppDispatch();
+  const inited = useSelector(getUserInited);
 
   useEffect(() => {
     dispatch(userActions.initAuthData());
@@ -20,7 +22,7 @@ function App() {
         <Suspense fallback="">
           <Navbar />
           <Sidebar />
-          <AppRouter />
+          {inited && <AppRouter />}
           <Footer />
         </Suspense>
       </div>

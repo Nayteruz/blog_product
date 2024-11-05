@@ -53,7 +53,7 @@ module.exports = {
         exceptions: ['input', 'button', 'select'],
       },
     ],
-    'no-underscore-dangle': [2, { allow: ['_d', '__IS_DEV__', '__API__', '__PROJECT__'] }],
+    'no-underscore-dangle': [2, { allow: ['_d', '__IS_DEV__', '__API__', '__PROJECT__', '_inited'] }],
     quotes: ['error', 'single'],
     'max-len': [2, { ignoreComments: true, code: 120 }],
     'import/no-extraneous-dependencies': [
