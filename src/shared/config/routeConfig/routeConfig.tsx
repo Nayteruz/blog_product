@@ -3,6 +3,8 @@ import { AboutPage } from '@/pages/AboutPage';
 import { MainPage } from '@/pages/MainPage';
 import { ProfilePage } from '@/pages/ProfilePage';
 import { NotFoundPage } from '@/pages/NotFound';
+import { ArticlePage } from '@/pages/ArticlePage';
+import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage';
 
 export type AppRoutesProps = RouteProps & {
   authOnly?: boolean
@@ -13,6 +15,8 @@ export const AppRoutes = {
   ABOUT: 'about',
   PROFILE: 'profile',
   NOT_FOUND: 'not_found',
+  ARTICLES: 'articles',
+  ARTICLE_DETAILS: 'article_details',
 
   // static
   STATIC_NOT_FOUND: 'static_not_found',
@@ -25,6 +29,8 @@ export const RoutePath: Record<TAppRoutes, string> = {
   [AppRoutes.ABOUT]: '/about',
   [AppRoutes.PROFILE]: '/profile',
   [AppRoutes.STATIC_NOT_FOUND]: '/not-found',
+  [AppRoutes.ARTICLES]: '/articles',
+  [AppRoutes.ARTICLE_DETAILS]: '/article/', // /article/:id
   // Должен быть всегда последним
   [AppRoutes.NOT_FOUND]: '*',
 };
@@ -46,6 +52,16 @@ export const routeConfig: Record<TAppRoutes, AppRoutesProps> = {
   [AppRoutes.STATIC_NOT_FOUND]: {
     path: RoutePath.static_not_found,
     element: <NotFoundPage />,
+  },
+  [AppRoutes.ARTICLES]: {
+    path: RoutePath.articles,
+    element: <ArticlePage />,
+    authOnly: true,
+  },
+  [AppRoutes.ARTICLE_DETAILS]: {
+    path: `${RoutePath.article_details}:id`,
+    element: <ArticleDetailsPage />,
+    authOnly: true,
   },
 
   // always last

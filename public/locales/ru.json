@@ -38,5 +38,7 @@
   "Incorrect currency": "Некорретная валюта",
   "Incorrect country": "Не выбрана страна",
   "No data": "Нет данных",
-  "Server error": "Серверная ошибка"
+  "Server error": "Серверная ошибка",
+  "Articles": "Статьи",
+  "Article details": "Статья"
 }
