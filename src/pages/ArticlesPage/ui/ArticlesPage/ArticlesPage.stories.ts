@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ArticlePage from './ArticlePage';
+import ArticlesPage from './ArticlesPage';
 import { defaultDark, ThemeDecorator } from '@/shared/config/storybook';
 
 const meta = {
-  title: 'Pages/ArticlePage',
-  component: ArticlePage,
+  title: 'Pages/ArticlesPage',
+  component: ArticlesPage,
   tags: ['autodocs'],
   argTypes: {},
   args: {},
-} satisfies Meta<typeof ArticlePage>;
+} satisfies Meta<typeof ArticlesPage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

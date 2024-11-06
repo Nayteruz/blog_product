@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { cn } from '@/shared/lib';
-import s from './[FTName | camelcase].module.scss';
+import s from './[FTName].module.scss';
 
 interface I[FTName]Props {
   className?: string;

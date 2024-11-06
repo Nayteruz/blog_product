@@ -1,7 +1,7 @@
 import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { cn } from '@/shared/lib';
-import s from './articleDetailsPage.module.scss';
+import s from './ArticleDetailsPage.module.scss';
 
 interface IArticleDetailsPageProps {
   className?: string;
