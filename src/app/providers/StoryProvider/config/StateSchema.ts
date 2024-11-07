@@ -7,12 +7,14 @@ import { CombinedState } from 'redux';
 import { IUserSchema } from '@/entities/User';
 import { IProfileSchema } from '@/entities/Profile';
 import { ILoginSchema } from '@/features/AuthByUserName';
+import { IArticleDetailsSchema } from '@/entities/Article';
 
 export interface StateSchema {
   user: IUserSchema;
   // Async reducers
   loginForm?: ILoginSchema;
   profile?: IProfileSchema;
+  articleDetails?: IArticleDetailsSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

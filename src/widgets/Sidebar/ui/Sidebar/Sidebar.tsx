@@ -2,11 +2,9 @@ import {
   CSSProperties, FC, memo, useMemo, useState,
 } from 'react';
 import { cn } from '@/shared/lib';
-import { Button } from '@/shared/ui';
+import { Button, Icon } from '@/shared/ui';
 import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
 import { LangSwitcher } from '@/widgets/LangSwitcher';
-import CircleLeftIcon from '@/shared/assets/icons/circle-left.svg';
-import CircleRightIcon from '@/shared/assets/icons/circle-right.svg';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { listMenu } from '../../model/links';
 import s from './Sidebar.module.scss';
@@ -41,7 +39,7 @@ export const Sidebar: FC<ISidebarProps> = memo(({ className, style }) => {
         square
         size="XL"
       >
-        {collapsed ? <CircleRightIcon /> : <CircleLeftIcon />}
+        <Icon name={collapsed ? 'circle-right' : 'circle-left'} />
       </Button>
       <div className={s.items}>
         {items}

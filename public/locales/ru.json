@@ -40,5 +40,8 @@
   "No data": "Нет данных",
   "Server error": "Серверная ошибка",
   "Articles": "Статьи",
-  "Article details": "Статья"
+  "Article details": "Статья",
+  "Article not found": "Статья не найдена",
+  "Not found article title": "Статья не найдена",
+  "Not found article text": "Статья видимо где то потерялась поэтому ничего не найдено"
 }

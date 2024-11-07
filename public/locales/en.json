@@ -39,5 +39,8 @@
   "No data": "No data",
   "Server error": "Server error",
   "Articles": "Articles",
-  "Article details": "Article details"
+  "Article details": "Article details",
+  "Article not found": "Article not found",
+  "Not found article title": "Article not found",
+  "Not found article text": "Article is someware"
 }

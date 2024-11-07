@@ -1,23 +1,21 @@
-.text {
+.textComponent {
   font-size: 14px;
 }
 
-.titleParagraph {
-  font: var(--font-l);
+.title {
   color: var(--primary-color);
 }
 
-.textParagraph {
-  font: var(--font-m);
+.text {
   color: var(--secondary-color);
 }
 
 .error {
-  .titleParagraph {
+  .title {
     color: var(--red-light);
   }
 
-  .textParagraph {
+  .text {
     color: var(--red-dark);
   }
 }
@@ -32,4 +30,44 @@
 
 .center {
   text-align: center;
+}
+
+.sizeS {
+  .title {
+    font: var(--font-m);
+  }
+
+  .text {
+    font: var(--font-s);
+  }
+}
+
+.sizeM {
+  .title {
+    font: var(--font-l);
+  }
+
+  .text {
+    font: var(--font-m);
+  }
+}
+
+.sizeL {
+  .title {
+    font: var(--font-xl);
+  }
+
+  .text {
+    font: var(--font-l);
+  }
+}
+
+.sizeXL {
+  .title {
+    font: var(--font-2xl);
+  }
+
+  .text {
+    font: var(--font-xl);
+  }
 }

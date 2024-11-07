@@ -3,8 +3,8 @@ import {
 } from 'react';
 import { cn } from '@/shared/lib';
 import { Portal } from '@/shared/ui/Portal/Portal';
-import CloseIcon from '@/shared/assets/icons/close.svg';
 import s from './Modal.module.scss';
+import { Icon } from '@/shared/ui/Icon/Icon';
 
 interface IModalProps {
   className?: string;
@@ -62,7 +62,7 @@ export const Modal = ({
         <div className={s.overlay} onClick={onCloseHandler} role="presentation">
           <div role="presentation" className={s.content} onClick={clickStop}>
             <span role="presentation" className={s.close} onClick={onCloseHandler}>
-              <CloseIcon />
+              <Icon name="close" />
             </span>
             {children}
           </div>

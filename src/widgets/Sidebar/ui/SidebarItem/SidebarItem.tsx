@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { cn } from '@/shared/lib';
 import s from './SidebarItem.module.scss';
-import { AppLink } from '@/shared/ui';
+import { AppLink, Icon } from '@/shared/ui';
 import { ISidebarItem } from '../../model/types';
 import { getUserAuthData } from '@/entities/User';
 
@@ -23,7 +23,7 @@ export const SidebarItem: FC<ISidebarItemProps> = memo(({ item, collapsed }) => 
 
   return (
     <AppLink className={cn(s.item, { [s.collapsed]: collapsed })} to={path} theme="secondary">
-      {icon && <span className={s.icon}>{icon}</span>}
+      {icon && <Icon name={icon} size={collapsed ? 'sizeL' : undefined} />}
       <span className={s.linkText}>{t(text)}</span>
     </AppLink>
   );

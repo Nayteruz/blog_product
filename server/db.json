@@ -11,28 +11,18 @@
       "views": 200
     }
   ],
-  "comments": [
-    {
-      "id": "1",
-      "text": "a comment about post 1",
-      "postId": "1"
-    },
-    {
-      "id": "2",
-      "text": "another comment about post 1",
-      "postId": "1"
-    }
-  ],
   "users": [
     {
       "id": "1",
       "username": "admin",
-      "password": "123"
+      "password": "123",
+      "role": "ADMIN"
     },
     {
       "id": "2",
       "username": "maria",
-      "password": "guess"
+      "password": "123",
+      "role": "USER"
     }
   ],
   "profile": {
@@ -44,5 +34,365 @@
     "city": "Barnaul333333",
     "username": "admin333333",
     "avatar": "https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg"
-  }
+  },
+  "articles": [
+    {
+      "id": "1",
+      "title": "Go Language Update",
+      "subtitle": "Основные новшества Go в 2023 году",
+      "img": "https://blog.golang.org/go-brand/Go-Logo/SVG/Go-Logo_Blue.svg",
+      "views": 1500,
+      "createdAt": 1698833600,
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "ECMAScript 2023",
+          "paragraphs": [
+          "Новые версии ECMAScript, спецификации JavaScript, продолжают добавлять важные улучшения. Например, более мощные функциональные возможности для работы с коллекциями, улучшенные инструменты для управления асинхронным кодом и расширенные возможности синтаксиса.",
+          "Новые механизмы позволяют более эффективно работать с потоками данных, что особенно полезно при разработке приложений, работающих с сетью и вводом/выводом в реальном времени."
+        ]
+        },
+        {
+          "id": "100",
+          "type": "TEXT",
+          "title": "Асинхронные итераторы и генераторы",
+          "paragraphs": [
+          "Новые механизмы позволяют более эффективно работать с потоками данных, что особенно полезно при разработке приложений, работающих с сетью и вводом/выводом в реальном времени."
+        ]
+        },
+        {
+          "id": "101",
+          "type": "TEXT",
+          "title": "Интуитивные функции обработки ошибок",
+          "paragraphs": [
+          "Улучшения в обработке исключений и корректной работы с промисами помогают создавать более надежные приложения. Введение нового синтаксиса, который упрощает чтение и написание сложных конструкций, имеет большое значение для поддержания чистоты и читаемости кода."
+        ]
+        },
+        {
+          "id": "102",
+          "type": "TEXT",
+          "title": "Операции с битами",
+          "paragraphs": [
+          "Новые операторы позволяют более удобно и быстро производить операции, которые необходимы в графике и при оптимизированной обработке данных. Это открывает дополнительные возможности для применения JavaScript в новых контекстах, таких как криптография и обработка изображений."
+        ]
+        },
+        {
+          "id": "103",
+          "type": "TEXT",
+          "title": "Интеграция с современными фреймворками",
+          "paragraphs": [
+          "JavaScript все больше интегрируется с современными фреймворками, такими как React, Angular и Vue. Новые возможности, такие как хуки в React и директивы в Vue, позволяют существенно упростить разработку и улучшить взаимодействие компонентов.", "Эти и другие обновления делают JavaScript ещё более мощным инструментом, расширяя область его применения за пределы традиционной веб-разработки, в область нативных приложений и даже серверного кода.", "Благодаря этим изменениям JavaScript остается актуальным выбором для разработчиков, стремящихся использовать современные технологии для создания сложных и интерактивных приложений."
+        ]
+        },
+        {
+        "id": "2",
+        "type": "CODE",
+        "code": "package main\n\nimport \"fmt\"\n\ntype List[T any] struct {\n    items []T\n}\n\nfunc (l *List[T]) Add(item T) {\n    l.items = append(l.items, item)\n}\n\nfunc (l List[T]) Get(index int) (T, bool) {\n    if index < 0 || index >= len(l.items) {\n        var zero T\n        return zero, false\n    }\n    return l.items[index], true\n}\n\nfunc (l List[T]) Size() int {\n    return len(l.items)\n}\n\nfunc main() {\n    integers := List[int]{items: []int{1, 2, 3}}\n    integers.Add(4)\n    fmt.Println(\"List of integers:\", integers.items)\n    value, ok := integers.Get(2)\n    if ok {\n        fmt.Println(\"Value at index 2:\", value)\n    } else {\n        fmt.Println(\"Index out of bounds\")\n    }\n    fmt.Println(\"Size of list:\", integers.Size())\n}"
+        },
+        {
+          "id": "3",
+          "type": "CODE",
+          "code": "public class Demo {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, Java 21!\");\n    }\n}"
+        },
+        {
+          "id": "4",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29kZXxlbnwwfHwwfHx8MA%3D%3D",
+          "title": "Тенденции в кибербезопасности"
+        },
+        {
+          "id": "105",
+          "type": "TEXT",
+          "title": "Интеграция с современными фреймворками",
+          "paragraphs": [
+          "JavaScript все больше интегрируется с современными фреймворками, такими как React, Angular и Vue. Новые возможности, такие как хуки в React и директивы в Vue, позволяют существенно упростить разработку и улучшить взаимодействие компонентов.", "Эти и другие обновления делают JavaScript ещё более мощным инструментом, расширяя область его применения за пределы традиционной веб-разработки, в область нативных приложений и даже серверного кода.", "Благодаря этим изменениям JavaScript остается актуальным выбором для разработчиков, стремящихся использовать современные технологии для создания сложных и интерактивных приложений."
+        ]
+        },
+        {
+          "id": "106",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29kZXxlbnwwfHwwfHx8MA%3D%3D",
+          "title": "Тенденции в кибербезопасности"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Vue.js Improvements",
+      "subtitle": "Что нового в Vue.js 3.2?",
+      "img": "https://vuejs.org/images/logo.png",
+      "views": 1800,
+      "createdAt": 1655833600,
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Новые фичи Vue.js",
+          "paragraphs": [
+            "В новой версии Vue.js 3.2 стало проще работать с рендерингом и композиционным API.",
+            "Это повышает эффективность работы разработчиков и улучшает стабильность приложений."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "<template>\n  <div>{{ message }}</div>\n</template>\n\n<script setup>\nconst message = 'Hello, Vue!'\n</script>"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Rust Language News",
+      "subtitle": "Эволюция Rust в 2023 году",
+      "img": "https://www.rust-lang.org/static/images/rust-logo-blk.svg",
+      "views": 620,
+      "createdAt": 1665833600,
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Обновления в Rust",
+          "paragraphs": [
+            "Rust продолжает завоёвывать популярность благодаря своей безопасности и скорости.",
+            "В 2023 году были сделаны улучшения по управлению памятью, что делает его ещё более эффективным."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "fn main() {\n    let number = 10;\n    println!(\"The number is: {}\", number);\n}"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Java Updates",
+      "subtitle": "Java 21: Что нового?",
+      "img": "https://www.oracle.com/a/ocom/img/cb71-java-logo.png",
+      "views": 830,
+      "createdAt": 1675833600,
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Новшества Java 21",
+          "paragraphs": [
+            "Java 21 представила улучшенные паттерн-матчи и новые утилиты для работы с потоками.",
+            "Теперь разработка многопоточных приложений стала ещё проще и безопаснее."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "public class Demo {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, Java 21!\");\n    }\n}"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Cybersecurity Trends",
+      "subtitle": "Новые тенденции в кибербезопасности",
+      "img": "https://cybersecurityventures.com/wp-content/uploads/2020/04/cybersecurity-ventures.jpg",
+      "views": 2104,
+      "createdAt": 1685833600,
+      "type": [
+        "IT",
+        "Security"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Текущие угрозы",
+          "paragraphs": [
+            "Кибербезопасность становится всё более важной с ростом числа онлайн-угроз. В 2023 году число атак ещё увеличилось.",
+            "Основной упор делается на защиту данных и пользователей от фишинговых атак и ransomware."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://securityintelligence.com/wp-content/uploads/2020/09/cybersecurity-trends.jpg",
+          "title": "Тенденции в кибербезопасности"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Machine Learning Innovations",
+      "subtitle": "Свежие достижения в машинном обучении",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Machine_learning.png",
+      "views": 4931,
+      "createdAt": 1699833600,
+      "type": [
+        "IT",
+        "AI"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Развитие ML",
+          "paragraphs": [
+            "Машинное обучение продолжает демонстрировать замечательные достижения, особенно в области глубоких нейронных сетей.",
+            "В 2023 году появились новые модели, которые стали более точными и быстрыми."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://ai.googleblog.com/images/AI%20for%20ML.jpg",
+          "title": "Искусственный интеллект в действии"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "title": "Blockchain in Fintech",
+      "subtitle": "Революция блокчейна в финансовом секторе",
+      "img": "https://blockchainindustrygroup.org/wp-content/uploads/2019/12/blockchain-logo.jpg",
+      "views": 3620,
+      "createdAt": 1688833600,
+      "type": [
+        "Finance",
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Влияние блокчейна",
+          "paragraphs": [
+            "Блокчейн продолжает трансформировать финансовую индустрию, обеспечивая прозрачность и безопасность транзакций.",
+            "Все больше финансовых институтов интегрируют блокчейн для оптимизации своих процессов."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://blockchainindustrygroup.org/wp-content/uploads/2020/01/Blockchain-1.jpg",
+          "title": "Применение блокчейна"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "title": "Quantum Computing Advances",
+      "subtitle": "Достижения в области квантовых вычислений",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/b/bb/QC_algae.jpg",
+      "views": 4098,
+      "createdAt": 1702833600,
+      "type": [
+        "IT",
+        "Science"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Прорывы в квантовых вычислениях",
+          "paragraphs": [
+            "Квантовые вычисления могут произвести революцию в области технологий, решая задачи, которые ранее считались невозможными.",
+            "В 2023 году были сделаны значительные успехи в области квантовой коммуникации и квантовой криптографии."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "# This is a placeholder for quantum programming code\nprint('Quantum world!')"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "title": "5G Network Expansion",
+      "subtitle": "Покрытие 5G становится глобальным",
+      "img": "https://www.qualcomm.com/content/dam/qcomm-martech-global-stage/homepage/quantainc-5g.svg",
+      "views": 5873,
+      "createdAt": 1678833600,
+      "type": [
+        "IT",
+        "Telecommunications"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Расширение 5G",
+          "paragraphs": [
+            "Сети 5G продолжают активно развиваться, обеспечивая высокую скорость передачи данных и низкую задержку.",
+            "Это открывает возможности для новых приложений в области интернета вещей и умных городов."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://www.qualcomm.com/content/dam/qcomm-martech-global-stage/homepage/5g-logo.svg",
+          "title": "5G Технологии"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Development in AR/VR",
+      "subtitle": "Искусственная реальность: что ждать в будущем?",
+      "img": "https://virtualrealityinstitute.s3.amazonaws.com/logo/how-vr-works.svg",
+      "views": 7551,
+      "createdAt": 1691833600,
+      "type": [
+        "IT",
+        "Entertainment"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Перспективы AR/VR",
+          "paragraphs": [
+            "Технологии дополненной и виртуальной реальности становятся всё более доступными для разработчиков.",
+            "В 2023 году на рынке появилось множество новых устройств, которые делают VR/AR ещё более интерактивными и захватывающими."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://virtualrealityinstitute.s3.amazonaws.com/logo/VR-console.svg",
+          "title": "Гарнитура VR"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "text": "a comment about post 2",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "3",
+      "text": "a comment about post 3",
+      "articleId": "1",
+      "userId": "1"
+    }
+  ]
 }

@@ -3,10 +3,12 @@ import { StateSchema, StoryProvider } from '@/app/providers/StoryProvider';
 import { loginReducer } from '@/features/AuthByUserName/model/slice/loginSlice';
 import { profileReducer } from '@/entities/Profile';
 import { ReducersList } from '@/shared/hooks/useDynamicReducer';
+import { articleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice';
 
 const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,
   profile: profileReducer,
+  articleDetails: articleDetailsReducer,
 };
 
 export const StoryDecorator = (

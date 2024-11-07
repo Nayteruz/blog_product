@@ -1,8 +1,8 @@
-import { ReactNode } from 'react';
+import { TIcon } from '@/shared/ui';
 
 export interface ISidebarItem {
   path: string;
   text: string;
-  icon?: ReactNode;
+  icon?: TIcon;
   authOnly?: boolean;
 }

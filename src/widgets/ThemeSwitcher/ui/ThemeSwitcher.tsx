@@ -1,10 +1,7 @@
 import { FC, memo } from 'react';
 import { cn } from '@/shared/lib';
 import { Theme, useTheme } from '@/app/providers/ThemeProvider';
-import SunIcon from '@/shared/assets/icons/sun.svg';
-import MoonIcon from '@/shared/assets/icons/moon.svg';
-import MoonPurpleIcon from '@/shared/assets/icons/moonPurple.svg';
-import { Button } from '@/shared/ui';
+import { Button, Icon, TIcon } from '@/shared/ui';
 import s from './ThemeSwitcher.module.scss';
 import { TTheme } from '@/app/providers/ThemeProvider/lib/ThemeContext';
 
@@ -24,13 +21,13 @@ export const ThemeSwitcher: FC<IThemeSwitcherProps> = memo(({ className, themeDe
   const { theme, toggleTheme } = useTheme();
 
   const themeIcon = {
-    [Theme.LIGHT]: SunIcon,
-    [Theme.DARK]: MoonIcon,
-    [Theme.PURPLE]: MoonPurpleIcon,
+    [Theme.LIGHT]: 'sun',
+    [Theme.DARK]: 'moon',
+    [Theme.PURPLE]: 'moon-purple',
   };
 
   const settedTheme = themeDefault || theme || Theme.LIGHT;
-  const ThemeIcon = themeIcon[settedTheme];
+  const iconTheme = themeIcon[settedTheme] as TIcon;
   toggleBodyTheme(settedTheme);
 
   return (
@@ -39,7 +36,9 @@ export const ThemeSwitcher: FC<IThemeSwitcherProps> = memo(({ className, themeDe
       className={cn(s.themeSwitcher, className, s[Theme.LIGHT])}
       onClick={() => toggleTheme()}
     >
-      {__PROJECT__ === 'storybook' ? <MoonPurpleIcon /> : <ThemeIcon />}
+      {__PROJECT__ === 'storybook'
+        ? <Icon name="moon-purple" />
+        : <Icon name={iconTheme} />}
     </Button>
   );
 });

@@ -50,7 +50,7 @@ module.exports = {
     'react/jsx-props-no-spreading': [
       'warn',
       {
-        exceptions: ['input', 'button', 'select'],
+        exceptions: ['input', 'button', 'select', 'SvgIcon'],
       },
     ],
     'no-underscore-dangle': [2, { allow: ['_d', '__IS_DEV__', '__API__', '__PROJECT__', '_inited'] }],
