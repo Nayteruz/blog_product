@@ -4,11 +4,7 @@ import { IProfile, TValidateProfileError, ValidateProfileError } from '../../typ
 import { getProfileForm } from '../../selectors/getProfileForm/getProfileForm';
 import { validateProfileData } from '../validateProfileData/validateProfileData';
 
-export const updateProfileData = createAsyncThunk<
-  IProfile,
-  void,
-  ThunkConfig<TValidateProfileError[]>
->(
+export const updateProfileData = createAsyncThunk<IProfile, void, ThunkConfig<TValidateProfileError[]>>(
   'profile/updateProfileData',
   async (_, thunkAPI) => {
     const { extra, rejectWithValue, getState } = thunkAPI;
@@ -22,7 +18,7 @@ export const updateProfileData = createAsyncThunk<
     }
 
     try {
-      const response = await extra.api.put<IProfile>('/profile', formData);
+      const response = await extra.api.put<IProfile>(`/profile/${formData?.id}`, formData);
 
       if (!response.data) {
         throw new Error('failed update profile');

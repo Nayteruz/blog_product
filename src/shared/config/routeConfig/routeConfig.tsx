@@ -27,7 +27,7 @@ type TAppRoutes = (typeof AppRoutes)[keyof typeof AppRoutes];
 export const RoutePath: Record<TAppRoutes, string> = {
   [AppRoutes.MAIN]: '/',
   [AppRoutes.ABOUT]: '/about',
-  [AppRoutes.PROFILE]: '/profile',
+  [AppRoutes.PROFILE]: '/profile/', // + :id
   [AppRoutes.STATIC_NOT_FOUND]: '/not-found',
   [AppRoutes.ARTICLES]: '/articles',
   [AppRoutes.ARTICLE_DETAILS]: '/article/', // /article/:id
@@ -45,7 +45,7 @@ export const routeConfig: Record<TAppRoutes, AppRoutesProps> = {
     element: <AboutPage />,
   },
   [AppRoutes.PROFILE]: {
-    path: RoutePath.profile,
+    path: `${RoutePath.profile}:id`,
     element: <ProfilePage />,
     authOnly: true,
   },

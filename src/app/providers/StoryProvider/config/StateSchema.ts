@@ -3,11 +3,12 @@ import { AnyAction, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/t
 import { AxiosInstance } from 'axios';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { CombinedState } from 'redux';
-import { IUserSchema } from '@/entities/User';
-import { IProfileSchema } from '@/entities/Profile';
-import { ILoginSchema } from '@/features/AuthByUserName';
-import { IArticleDetailsSchema } from '@/entities/Article';
-import { IArticleDetailsCommentsSchema } from '@/pages/ArticleDetailsPage';
+import type { IUserSchema } from '@/entities/User';
+import type { IProfileSchema } from '@/entities/Profile';
+import type { ILoginSchema } from '@/features/AuthByUserName';
+import type { IArticleDetailsSchema } from '@/entities/Article';
+import type { IArticleDetailsCommentsSchema } from '@/pages/ArticleDetailsPage';
+import type { IAddCommentFormSchema } from '@/features/AddCommentForm';
 
 export interface StateSchema {
   user: IUserSchema;
@@ -16,6 +17,7 @@ export interface StateSchema {
   profile?: IProfileSchema;
   articleDetails?: IArticleDetailsSchema;
   articleDetailsComments?: IArticleDetailsCommentsSchema;
+  addCommentForm?: IAddCommentFormSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

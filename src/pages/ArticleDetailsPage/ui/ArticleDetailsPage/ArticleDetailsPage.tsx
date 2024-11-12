@@ -1,4 +1,4 @@
-import { FC, memo } from 'react';
+import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -13,6 +13,8 @@ import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
+import { AddCommentForm } from '@/features/AddCommentForm';
+import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 
 interface IArticleDetailsPageProps {
   className?: string;
@@ -31,11 +33,15 @@ const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
 
   useDynamicReducer(reducers);
 
+  const onSendComment = useCallback((text: string) => {
+    dispatch(addCommentForArticle(text));
+  }, [dispatch]);
+
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
   });
 
-  if (!id) {
+  if (!id && __PROJECT__ !== 'storybook') {
     return (
       <div className={cn(s.articleDetailsPage, className)}>
         {t('Article not found')}
@@ -45,8 +51,9 @@ const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
 
   return (
     <div className={cn(s.articleDetailsPage, className)}>
-      <ArticleDetails id={id} />
+      <ArticleDetails id={id || '0'} />
       <Text className={s.commentTitle} title={t('Comments')} />
+      <AddCommentForm onSendComment={onSendComment} />
       <CommentList
         isLoading={commentsIsLoading}
         comments={comments}

@@ -1,8 +1,9 @@
 import {
-  FC, useCallback, useEffect,
+  FC, useCallback,
 } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
 import { ReducersList, useDynamicReducer } from '@/shared/hooks/useDynamicReducer';
 import {
   fetchProfileData,
@@ -19,13 +20,21 @@ import {
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 import { ProfilePageHeader } from './ProfilePageHeader';
 import { Text } from '@/shared/ui/Text';
+import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
 
 const reducers: ReducersList = {
   profile: profileReducer,
 };
 
+interface IChangeData {
+  name: string;
+  value: string;
+  type: string;
+}
+
 const ProfilePage: FC = () => {
   const { t } = useTranslation();
+  const { id } = useParams<{id: string}>();
   const dispatch = useAppDispatch();
   const formData = useSelector(getProfileForm);
   const isLoading = useSelector(getProfileLoading);
@@ -45,17 +54,11 @@ const ProfilePage: FC = () => {
 
   useDynamicReducer(reducers);
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData());
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
-
-  interface IChangeData {
-    name: string;
-    value: string;
-    type: string;
-  }
+  });
 
   const onChangeData = useCallback(({ name, value, type }: IChangeData) => {
     dispatch(profileActions.updateProfile({

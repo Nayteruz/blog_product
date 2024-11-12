@@ -5,6 +5,7 @@ import { createTestAsyncThunk } from '@/shared/lib/tests/TextAyncThunk';
 jest.mock('axios');
 
 const data: IProfile = {
+  id: '1',
   username: '123',
   age: 32,
   country: 'Russia',
@@ -43,7 +44,9 @@ describe('updateProfileData', () => {
   });
 
   test('validate multiple error', async () => {
-    const thunk = createTestAsyncThunk(updateProfileData, { profile: { form: { ...data, lastname: '', age: undefined } } });
+    const thunk = createTestAsyncThunk(updateProfileData, {
+      profile: { form: { ...data, lastname: '', age: undefined } },
+    });
     const result = await thunk.callThunk();
 
     expect(result.meta.requestStatus).toBe('rejected');

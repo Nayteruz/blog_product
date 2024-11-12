@@ -2,8 +2,9 @@ import { FC, memo } from 'react';
 import { cn } from '@/shared/lib';
 import s from './CommentCard.module.scss';
 import { IComment } from '../../model/types/comment';
-import { Avatar, Skeleton } from '@/shared/ui';
+import { AppLink, Avatar, Skeleton } from '@/shared/ui';
 import { Text } from '@/shared/ui/Text';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 
 interface ICommentCardProps {
   comment: IComment;
@@ -26,8 +27,15 @@ export const CommentCard: FC<ICommentCardProps> = memo((props) => {
 
   return (
     <div className={cn(s.commentCard, className)}>
-      {comment.user.avatar && <Avatar size={30} src={comment.user.avatar || ''} className={s.avatar} />}
-      <Text title={comment.user.username} />
+      {comment.user.avatar
+      && (
+        <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={s.avatar}>
+          <Avatar size={30} src={comment.user.avatar || ''} />
+        </AppLink>
+      )}
+      <AppLink to={`${RoutePath.profile}${comment.user.id}`}>
+        <Text title={comment.user.username} />
+      </AppLink>
       <Text text={comment.text} className={s.commentText} />
     </div>
   );

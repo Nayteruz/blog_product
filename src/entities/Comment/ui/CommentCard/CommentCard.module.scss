@@ -1,12 +1,17 @@
 .commentCard {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto auto 1fr;
   gap: 10px;
   padding: 10px;
   border: 1px solid var(--primary-color);
   align-items: center;
 }
 
+.avatar {
+  font-size: 0;
+  line-height: 0;
+}
+
 .commentText {
-  grid-column: span 2;
+  grid-column: span 3;
 }
