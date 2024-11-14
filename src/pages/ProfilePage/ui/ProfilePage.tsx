@@ -1,6 +1,4 @@
-import {
-  FC, useCallback,
-} from 'react';
+import { FC, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
@@ -58,7 +56,7 @@ const ProfilePage: FC = () => {
     if (id) {
       dispatch(fetchProfileData(id));
     }
-  });
+  }, [id, dispatch]);
 
   const onChangeData = useCallback(({ name, value, type }: IChangeData) => {
     dispatch(profileActions.updateProfile({

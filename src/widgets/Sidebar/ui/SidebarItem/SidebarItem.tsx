@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 import { cn } from '@/shared/lib';
 import s from './SidebarItem.module.scss';
 import { AppLink, Icon } from '@/shared/ui';
-import { ISidebarItem } from '../../model/types';
 import { getUserAuthData } from '@/entities/User';
+import { ISidebarItem } from '../../model/types/sidebar';
 
 interface ISidebarItemProps {
   item: ISidebarItem;

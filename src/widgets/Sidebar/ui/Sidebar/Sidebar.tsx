@@ -1,13 +1,14 @@
 import {
   CSSProperties, FC, memo, useMemo, useState,
 } from 'react';
+import { useSelector } from 'react-redux';
 import { cn } from '@/shared/lib';
 import { Button, Icon } from '@/shared/ui';
 import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
 import { LangSwitcher } from '@/widgets/LangSwitcher';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
-import { listMenu } from '../../model/links';
 import s from './Sidebar.module.scss';
+import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 
 interface ISidebarProps {
   className?: string;
@@ -16,14 +17,15 @@ interface ISidebarProps {
 
 export const Sidebar: FC<ISidebarProps> = memo(({ className, style }) => {
   const [collapsed, setCollapsed] = useState(false);
+  const sidebarMenuList = useSelector(getSidebarItems);
 
   const onToggle = () => {
     setCollapsed((prev) => !prev);
   };
 
-  const items = useMemo(() => listMenu.map((item) => (
+  const items = useMemo(() => sidebarMenuList.map((item) => (
     <SidebarItem key={item.path} item={item} collapsed={collapsed} />
-  )), [collapsed]);
+  )), [collapsed, sidebarMenuList]);
 
   return (
     <div
