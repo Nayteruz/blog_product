@@ -14,11 +14,7 @@ describe('getProfileForm', () => {
       username: 'AlexNayter',
     };
 
-    const state: DeepPartial<StateSchema> = {
-      profile: {
-        form: data,
-      },
-    };
+    const state: DeepPartial<StateSchema> = {profile: {form: data,},};
 
     expect(getProfileForm(state as StateSchema)).toEqual(data);
   });

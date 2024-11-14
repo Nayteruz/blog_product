@@ -26,11 +26,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {
-  args: {
-
-  },
-};
+export const Normal: Story = {args: {},};
 
 export const Dark: Story = {
   ...defaultDark,
@@ -38,20 +34,8 @@ export const Dark: Story = {
   decorators: [ThemeDecorator('dark')],
 };
 
-export const Readonly: Story = {
-  args: {
-    isReadOnly: true,
-  },
-};
+export const Readonly: Story = {args: {isReadOnly: true,},};
 
-export const Loading: Story = {
-  args: {
-    isLoading: true,
-  },
-};
+export const Loading: Story = {args: {isLoading: true,},};
 
-export const Error: Story = {
-  args: {
-    error: 'Error',
-  },
-};
+export const Error: Story = {args: {error: 'Error',},};

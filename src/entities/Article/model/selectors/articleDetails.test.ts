@@ -12,11 +12,7 @@ describe('getArticleDetailsData', () => {
       title: 'Test title',
     };
 
-    const state: DeepPartial<StateSchema> = {
-      articleDetails: {
-        data,
-      },
-    };
+    const state: DeepPartial<StateSchema> = {articleDetails: {data,},};
 
     expect(getArticleDetailsData(state as StateSchema)).toEqual(data);
   });
@@ -32,11 +28,7 @@ describe('getArticleDetailsError', () => {
   test('should work with data', () => {
     const error = 'test error';
 
-    const state: DeepPartial<StateSchema> = {
-      articleDetails: {
-        error,
-      },
-    };
+    const state: DeepPartial<StateSchema> = {articleDetails: {error,},};
 
     expect(getArticleDetailsError(state as StateSchema)).toEqual(error);
   });
@@ -52,11 +44,7 @@ describe('getArticleDetailsLoading', () => {
   test('should work with data', () => {
     const isLoading = true;
 
-    const state: DeepPartial<StateSchema> = {
-      articleDetails: {
-        isLoading,
-      },
-    };
+    const state: DeepPartial<StateSchema> = {articleDetails: {isLoading,},};
 
     expect(getArticleDetailsLoading(state as StateSchema)).toEqual(isLoading);
   });

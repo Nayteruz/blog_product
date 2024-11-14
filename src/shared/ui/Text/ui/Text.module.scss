@@ -8,6 +8,8 @@
 
 .text {
   color: var(--secondary-color);
+  overflow: inherit;
+  text-overflow: inherit;
 }
 
 .error {

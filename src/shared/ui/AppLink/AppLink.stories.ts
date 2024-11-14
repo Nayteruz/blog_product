@@ -24,30 +24,18 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const NormalPrimary: Story = {
-  args: {
-    theme: 'primary',
-  },
-};
+export const NormalPrimary: Story = {args: {theme: 'primary',},};
 
 export const DarkPrimary: Story = {
   ...defaultDark,
-  args: {
-    theme: 'primary',
-  },
+  args: {theme: 'primary',},
   decorators: [ThemeDecorator('dark')],
 };
 
-export const NormalSecondary: Story = {
-  args: {
-    theme: 'secondary',
-  },
-};
+export const NormalSecondary: Story = {args: {theme: 'secondary',},};
 
 export const DarkSecondary: Story = {
   ...defaultDark,
-  args: {
-    theme: 'secondary',
-  },
+  args: {theme: 'secondary',},
   decorators: [ThemeDecorator('dark')],
 };

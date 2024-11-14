@@ -31,9 +31,7 @@ interface IArticleContentProps {
   className?: string;
 }
 
-const reducers: ReducersList = {
-  articleDetails: articleDetailsReducer,
-};
+const reducers: ReducersList = {articleDetails: articleDetailsReducer,};
 
 const ArticleContent: FC<IArticleContentProps> = (props) => {
   const { children, className } = props;

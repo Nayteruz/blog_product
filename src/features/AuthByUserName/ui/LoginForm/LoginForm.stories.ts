@@ -8,18 +8,14 @@ const meta = {
   component: LoginForm,
   tags: ['autodocs'],
   argTypes: {},
-  args: {
-    onSuccess: () => {},
-  },
+  args: {onSuccess: () => {},},
   decorators: [StoryDecorator({})],
 } satisfies Meta<typeof LoginForm>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {
-  args: {},
-};
+export const Normal: Story = {args: {},};
 
 export const Dark: Story = {
   ...defaultDark,
@@ -41,21 +37,13 @@ export const WithData: Story = {
 export const WithError: Story = {
   args: {},
   decorators: [
-    StoryDecorator({
-      loginForm: {
-        error: 'Incorrect username or password',
-      },
-    }),
+    StoryDecorator({loginForm: {error: 'Incorrect username or password',},}),
   ],
 };
 
 export const WithLoading: Story = {
   args: {},
   decorators: [
-    StoryDecorator({
-      loginForm: {
-        isLoading: true,
-      },
-    }),
+    StoryDecorator({loginForm: {isLoading: true,},}),
   ],
 };

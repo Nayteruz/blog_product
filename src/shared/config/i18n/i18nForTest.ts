@@ -3,18 +3,14 @@ import { initReactI18next } from 'react-i18next';
 
 const testI18n = i18n.createInstance();
 
-testI18n
-  .use(initReactI18next)
-  .init({
-    lng: 'ru',
-    fallbackLng: 'ru',
-    debug: false,
+testI18n.use(initReactI18next).init({
+  lng: 'ru',
+  fallbackLng: 'ru',
+  debug: false,
 
-    interpolation: {
-      escapeValue: false, // not needed for react!!
-    },
+  interpolation: { escapeValue: false }, // not needed for react!!
 
-    resources: { ru: { translations: {} } },
-  });
+  resources: { ru: { translations: {} } },
+});
 
 export default testI18n;

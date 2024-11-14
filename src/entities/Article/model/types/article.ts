@@ -1,10 +1,12 @@
+import { IUser } from '@/entities/User';
+
 export const ArticleBlockType = {
   IT: 'IT',
   SCIENCE: 'SCIENCE',
   EXONOMICS: 'EXONOMICS',
 } as const;
 
-export type TArticleBlockType = typeof ArticleBlockType[keyof typeof ArticleBlockType];
+export type TArticleBlockType = (typeof ArticleBlockType)[keyof typeof ArticleBlockType];
 
 export const ArticleViewType = {
   CODE: 'CODE',
@@ -12,7 +14,14 @@ export const ArticleViewType = {
   TEXT: 'TEXT',
 } as const;
 
-export type TArticleViewType = typeof ArticleViewType[keyof typeof ArticleViewType];
+export type TArticleViewType = (typeof ArticleViewType)[keyof typeof ArticleViewType];
+
+export const ArticleListView = {
+  TILES: 'tiles',
+  SIMPLE: 'simple',
+} as const;
+
+export type TArticleListView = (typeof ArticleListView)[keyof typeof ArticleListView];
 
 export interface IArticleBaseBlock {
   id: string;
@@ -40,9 +49,10 @@ export type TArticleBlock = IArticleCodeBlock | IArticleImageBlock | IArticleTex
 
 export interface IArticle {
   id: string;
-  title?: string;
-  subtitle?: string;
-  img?: string;
+  title: string;
+  user: IUser;
+  subtitle: string;
+  img: string;
   views: number;
   createdAt: number;
   type: TArticleBlockType[];

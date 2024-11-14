@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleDetails } from './ArticleDetails';
 import {
-  defaultDark, defaultPurple, StoryDecorator, ThemeDecorator,
+  defaultDark, defaultPurple, StoryDecorator, ThemeDecorator 
 } from '@/shared/config/storybook';
 import { IArticle } from '../../model/types/article';
 
@@ -9,12 +9,14 @@ const article: IArticle = {
   id: '1',
   title: 'Go Language Update',
   subtitle: 'Основные новшества Go в 2023 году',
+  user: {
+    id: '1',
+    username: 'admin',
+  },
   img: 'https://blog.golang.org/go-brand/Go-Logo/SVG/Go-Logo_Blue.svg',
   views: 1500,
   createdAt: 1698833600,
-  type: [
-    'IT',
-  ],
+  type: ['IT'],
   blocks: [
     {
       id: '1',
@@ -54,7 +56,9 @@ const article: IArticle = {
       type: 'TEXT',
       title: 'Интеграция с современными фреймворками',
       paragraphs: [
-        'JavaScript все больше интегрируется с современными фреймворками, такими как React, Angular и Vue. Новые возможности, такие как хуки в React и директивы в Vue, позволяют существенно упростить разработку и улучшить взаимодействие компонентов.', 'Эти и другие обновления делают JavaScript ещё более мощным инструментом, расширяя область его применения за пределы традиционной веб-разработки, в область нативных приложений и даже серверного кода.', 'Благодаря этим изменениям JavaScript остается актуальным выбором для разработчиков, стремящихся использовать современные технологии для создания сложных и интерактивных приложений.',
+        'JavaScript все больше интегрируется с современными фреймворками, такими как React, Angular и Vue. Новые возможности, такие как хуки в React и директивы в Vue, позволяют существенно упростить разработку и улучшить взаимодействие компонентов.',
+        'Эти и другие обновления делают JavaScript ещё более мощным инструментом, расширяя область его применения за пределы традиционной веб-разработки, в область нативных приложений и даже серверного кода.',
+        'Благодаря этим изменениям JavaScript остается актуальным выбором для разработчиков, стремящихся использовать современные технологии для создания сложных и интерактивных приложений.',
       ],
     },
     {
@@ -78,7 +82,9 @@ const article: IArticle = {
       type: 'TEXT',
       title: 'Интеграция с современными фреймворками',
       paragraphs: [
-        'JavaScript все больше интегрируется с современными фреймворками, такими как React, Angular и Vue. Новые возможности, такие как хуки в React и директивы в Vue, позволяют существенно упростить разработку и улучшить взаимодействие компонентов.', 'Эти и другие обновления делают JavaScript ещё более мощным инструментом, расширяя область его применения за пределы традиционной веб-разработки, в область нативных приложений и даже серверного кода.', 'Благодаря этим изменениям JavaScript остается актуальным выбором для разработчиков, стремящихся использовать современные технологии для создания сложных и интерактивных приложений.',
+        'JavaScript все больше интегрируется с современными фреймворками, такими как React, Angular и Vue. Новые возможности, такие как хуки в React и директивы в Vue, позволяют существенно упростить разработку и улучшить взаимодействие компонентов.',
+        'Эти и другие обновления делают JavaScript ещё более мощным инструментом, расширяя область его применения за пределы традиционной веб-разработки, в область нативных приложений и даже серверного кода.',
+        'Благодаря этим изменениям JavaScript остается актуальным выбором для разработчиков, стремящихся использовать современные технологии для создания сложных и интерактивных приложений.',
       ],
     },
     {
@@ -95,16 +101,16 @@ const meta = {
   component: ArticleDetails,
   tags: ['autodocs'],
   argTypes: {},
-  args: {
-    id: '1',
-  },
-  decorators: [StoryDecorator({
-    articleDetails: {
-      data: article,
-      isLoading: false,
-      error: undefined,
-    },
-  })],
+  args: {id: '1',},
+  decorators: [
+    StoryDecorator({
+      articleDetails: {
+        data: article,
+        isLoading: false,
+        error: undefined,
+      },
+    }),
+  ],
 } satisfies Meta<typeof ArticleDetails>;
 
 export default meta;
@@ -113,19 +119,15 @@ type Story = StoryObj<typeof meta>;
 export const Normal: Story = {};
 
 export const Loading: Story = {
-  decorators: [StoryDecorator({
-    articleDetails: {
-      isLoading: true,
-    },
-  })],
+  decorators: [
+    StoryDecorator({articleDetails: {isLoading: true,},}),
+  ],
 };
 
 export const Error: Story = {
-  decorators: [StoryDecorator({
-    articleDetails: {
-      error: 'Some test error',
-    },
-  })],
+  decorators: [
+    StoryDecorator({articleDetails: {error: 'Some test error',},}),
+  ],
 };
 
 export const Dark: Story = {

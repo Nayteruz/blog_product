@@ -3,11 +3,7 @@ import { getProfileReadOnly } from './getProfileReadOnly';
 
 describe('getProfileReadonly', () => {
   test('should work with data', () => {
-    const state: DeepPartial<StateSchema> = {
-      profile: {
-        readonly: true,
-      },
-    };
+    const state: DeepPartial<StateSchema> = {profile: {readonly: true,},};
 
     expect(getProfileReadOnly(state as StateSchema)).toEqual(true);
   });

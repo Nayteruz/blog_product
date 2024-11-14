@@ -37,9 +37,7 @@ interface ITextProps {
 }
 
 export const Text: FC<ITextProps> = memo((props) => {
-  const {
-    className, title, text, theme = TextTheme.PRIMARY, align = TextAlign.LEFT, size = TextSize.M,
-  } = props;
+  const {className, title, text, theme = TextTheme.PRIMARY, align = TextAlign.LEFT, size = TextSize.M,} = props;
   const mods = [s[theme], s[align]];
 
   return (

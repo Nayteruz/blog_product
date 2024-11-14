@@ -12,9 +12,7 @@ interface IAvatarProps {
 }
 
 export const Avatar: FC<IAvatarProps> = (props) => {
-  const {
-    className, src, alt = '', title = '', style, size = 100,
-  } = props;
+  const {className, src, alt = '', title = '', style, size = 100,} = props;
 
   const styles = useMemo<CSSProperties>(() => ({
     width: size,

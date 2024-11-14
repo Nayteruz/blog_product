@@ -20,9 +20,7 @@ import { ProfilePageHeader } from './ProfilePageHeader';
 import { Text } from '@/shared/ui/Text';
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
 
-const reducers: ReducersList = {
-  profile: profileReducer,
-};
+const reducers: ReducersList = {profile: profileReducer,};
 
 interface IChangeData {
   name: string;
@@ -59,9 +57,7 @@ const ProfilePage: FC = () => {
   }, [id, dispatch]);
 
   const onChangeData = useCallback(({ name, value, type }: IChangeData) => {
-    dispatch(profileActions.updateProfile({
-      [name]: type === 'number' ? Number(value) : value,
-    }));
+    dispatch(profileActions.updateProfile({[name]: type === 'number' ? Number(value) : value,}));
   }, [dispatch]);
 
   return (

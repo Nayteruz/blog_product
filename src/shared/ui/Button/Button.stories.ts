@@ -29,88 +29,52 @@ const meta = {
     },
     children: { control: 'text', defaultValue: 'Button' },
   },
-  args: {
-    children: 'Button',
-  },
+  args: {children: 'Button',},
 } satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const NormalPrimary: Story = {
-  args: {
-    theme: 'primary',
-  },
-};
+export const NormalPrimary: Story = {args: {theme: 'primary',},};
 
 export const DarkPrimary: Story = {
   ...defaultDark,
-  args: {
-    theme: 'primary',
-  },
+  args: {theme: 'primary',},
   decorators: [ThemeDecorator('dark')],
 };
 
-export const NormalSecondary: Story = {
-  args: {
-    theme: 'primary',
-  },
-};
+export const NormalSecondary: Story = {args: {theme: 'primary',},};
 
 export const DarkSecondary: Story = {
   ...defaultDark,
-  args: {
-    theme: 'primary',
-  },
+  args: {theme: 'primary',},
   decorators: [ThemeDecorator('dark')],
 };
 
-export const NormalLink: Story = {
-  args: {
-    theme: 'link',
-  },
-};
+export const NormalLink: Story = {args: {theme: 'link',},};
 
 export const DarkLink: Story = {
   ...defaultDark,
-  args: {
-    theme: 'link',
-  },
+  args: {theme: 'link',},
   decorators: [ThemeDecorator('dark')],
 };
 
-export const NormalClear: Story = {
-  args: {
-    theme: 'clear',
-  },
-};
+export const NormalClear: Story = {args: {theme: 'clear',},};
 
 export const DarkClear: Story = {
   ...defaultDark,
-  args: {
-    theme: 'clear',
-  },
+  args: {theme: 'clear',},
   decorators: [ThemeDecorator('dark')],
 };
 
-export const ClearInverted: Story = {
-  args: {
-    theme: 'clearInverted',
-  },
-};
+export const ClearInverted: Story = {args: {theme: 'clearInverted',},};
 
-export const NormalOutline: Story = {
-  args: {
-    theme: 'outline',
-  },
-};
+export const NormalOutline: Story = {args: {theme: 'outline',},};
 
 export const DarkOutline: Story = {
   ...defaultDark,
-  args: {
-    theme: 'outline',
-  },
+  args: {theme: 'outline',},
   decorators: [ThemeDecorator('dark')],
 };
 
@@ -154,19 +118,9 @@ export const SquareSizeXL: Story = {
 
 export const Background: Story = {
   ...defaultDark,
-  args: {
-    theme: 'background',
-  },
+  args: {theme: 'background',},
 };
 
-export const BackgroundInverted: Story = {
-  args: {
-    theme: 'backgroundInverted',
-  },
-};
+export const BackgroundInverted: Story = {args: {theme: 'backgroundInverted',},};
 
-export const Disabled: Story = {
-  args: {
-    disabled: true,
-  },
-};
+export const Disabled: Story = {args: {disabled: true,},};

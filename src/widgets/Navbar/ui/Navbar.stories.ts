@@ -8,20 +8,14 @@ const meta = {
   component: Navbar,
   tags: ['autodocs'],
   argTypes: {},
-  args: {
-    style: {
-      minWidth: 500,
-    },
-  },
+  args: {style: {minWidth: 500,},},
   decorators: [StoryDecorator({})],
 } satisfies Meta<typeof Navbar>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {
-  args: {},
-};
+export const Normal: Story = {args: {},};
 
 export const Dark: Story = {
   ...defaultDark,
@@ -31,12 +25,6 @@ export const Dark: Story = {
 export const AuthNavbar: Story = {
   args: {},
   decorators: [
-    StoryDecorator({
-      user: {
-        authData: {
-          id: '1',
-        },
-      },
-    }),
+    StoryDecorator({user: {authData: {id: '1',},},}),
   ],
 };

@@ -12,12 +12,8 @@ appI18n
     lng: 'ru',
     debug: __IS_DEV__,
 
-    interpolation: {
-      escapeValue: false, // not needed for react as it escapes by default
-    },
-    backend: {
-      loadPath: '/locales/{{lng}}.json',
-    },
+    interpolation: { escapeValue: false },
+    backend: { loadPath: '/locales/{{lng}}.json' },
   });
 
 export default appI18n;

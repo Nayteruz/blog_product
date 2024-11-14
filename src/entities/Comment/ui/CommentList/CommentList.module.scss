@@ -1,7 +1,6 @@
 .commentList {
-  opacity: 1;
-}
-
-.comment {
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

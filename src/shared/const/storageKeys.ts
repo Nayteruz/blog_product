@@ -1,3 +1,1 @@
-export const STORAGE_KEYS = {
-  AUTH: 'auth',
-} as const;
+export const STORAGE_KEYS = {AUTH: 'auth',} as const;

@@ -3,11 +3,7 @@ import { getProfileLoading } from './getProfileLoading';
 
 describe('getProfileLoading', () => {
   test('should work with data', () => {
-    const state: DeepPartial<StateSchema> = {
-      profile: {
-        isLoading: true,
-      },
-    };
+    const state: DeepPartial<StateSchema> = {profile: {isLoading: true,},};
 
     expect(getProfileLoading(state as StateSchema)).toEqual(true);
   });

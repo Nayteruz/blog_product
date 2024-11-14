@@ -17,9 +17,7 @@ interface IModalProps {
   lazy?: boolean;
 }
 
-export const Modal = ({
-  className, children, isOpen, onClose, container, modalKey, style, lazy,
-}: IModalProps) => {
+export const Modal = ({className, children, isOpen, onClose, container, modalKey, style, lazy,}: IModalProps) => {
   const [isMounted, setIsMounted] = useState(false);
   const onCloseHandler = useCallback(() => {
     if (onClose) {

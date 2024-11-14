@@ -9,12 +9,11 @@ module.exports = {
     'airbnb',
     'plugin:import/typescript',
     'plugin:storybook/recommended',
+    'prettier',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
+    ecmaFeatures: { jsx: true },
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
@@ -47,15 +46,16 @@ module.exports = {
         unnamedComponents: 'arrow-function',
       },
     ],
-    'react/jsx-props-no-spreading': [
-      'warn',
+    'react/jsx-props-no-spreading': ['warn', { exceptions: ['input', 'button', 'select', 'SvgIcon'] }],
+    'no-underscore-dangle': [2, { allow: ['_d', '__IS_DEV__', '__API__', '__PROJECT__', '_inited'] }],
+    quotes: ['error', 'single', { avoidEscape: true }],
+    'max-len': [
+      2,
       {
-        exceptions: ['input', 'button', 'select', 'SvgIcon'],
+        ignoreComments: true,
+        code: 120,
       },
     ],
-    'no-underscore-dangle': [2, { allow: ['_d', '__IS_DEV__', '__API__', '__PROJECT__', '_inited'] }],
-    quotes: ['error', 'single'],
-    'max-len': [2, { ignoreComments: true, code: 120 }],
     'import/no-extraneous-dependencies': [
       'error',
       {
@@ -77,6 +77,21 @@ module.exports = {
     'react/prop-types': 'off',
     'no-console': ['error', { allow: ['warn', 'error'] }],
     'no-undef': 'off',
+    'object-curly-newline': [
+      'error',
+      {
+        ObjectExpression: {
+          multiline: true,
+          minProperties: 4,
+        },
+        ObjectPattern: { multiline: true },
+        ImportDeclaration: {
+          multiline: true,
+          minProperties: 4,
+        },
+        ExportDeclaration: 'never',
+      },
+    ],
   },
   globals: {
     __IS_DEV__: true,

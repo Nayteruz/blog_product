@@ -1,6 +1,4 @@
-import {
-  FC, memo, useCallback,
-} from 'react';
+import {FC, memo, useCallback,} from 'react';
 import { cn } from '@/shared/lib';
 import s from './Code.module.scss';
 import { Button } from '../Button/Button';

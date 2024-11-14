@@ -26,9 +26,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const NormalPrimary: Story = {
-  args: {},
-};
+export const NormalPrimary: Story = {args: {},};
 
 export const DarkPrimary: Story = {
   ...defaultDark,

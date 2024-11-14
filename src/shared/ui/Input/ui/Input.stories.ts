@@ -7,23 +7,15 @@ const meta = {
   title: 'Shared/Input',
   component: Input,
   tags: ['autodocs'],
-  argTypes: {
-    children: { control: 'text', defaultValue: '' },
-  },
+  argTypes: {children: { control: 'text', defaultValue: '' },},
 } satisfies Meta<typeof Input>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {
-  args: {},
-};
+export const Normal: Story = {args: {},};
 
-export const NormalValue: Story = {
-  args: {
-    value: 'Test value',
-  },
-};
+export const NormalValue: Story = {args: {value: 'Test value',},};
 
 export const Dark: Story = {
   ...defaultDark,
@@ -31,17 +23,9 @@ export const Dark: Story = {
   decorators: [ThemeDecorator('dark')],
 };
 
-export const Placeholder: Story = {
-  args: {
-    placeholder: 'Placeholder',
-  },
-};
+export const Placeholder: Story = {args: {placeholder: 'Placeholder',},};
 
-export const Title: Story = {
-  args: {
-    title: 'Title',
-  },
-};
+export const Title: Story = {args: {title: 'Title',},};
 
 export const PlaceholderTitle: Story = {
   args: {

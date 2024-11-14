@@ -17,23 +17,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {};
 
-export const Normal200: Story = {
-  args: {
-    size: 200,
-  },
-};
+export const Normal200: Story = {args: {size: 200,},};
 
-export const Normal500: Story = {
-  args: {
-    size: 500,
-  },
-};
+export const Normal500: Story = {args: {size: 500,},};
 
 export const Square500: Story = {
   args: {
     size: 500,
-    style: {
-      borderRadius: 0,
-    },
+    style: {borderRadius: 0,},
   },
 };

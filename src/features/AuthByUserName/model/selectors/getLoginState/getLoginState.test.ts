@@ -14,45 +14,25 @@ describe('getLoginState', () => {
   });
 
   test('should return error', () => {
-    const state: DeepPartial<StateSchema> = {
-      loginForm: {
-        error: 'error',
-      },
-    };
+    const state: DeepPartial<StateSchema> = {loginForm: {error: 'error',},};
 
     expect(getLoginState(state as StateSchema)).toEqual({ error: 'error' });
   });
 
   test('should return username', () => {
-    const state: DeepPartial<StateSchema> = {
-      loginForm: {
-        username: 'username',
-      },
-    };
+    const state: DeepPartial<StateSchema> = {loginForm: {username: 'username',},};
 
-    expect(getLoginState(state as StateSchema)).toEqual({
-      username: 'username',
-    });
+    expect(getLoginState(state as StateSchema)).toEqual({username: 'username',});
   });
 
   test('should return password', () => {
-    const state: DeepPartial<StateSchema> = {
-      loginForm: {
-        password: 'password',
-      },
-    };
+    const state: DeepPartial<StateSchema> = {loginForm: {password: 'password',},};
 
-    expect(getLoginState(state as StateSchema)).toEqual({
-      password: 'password',
-    });
+    expect(getLoginState(state as StateSchema)).toEqual({password: 'password',});
   });
 
   test('should return isLoading', () => {
-    const state: DeepPartial<StateSchema> = {
-      loginForm: {
-        isLoading: true,
-      },
-    };
+    const state: DeepPartial<StateSchema> = {loginForm: {isLoading: true,},};
 
     expect(getLoginState(state as StateSchema)).toEqual({ isLoading: true });
   });

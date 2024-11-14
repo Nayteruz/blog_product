@@ -8,26 +8,18 @@ const meta = {
   component: Sidebar,
   tags: ['autodocs'],
   argTypes: {},
-  args: {
-    style: {
-      minHeight: 400,
-    },
-  },
+  args: {style: {minHeight: 400,},},
   decorators: [StoryDecorator({ user: { authData: {} } })],
 } satisfies Meta<typeof Sidebar>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {
-  args: {},
-};
+export const Normal: Story = {args: {},};
 
 export const Dark: Story = {
   ...defaultDark,
   decorators: [ThemeDecorator('dark')],
 };
 
-export const NoAuth: Story = {
-  decorators: [StoryDecorator({ user: {} })],
-};
+export const NoAuth: Story = {decorators: [StoryDecorator({ user: {} })],};

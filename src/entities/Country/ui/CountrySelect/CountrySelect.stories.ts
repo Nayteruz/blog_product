@@ -23,11 +23,7 @@ export const Dark: Story = {
   decorators: [ThemeDecorator('dark')],
 };
 
-export const WithLabel: Story = {
-  args: {
-    label: 'label currency',
-  },
-};
+export const WithLabel: Story = {args: {label: 'label currency',},};
 
 export const WithPlaceholder: Story = {
   args: {
@@ -36,8 +32,4 @@ export const WithPlaceholder: Story = {
   },
 };
 
-export const WithSelectedValue: Story = {
-  args: {
-    value: Country.Russia,
-  },
-};
+export const WithSelectedValue: Story = {args: {value: Country.Russia,},};

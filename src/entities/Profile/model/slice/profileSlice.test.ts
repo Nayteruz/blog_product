@@ -21,9 +21,7 @@ describe('profileSlice', () => {
 
   test('update profile', () => {
     const state: DeepPartial<IProfileSchema> = { form: { age: 30 } };
-    expect(profileReducer(state as IProfileSchema, profileActions.updateProfile({ age: 32 }))).toStrictEqual({
-      form: { age: 32 },
-    });
+    expect(profileReducer(state as IProfileSchema, profileActions.updateProfile({ age: 32 }))).toStrictEqual({form: { age: 32 },});
   });
 
   test('cancel edit', () => {

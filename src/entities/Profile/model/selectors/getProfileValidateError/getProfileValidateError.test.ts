@@ -3,11 +3,7 @@ import { getProfileValidateError } from './getProfileValidateError';
 
 describe('getProfileValidateError', () => {
   test('should work with data', () => {
-    const state: DeepPartial<StateSchema> = {
-      profile: {
-        validateErrors: ['SERVER_ERROR'],
-      },
-    };
+    const state: DeepPartial<StateSchema> = {profile: {validateErrors: ['SERVER_ERROR'],},};
 
     expect(getProfileValidateError(state as StateSchema)).toEqual(['SERVER_ERROR']);
   });

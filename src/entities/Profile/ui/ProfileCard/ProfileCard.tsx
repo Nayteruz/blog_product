@@ -1,6 +1,4 @@
-import {
-  ChangeEvent, FC, useCallback,
-} from 'react';
+import {ChangeEvent, FC, useCallback,} from 'react';
 import { useTranslation } from 'react-i18next';
 import { cn } from '@/shared/lib';
 import { Text } from '@/shared/ui/Text';
@@ -25,9 +23,7 @@ interface IProfileCardProps {
   onChangeData?: (props: IChangeData) => void;
 }
 
-export const ProfileCard: FC<IProfileCardProps> = ({
-  className, data, isLoading, error, isReadOnly, onChangeData,
-}) => {
+export const ProfileCard: FC<IProfileCardProps> = ({className, data, isLoading, error, isReadOnly, onChangeData,}) => {
   const { t } = useTranslation();
 
   const onChange = useCallback(

@@ -19,17 +19,13 @@ export interface ILoginFormProps {
   onSuccess?: () => void;
 }
 
-const initialReducers: ReducersList = {
-  loginForm: loginReducer,
-};
+const initialReducers: ReducersList = {loginForm: loginReducer,};
 
 const LoginForm: FC<ILoginFormProps> = memo(({ className, onSuccess }) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
 
-  const {
-    username, password, error, isLoading,
-  } = useSelector(getLoginState);
+  const {username, password, error, isLoading,} = useSelector(getLoginState);
 
   useDynamicReducer(initialReducers);
 

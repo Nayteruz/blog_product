@@ -17,9 +17,7 @@ export interface IAddCommentFormProps {
   onSendComment: (text: string) => void;
 }
 
-const initialReducers: ReducersList = {
-  addCommentForm: addCommentFormReducer,
-};
+const initialReducers: ReducersList = {addCommentForm: addCommentFormReducer,};
 
 const AddCommentForm: FC<IAddCommentFormProps> = memo(({ className, onSendComment }) => {
   const { t } = useTranslation();

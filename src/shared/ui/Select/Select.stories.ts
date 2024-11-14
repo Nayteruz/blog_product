@@ -16,9 +16,7 @@ const meta = {
   component: Select,
   tags: ['autodocs'],
   argTypes: {},
-  args: {
-    options: list,
-  },
+  args: {options: list,},
 } satisfies Meta<typeof Select>;
 
 export default meta;
@@ -32,20 +30,8 @@ export const Dark: Story = {
   decorators: [ThemeDecorator('dark')],
 };
 
-export const WithLabel: Story = {
-  args: {
-    label: 'label',
-  },
-};
+export const WithLabel: Story = {args: {label: 'label',},};
 
-export const WithPlaceholder: Story = {
-  args: {
-    placeholder: 'label placeholder',
-  },
-};
+export const WithPlaceholder: Story = {args: {placeholder: 'label placeholder',},};
 
-export const WithSelectedValue: Story = {
-  args: {
-    value: list[2].value,
-  },
-};
+export const WithSelectedValue: Story = {args: {value: list[2].value,},};

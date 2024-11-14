@@ -21,26 +21,8 @@ export const themes = {
   },
 };
 
-export const defaultLight = {
-  parameters: {
-    backgrounds: {
-      default: themeNames.LIGHT,
-    },
-  },
-};
+export const defaultLight = {parameters: {backgrounds: {default: themeNames.LIGHT,},},};
 
-export const defaultDark = {
-  parameters: {
-    backgrounds: {
-      default: themeNames.DARK,
-    },
-  },
-};
+export const defaultDark = {parameters: {backgrounds: {default: themeNames.DARK,},},};
 
-export const defaultPurple = {
-  parameters: {
-    backgrounds: {
-      default: themeNames.PURPLE,
-    },
-  },
-};
+export const defaultPurple = {parameters: {backgrounds: {default: themeNames.PURPLE,},},};
