@@ -37,7 +37,7 @@ export const ArticleListItem: FC<IArticleListItemProps> = memo(props => {
   }, [article.id, navigate]);
 
   switch (view) {
-  case ArticleListView.TILES:
+  case ArticleListView.LIST:
     return (
       <div className={cn(s.articleListItem, className, s[view])}>
         <Card className={s.card} onClick={navigateToArticle}>

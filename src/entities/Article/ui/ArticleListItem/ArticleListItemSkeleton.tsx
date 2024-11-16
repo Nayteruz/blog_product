@@ -10,11 +10,11 @@ interface IArticleListItemSkeletonProps {
   view: TArticleListView;
 }
 
-export const ArticleListItemSkeleton: FC<IArticleListItemSkeletonProps> = memo((props) => {
+export const ArticleListItemSkeleton: FC<IArticleListItemSkeletonProps> = memo(props => {
   const { className, view } = props;
 
   switch (view) {
-  case ArticleListView.TILES:
+  case ArticleListView.LIST:
     return (
       <div className={cn(s.articleListItem, className, s[view])}>
         <Card className={s.card}>

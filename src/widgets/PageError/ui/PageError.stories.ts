@@ -8,13 +8,13 @@ const meta = {
   component: PageError,
   tags: ['autodocs'],
   argTypes: {},
-  args: {style: {minHeight: 200,},},
+  args: { errorText: 'Error text' },
 } satisfies Meta<typeof PageError>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {args: {},};
+export const Normal: Story = { args: {} };
 
 export const Dark: Story = {
   ...defaultDark,

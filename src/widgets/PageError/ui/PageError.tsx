@@ -1,19 +1,23 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, Loader } from '@/shared/ui';
+import { cn } from '@/shared/lib';
 import s from './PageError.module.scss';
 
-export const PageError: FC = () => {
+interface IPageErrorProps {
+  className?: string;
+  errorText?: string;
+}
+
+export const PageError: FC<IPageErrorProps> = props => {
   const { t } = useTranslation();
+  const { className, errorText } = props;
 
   return (
-    <div className={s.pageError}>
+    <div className={cn(s.pageError, className)}>
       <Loader />
-      <div className={s.text}>{t('page error')}</div>
-      <Button
-        theme="link"
-        onClick={() => window.location.reload()}
-      >
+      <div className={s.text}>{errorText || t('page error')}</div>
+      <Button theme="link" onClick={() => window.location.reload()}>
         {t('try again')}
       </Button>
     </div>

@@ -9,6 +9,7 @@ import type { ILoginSchema } from '@/features/AuthByUserName';
 import type { IArticleDetailsSchema } from '@/entities/Article';
 import type { IArticleDetailsCommentsSchema } from '@/pages/ArticleDetailsPage';
 import type { IAddCommentFormSchema } from '@/features/AddCommentForm';
+import { IArticlesPageSchema } from '@/pages/ArticlesPage';
 
 export interface StateSchema {
   user: IUserSchema;
@@ -18,6 +19,7 @@ export interface StateSchema {
   articleDetails?: IArticleDetailsSchema;
   articleDetailsComments?: IArticleDetailsCommentsSchema;
   addCommentForm?: IAddCommentFormSchema;
+  articlesPage?: IArticlesPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

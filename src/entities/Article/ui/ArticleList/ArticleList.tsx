@@ -16,7 +16,7 @@ export const ArticleList: FC<IArticleListProps> = memo(props => {
   const { className, articles, isLoading, view = ArticleListView.SIMPLE } = props;
 
   if (isLoading) {
-    const items = new Array(view === ArticleListView.TILES ? 9 : 3).fill(0);
+    const items = new Array(view === ArticleListView.LIST ? 9 : 3).fill(0);
     return (
       <div className={cn(s.articleList, className, s[view])}>
         {items.map((_, index) => (

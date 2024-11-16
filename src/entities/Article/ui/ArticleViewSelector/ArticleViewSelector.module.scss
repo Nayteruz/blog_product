@@ -1,0 +1,13 @@
+.articleViewSelector {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.itemSelector {
+  color: var(--primary-color);
+}
+
+.selected {
+  color: var(--primary-color-red);
+}

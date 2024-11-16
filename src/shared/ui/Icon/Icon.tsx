@@ -17,6 +17,8 @@ import NewsIcon from '@/shared/assets/icons/news.svg';
 import ProfileIcon from '@/shared/assets/icons/profile.svg';
 import SunIcon from '@/shared/assets/icons/sun.svg';
 import CopyIcon from '@/shared/assets/icons/copy.svg';
+import ListIcon from '@/shared/assets/icons/list.svg';
+import TiledIcon from '@/shared/assets/icons/tiled.svg';
 import s from './Icon.module.scss';
 
 const Icons = {
@@ -37,6 +39,8 @@ const Icons = {
   profile: ProfileIcon,
   sun: SunIcon,
   copy: CopyIcon,
+  list: ListIcon,
+  tiled: TiledIcon,
 };
 
 export type TIcon = keyof typeof Icons;
@@ -51,11 +55,11 @@ const sizeIcon = {
 interface IIconProps extends React.SVGProps<SVGSVGElement> {
   className?: string;
   name: keyof typeof Icons;
-  size?: (typeof sizeIcon)[keyof typeof sizeIcon]
+  size?: (typeof sizeIcon)[keyof typeof sizeIcon];
 }
 
-export const Icon: FC<IIconProps> = memo((props) => {
-  const {className, name, size = sizeIcon.M, ...otherProps} = props;
+export const Icon: FC<IIconProps> = memo(props => {
+  const { className, name, size = sizeIcon.M, ...otherProps } = props;
 
   const SvgIcon = Icons[name];
 
@@ -64,7 +68,5 @@ export const Icon: FC<IIconProps> = memo((props) => {
     return null;
   }
 
-  return (
-    <SvgIcon className={cn(s.icon, s[size], className)} {...otherProps} />
-  );
+  return <SvgIcon className={cn(s.icon, s[size], className)} {...otherProps} />;
 });

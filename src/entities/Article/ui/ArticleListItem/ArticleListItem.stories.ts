@@ -40,14 +40,14 @@ const meta = {
   argTypes: {},
   args: {
     article: mockArticle,
-    view: ArticleListView.TILES,
+    view: ArticleListView.LIST,
   },
 } satisfies Meta<typeof ArticleListItem>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {args: {},};
+export const Normal: Story = { args: {} };
 
 export const Dark: Story = {
   ...defaultDark,
@@ -61,16 +61,16 @@ export const Purple: Story = {
   decorators: [ThemeDecorator('purple')],
 };
 
-export const ViewSimple: Story = {args: {view: ArticleListView.SIMPLE,},};
+export const ViewSimple: Story = { args: { view: ArticleListView.SIMPLE } };
 
 export const DarkSimple: Story = {
   ...defaultDark,
-  args: {view: ArticleListView.SIMPLE,},
+  args: { view: ArticleListView.SIMPLE },
   decorators: [ThemeDecorator('dark')],
 };
 
 export const PurpleSimple: Story = {
   ...defaultPurple,
-  args: {view: ArticleListView.SIMPLE,},
+  args: { view: ArticleListView.SIMPLE },
   decorators: [ThemeDecorator('purple')],
 };

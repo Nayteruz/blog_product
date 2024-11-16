@@ -40,14 +40,14 @@ const meta = {
   argTypes: {},
   args: {
     articles: [mockArticle, mockArticle],
-    view: ArticleListView.TILES,
+    view: ArticleListView.LIST,
   },
 } satisfies Meta<typeof ArticleList>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {args: {},};
+export const Normal: Story = { args: {} };
 
 export const Dark: Story = {
   ...defaultDark,
@@ -61,9 +61,9 @@ export const Purple: Story = {
   decorators: [ThemeDecorator('purple')],
 };
 
-export const IsLoading: Story = {args: {isLoading: true,},};
+export const IsLoading: Story = { args: { isLoading: true } };
 
-export const ViewSimple: Story = {args: {view: ArticleListView.SIMPLE,},};
+export const ViewSimple: Story = { args: { view: ArticleListView.SIMPLE } };
 
 export const ViewSimpleLoading: Story = {
   args: {

@@ -1,74 +1,58 @@
-import { FC, memo } from 'react';
+import { FC, memo, useCallback } from 'react';
+import { useSelector } from 'react-redux';
 import { cn } from '@/shared/lib';
 import s from './ArticlesPage.module.scss';
-import { ArticleList, IArticle } from '@/entities/Article';
+import { ArticleList, ArticleViewSelector, TArticleListView } from '@/entities/Article';
+import { ReducersList, useDynamicReducer } from '@/shared/hooks/useDynamicReducer';
+import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice';
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
+import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
+import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
+import {
+  getArticlesPageError,
+  getArticlesPageLoading,
+  getArticlesPageView,
+} from '../../model/selectors/articlesPageSelectors';
+import { PageError } from '@/widgets/PageError';
 
 interface IArticlesPageProps {
   className?: string;
 }
 
-const mockArticle = {
-  id: '2',
-  title: 'Vue.js Improvements and other text for example',
-  subtitle: 'Что нового в Vue.js 3.2?',
-  user: {
-    id: '1',
-    username: 'admin',
-    avatar: 'https://vuejs.org/images/logo.png',
-    role: 'ADMIN',
-  },
-  img: 'https://vuejs.org/images/logo.png',
-  views: 1800,
-  createdAt: 1655833600,
-  type: ['IT', 'ECONOMICS', 'SCIENCE', 'EXONOMICS'],
-  blocks: [
-    {
-      id: '1',
-      type: 'TEXT',
-      title: 'Новые фичи Vue.js',
-      paragraphs: [
-        'В новой версии Vue.js 3.2 стало проще работать с рендерингом и композиционным API.',
-        'Это повышает эффективность работы разработчиков и улучшает стабильность приложений.',
-        'В новой версии Vue.js 3.2 стало проще работать с рендерингом и композиционным API.',
-        'Это повышает эффективность работы разработчиков и улучшает стабильность приложений.',
-        'В новой версии Vue.js 3.2 стало проще работать с рендерингом и композиционным API.',
-        'Это повышает эффективность работы разработчиков и улучшает стабильность приложений.',
-        'В новой версии Vue.js 3.2 стало проще работать с рендерингом и композиционным API.',
-        'Это повышает эффективность работы разработчиков и улучшает стабильность приложений.',
-        'В новой версии Vue.js 3.2 стало проще работать с рендерингом и композиционным API.',
-        'Это повышает эффективность работы разработчиков и улучшает стабильность приложений.',
-        'В новой версии Vue.js 3.2 стало проще работать с рендерингом и композиционным API.',
-        'Это повышает эффективность работы разработчиков и улучшает стабильность приложений.',
-        'В новой версии Vue.js 3.2 стало проще работать с рендерингом и композиционным API.',
-        'Это повышает эффективность работы разработчиков и улучшает стабильность приложений.',
-        'В новой версии Vue.js 3.2 стало проще работать с рендерингом и композиционным API.',
-        'Это повышает эффективность работы разработчиков и улучшает стабильность приложений.',
-        'В новой версии Vue.js 3.2 стало проще работать с рендерингом и композиционным API.',
-        'Это повышает эффективность работы разработчиков и улучшает стабильность приложений.',
-        'В новой версии Vue.js 3.2 стало проще работать с рендерингом и композиционным API.',
-        'Это повышает эффективность работы разработчиков и улучшает стабильность приложений.',
-      ],
-    },
-    {
-      id: '2',
-      type: 'CODE',
-      // eslint-disable-next-line max-len
-      code: "<template>\n  <div>{{ message }}</div>\n</template>\n\n<script setup>\nconst message = 'Hello, Vue!'\n</script>",
-    },
-  ],
-} as IArticle;
+const reducers: ReducersList = { articlesPage: articlesPageReducer };
 
 const ArticlesPage: FC<IArticlesPageProps> = props => {
   const { className } = props;
+  const dispatch = useAppDispatch();
+  const articles = useSelector(getArticles.selectAll);
+  const isLoading = useSelector(getArticlesPageLoading);
+  const error = useSelector(getArticlesPageError);
+  const view = useSelector(getArticlesPageView);
+
+  useDynamicReducer(reducers);
+
+  const onChangeView = useCallback(
+    (selectedView: TArticleListView) => {
+      dispatch(articlesPageActions.setView(selectedView));
+    },
+    [dispatch],
+  );
+
+  useInitialEffect(() => {
+    dispatch(fetchArticlesList());
+    dispatch(articlesPageActions.initState());
+  });
+
+  if (error) {
+    return <PageError errorText={error} className={s.error} />;
+  }
 
   return (
     <div className={cn(s.articlesPage, className)}>
-      <ArticleList
-        articles={new Array(16).fill(0).map((item, index) => ({
-          ...mockArticle,
-          id: String(index),
-        }))}
-      />
+      <div>
+        <ArticleViewSelector view={view} onViewClick={onChangeView} />
+      </div>
+      <ArticleList view={view} isLoading={isLoading} articles={articles} />
     </div>
   );
 };

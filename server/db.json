@@ -59,9 +59,8 @@
       "img": "https://blog.golang.org/go-brand/Go-Logo/SVG/Go-Logo_Blue.svg",
       "views": 1500,
       "createdAt": 1698833600,
-      "type": [
-        "IT"
-      ],
+      "userId": "1",
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -147,9 +146,8 @@
       "img": "https://vuejs.org/images/logo.png",
       "views": 1800,
       "createdAt": 1655833600,
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
+      "userId": "2",
       "blocks": [
         {
           "id": "1",
@@ -174,9 +172,8 @@
       "img": "https://www.rust-lang.org/static/images/rust-logo-blk.svg",
       "views": 620,
       "createdAt": 1665833600,
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
+      "userId": "1",
       "blocks": [
         {
           "id": "1",
@@ -201,9 +198,8 @@
       "img": "https://www.oracle.com/a/ocom/img/cb71-java-logo.png",
       "views": 830,
       "createdAt": 1675833600,
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
+      "userId": "1",
       "blocks": [
         {
           "id": "1",
@@ -228,10 +224,8 @@
       "img": "https://cybersecurityventures.com/wp-content/uploads/2020/04/cybersecurity-ventures.jpg",
       "views": 2104,
       "createdAt": 1685833600,
-      "type": [
-        "IT",
-        "Security"
-      ],
+      "type": ["IT", "Security"],
+      "userId": "1",
       "blocks": [
         {
           "id": "1",
@@ -257,10 +251,8 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Machine_learning.png",
       "views": 4931,
       "createdAt": 1699833600,
-      "type": [
-        "IT",
-        "AI"
-      ],
+      "type": ["IT", "AI"],
+      "userId": "2",
       "blocks": [
         {
           "id": "1",
@@ -286,10 +278,8 @@
       "img": "https://blockchainindustrygroup.org/wp-content/uploads/2019/12/blockchain-logo.jpg",
       "views": 3620,
       "createdAt": 1688833600,
-      "type": [
-        "Finance",
-        "IT"
-      ],
+      "type": ["Finance", "IT"],
+      "userId": "1",
       "blocks": [
         {
           "id": "1",
@@ -315,10 +305,8 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/b/bb/QC_algae.jpg",
       "views": 4098,
       "createdAt": 1702833600,
-      "type": [
-        "IT",
-        "Science"
-      ],
+      "type": ["IT", "Science"],
+      "userId": "2",
       "blocks": [
         {
           "id": "1",
@@ -343,10 +331,8 @@
       "img": "https://www.qualcomm.com/content/dam/qcomm-martech-global-stage/homepage/quantainc-5g.svg",
       "views": 5873,
       "createdAt": 1678833600,
-      "type": [
-        "IT",
-        "Telecommunications"
-      ],
+      "type": ["IT", "Telecommunications"],
+      "userId": "2",
       "blocks": [
         {
           "id": "1",
@@ -372,10 +358,8 @@
       "img": "https://virtualrealityinstitute.s3.amazonaws.com/logo/how-vr-works.svg",
       "views": 7551,
       "createdAt": 1691833600,
-      "type": [
-        "IT",
-        "Entertainment"
-      ],
+      "type": ["IT", "Entertainment"],
+      "userId": "1",
       "blocks": [
         {
           "id": "1",

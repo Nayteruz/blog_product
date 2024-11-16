@@ -17,7 +17,7 @@ export const ArticleViewType = {
 export type TArticleViewType = (typeof ArticleViewType)[keyof typeof ArticleViewType];
 
 export const ArticleListView = {
-  TILES: 'tiles',
+  LIST: 'list',
   SIMPLE: 'simple',
 } as const;
 
