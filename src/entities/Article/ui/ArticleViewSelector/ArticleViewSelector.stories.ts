@@ -1,21 +1,24 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
 import { ArticleViewSelector } from './ArticleViewSelector';
 import { defaultDark, ThemeDecorator } from '@/shared/config/storybook';
+import { ArticleListView } from '../../model/types/article';
 
 const meta = {
-  title: 'nonGroup/ArticleViewSelector',
+  title: 'Entities/ArticleViewSelector',
   component: ArticleViewSelector,
   tags: ['autodocs'],
   argTypes: {},
-  args: {},
+  args: {
+    view: ArticleListView.LIST,
+    onViewClick: fn(),
+  },
 } satisfies Meta<typeof ArticleViewSelector>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {
-  args: {},
-};
+export const Normal: Story = {};
 
 export const Dark: Story = {
   ...defaultDark,

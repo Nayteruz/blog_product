@@ -13,13 +13,12 @@ const defaultAsyncReducers: ReducersList = {
   articleDetails: articleDetailsReducer,
   addCommentForm: addCommentFormReducer,
   articleDetailsComments: articleDetailsCommentsReducer,
+  articlesPage: articleDetailsReducer,
 };
 
-export const StoryDecorator = (
-  initialState: DeepPartial<StateSchema>,
-  asyncReducers?: ReducersList,
-) => (Story: StoryFn) => (
-  <StoryProvider initialState={initialState} asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}>
-    <Story />
-  </StoryProvider>
-);
+export const StoryDecorator =
+  (initialState: DeepPartial<StateSchema>, asyncReducers?: ReducersList) => (Story: StoryFn) => (
+    <StoryProvider initialState={initialState} asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}>
+      <Story />
+    </StoryProvider>
+  );
