@@ -40,14 +40,14 @@ const ArticlesPage: FC<IArticlesPageProps> = (props) => {
     [dispatch],
   );
 
-  const onLoadNextPart = useCallback(() => {
-    dispatch(fetchNextArticlePage());
-  }, [dispatch]);
-
   useInitialEffect(() => {
     dispatch(articlesPageActions.initState());
     dispatch(fetchArticlesList({ page: 1 }));
   });
+
+  const onLoadNextPart = useCallback(() => {
+    dispatch(fetchNextArticlePage());
+  }, [dispatch]);
 
   if (error) {
     return (
@@ -58,7 +58,7 @@ const ArticlesPage: FC<IArticlesPageProps> = (props) => {
   }
 
   return (
-    <Page onScrollEnd={onLoadNextPart} className={cn(s.articlesPage, className)}>
+    <Page isLoading={isLoading} onScrollEnd={onLoadNextPart} className={cn(s.articlesPage, className)}>
       <div>
         <ArticleViewSelector view={view} onViewClick={onChangeView} />
       </div>

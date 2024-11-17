@@ -4,9 +4,10 @@ export interface IUseInfinityScroll {
   callback?: () => void;
   triggerRef: MutableRefObject<HTMLElement>;
   wrapperRef: MutableRefObject<HTMLElement>;
+  isLoading?: boolean;
 }
 
-export const useInfinityScroll = ({ callback, triggerRef, wrapperRef }: IUseInfinityScroll) => {
+export const useInfinityScroll = ({ callback, triggerRef, wrapperRef, isLoading }: IUseInfinityScroll) => {
   useEffect(() => {
     const wrapperElement = wrapperRef.current;
     const triggerElement = triggerRef.current;
@@ -30,9 +31,8 @@ export const useInfinityScroll = ({ callback, triggerRef, wrapperRef }: IUseInfi
 
     return () => {
       if (observer && triggerElement) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        observer.unobserve(triggerElement);
+        observer.disconnect();
       }
     };
-  }, [callback, triggerRef, wrapperRef]);
+  }, [callback, triggerRef, wrapperRef, isLoading]);
 };

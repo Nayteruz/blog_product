@@ -10,10 +10,11 @@ interface IPageProps {
   className?: string;
   style?: CSSProperties;
   onScrollEnd?: () => void;
+  isLoading?: boolean;
 }
 
 export const Page: FC<IPageProps> = (props) => {
-  const { className, children, onScrollEnd, style } = props;
+  const { className, children, onScrollEnd, style, isLoading } = props;
   const wrapperRef = useRef<HTMLDivElement>(null) as MutableRefObject<HTMLDivElement>;
   const triggerRef = useRef<HTMLDivElement>(null) as MutableRefObject<HTMLDivElement>;
 
@@ -22,6 +23,7 @@ export const Page: FC<IPageProps> = (props) => {
     wrapperRef,
     // eslint-disable-next-line no-console
     callback: onScrollEnd,
+    isLoading,
   });
 
   return (

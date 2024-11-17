@@ -13,7 +13,7 @@ interface IArticleListProps {
 }
 
 const getSkeletons = (view: TArticleListView) => {
-  const items = new Array(view === ArticleListView.LIST ? 9 : 3).fill(0);
+  const items = new Array(view === ArticleListView.LIST ? 6 : 3).fill(0);
   return items.map((_, index) => (
     // eslint-disable-next-line react/no-array-index-key
     <ArticleListItemSkeleton key={index} view={view} />

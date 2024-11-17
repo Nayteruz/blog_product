@@ -12,9 +12,9 @@ export const fetchNextArticlePage = createAsyncThunk<void, void, ThunkConfig<str
   'articlesPage/fetchNextArticlePage',
   async (_, thunkAPI) => {
     const { getState, dispatch } = thunkAPI;
+    const isLoading = getArticlesPageLoading(getState());
     const hasMore = getArticlesPageHasMore(getState());
     const page = getArticlesPageNumber(getState());
-    const isLoading = getArticlesPageLoading(getState());
 
     if (hasMore && !isLoading) {
       dispatch(articlesPageActions.setPage(page + 1));
