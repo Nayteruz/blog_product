@@ -1,5 +1,5 @@
 import {
-  CSSProperties, FC, memo, useCallback, useState,
+  CSSProperties, FC, memo, useCallback, useState 
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -36,20 +36,20 @@ export const Navbar: FC<INavbarProps> = memo(({ className, style }) => {
 
   if (authData) {
     return (
-      <nav className={cn(s.navbar, className)}>
+      <header className={cn(s.navbar, className)}>
         <Button className={s.links} theme="clearInverted" style={style} onClick={onLogout}>
           {t('Sign out')}
         </Button>
-      </nav>
+      </header>
     );
   }
 
   return (
-    <nav className={cn(s.navbar, className)}>
+    <header className={cn(s.navbar, className)}>
       <Button className={s.links} theme="clearInverted" style={style} onClick={onOpen}>
         {t('Sign in')}
       </Button>
       {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onClose} />}
-    </nav>
+    </header>
   );
 });

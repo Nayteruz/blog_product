@@ -8,3 +8,4 @@ export { Select } from './Select/Select';
 export { Skeleton } from './Skeleton/Skeleton';
 export { Icon } from './Icon/Icon';
 export type { TIcon } from './Icon/Icon';
+export { Page } from './Page/Page';

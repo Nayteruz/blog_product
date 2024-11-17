@@ -7,5 +7,5 @@ interface IFooterProps {
 }
 
 export const Footer: FC<IFooterProps> = ({ className }) => (
-  <div className={cn(s.footer, className)}>Copyright 2024</div>
+  <footer className={cn(s.footer, className)}>Copyright 2024</footer>
 );

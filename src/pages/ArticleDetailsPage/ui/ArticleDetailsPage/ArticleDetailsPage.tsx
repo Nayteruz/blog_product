@@ -15,14 +15,14 @@ import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByAr
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
 import { AddCommentForm } from '@/features/AddCommentForm';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
-import { Button } from '@/shared/ui';
+import { Button, Page } from '@/shared/ui';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 
 interface IArticleDetailsPageProps {
   className?: string;
 }
 
-const reducers: ReducersList = {articleDetailsComments: articleDetailsCommentsReducer,};
+const reducers: ReducersList = { articleDetailsComments: articleDetailsCommentsReducer };
 
 const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
   const { t } = useTranslation();
@@ -50,11 +50,11 @@ const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
   });
 
   if (!id && __PROJECT__ !== 'storybook') {
-    return <div className={cn(s.articleDetailsPage, className)}>{t('Article not found')}</div>;
+    return <Page className={cn(s.articleDetailsPage, className)}>{t('Article not found')}</Page>;
   }
 
   return (
-    <div className={cn(s.articleDetailsPage, className)}>
+    <Page className={cn(s.articleDetailsPage, className)}>
       <Button className={s.back} onClick={navigateToList}>
         {t('Back to article list')}
       </Button>
@@ -62,7 +62,7 @@ const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
       <Text className={s.commentTitle} title={t('Comments')} />
       <AddCommentForm onSendComment={onSendComment} />
       <CommentList isLoading={commentsIsLoading} comments={comments} />
-    </div>
+    </Page>
   );
 };
 

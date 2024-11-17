@@ -377,6 +377,407 @@
           "title": "Гарнитура VR"
         }
       ]
+    },
+    {
+      "id": "11",
+      "title": "Java Updates",
+      "subtitle": "Java 21: Что нового?",
+      "img": "https://www.oracle.com/a/ocom/img/cb71-java-logo.png",
+      "views": 830,
+      "createdAt": 1675833600,
+      "type": ["IT"],
+      "userId": "1",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Новшества Java 21",
+          "paragraphs": [
+            "Java 21 представила улучшенные паттерн-матчи и новые утилиты для работы с потоками.",
+            "Теперь разработка многопоточных приложений стала ещё проще и безопаснее."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "public class Demo {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, Java 21!\");\n    }\n}"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "title": "Cybersecurity Trends",
+      "subtitle": "Новые тенденции в кибербезопасности",
+      "img": "https://cybersecurityventures.com/wp-content/uploads/2020/04/cybersecurity-ventures.jpg",
+      "views": 2104,
+      "createdAt": 1685833600,
+      "type": ["IT", "Security"],
+      "userId": "1",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Текущие угрозы",
+          "paragraphs": [
+            "Кибербезопасность становится всё более важной с ростом числа онлайн-угроз. В 2023 году число атак ещё увеличилось.",
+            "Основной упор делается на защиту данных и пользователей от фишинговых атак и ransomware."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://securityintelligence.com/wp-content/uploads/2020/09/cybersecurity-trends.jpg",
+          "title": "Тенденции в кибербезопасности"
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "title": "Machine Learning Innovations",
+      "subtitle": "Свежие достижения в машинном обучении",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Machine_learning.png",
+      "views": 4931,
+      "createdAt": 1699833600,
+      "type": ["IT", "AI"],
+      "userId": "2",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Развитие ML",
+          "paragraphs": [
+            "Машинное обучение продолжает демонстрировать замечательные достижения, особенно в области глубоких нейронных сетей.",
+            "В 2023 году появились новые модели, которые стали более точными и быстрыми."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://ai.googleblog.com/images/AI%20for%20ML.jpg",
+          "title": "Искусственный интеллект в действии"
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "title": "Blockchain in Fintech",
+      "subtitle": "Революция блокчейна в финансовом секторе",
+      "img": "https://blockchainindustrygroup.org/wp-content/uploads/2019/12/blockchain-logo.jpg",
+      "views": 3620,
+      "createdAt": 1688833600,
+      "type": ["Finance", "IT"],
+      "userId": "1",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Влияние блокчейна",
+          "paragraphs": [
+            "Блокчейн продолжает трансформировать финансовую индустрию, обеспечивая прозрачность и безопасность транзакций.",
+            "Все больше финансовых институтов интегрируют блокчейн для оптимизации своих процессов."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://blockchainindustrygroup.org/wp-content/uploads/2020/01/Blockchain-1.jpg",
+          "title": "Применение блокчейна"
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "title": "Quantum Computing Advances",
+      "subtitle": "Достижения в области квантовых вычислений",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/b/bb/QC_algae.jpg",
+      "views": 4098,
+      "createdAt": 1702833600,
+      "type": ["IT", "Science"],
+      "userId": "2",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Прорывы в квантовых вычислениях",
+          "paragraphs": [
+            "Квантовые вычисления могут произвести революцию в области технологий, решая задачи, которые ранее считались невозможными.",
+            "В 2023 году были сделаны значительные успехи в области квантовой коммуникации и квантовой криптографии."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "# This is a placeholder for quantum programming code\nprint('Quantum world!')"
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "title": "5G Network Expansion",
+      "subtitle": "Покрытие 5G становится глобальным",
+      "img": "https://www.qualcomm.com/content/dam/qcomm-martech-global-stage/homepage/quantainc-5g.svg",
+      "views": 5873,
+      "createdAt": 1678833600,
+      "type": ["IT", "Telecommunications"],
+      "userId": "2",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Расширение 5G",
+          "paragraphs": [
+            "Сети 5G продолжают активно развиваться, обеспечивая высокую скорость передачи данных и низкую задержку.",
+            "Это открывает возможности для новых приложений в области интернета вещей и умных городов."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://www.qualcomm.com/content/dam/qcomm-martech-global-stage/homepage/5g-logo.svg",
+          "title": "5G Технологии"
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "title": "Development in AR/VR",
+      "subtitle": "Искусственная реальность: что ждать в будущем?",
+      "img": "https://virtualrealityinstitute.s3.amazonaws.com/logo/how-vr-works.svg",
+      "views": 7551,
+      "createdAt": 1691833600,
+      "type": ["IT", "Entertainment"],
+      "userId": "1",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Перспективы AR/VR",
+          "paragraphs": [
+            "Технологии дополненной и виртуальной реальности становятся всё более доступными для разработчиков.",
+            "В 2023 году на рынке появилось множество новых устройств, которые делают VR/AR ещё более интерактивными и захватывающими."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://virtualrealityinstitute.s3.amazonaws.com/logo/VR-console.svg",
+          "title": "Гарнитура VR"
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "title": "Development in AR/VR",
+      "subtitle": "Искусственная реальность: что ждать в будущем?",
+      "img": "https://virtualrealityinstitute.s3.amazonaws.com/logo/how-vr-works.svg",
+      "views": 7551,
+      "createdAt": 1691833600,
+      "type": ["IT", "Entertainment"],
+      "userId": "1",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Перспективы AR/VR",
+          "paragraphs": [
+            "Технологии дополненной и виртуальной реальности становятся всё более доступными для разработчиков.",
+            "В 2023 году на рынке появилось множество новых устройств, которые делают VR/AR ещё более интерактивными и захватывающими."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://virtualrealityinstitute.s3.amazonaws.com/logo/VR-console.svg",
+          "title": "Гарнитура VR"
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "title": "Java Updates",
+      "subtitle": "Java 21: Что нового?",
+      "img": "https://www.oracle.com/a/ocom/img/cb71-java-logo.png",
+      "views": 830,
+      "createdAt": 1675833600,
+      "type": ["IT"],
+      "userId": "1",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Новшества Java 21",
+          "paragraphs": [
+            "Java 21 представила улучшенные паттерн-матчи и новые утилиты для работы с потоками.",
+            "Теперь разработка многопоточных приложений стала ещё проще и безопаснее."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "public class Demo {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, Java 21!\");\n    }\n}"
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "title": "Cybersecurity Trends",
+      "subtitle": "Новые тенденции в кибербезопасности",
+      "img": "https://cybersecurityventures.com/wp-content/uploads/2020/04/cybersecurity-ventures.jpg",
+      "views": 2104,
+      "createdAt": 1685833600,
+      "type": ["IT", "Security"],
+      "userId": "1",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Текущие угрозы",
+          "paragraphs": [
+            "Кибербезопасность становится всё более важной с ростом числа онлайн-угроз. В 2023 году число атак ещё увеличилось.",
+            "Основной упор делается на защиту данных и пользователей от фишинговых атак и ransomware."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://securityintelligence.com/wp-content/uploads/2020/09/cybersecurity-trends.jpg",
+          "title": "Тенденции в кибербезопасности"
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "title": "Machine Learning Innovations",
+      "subtitle": "Свежие достижения в машинном обучении",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Machine_learning.png",
+      "views": 4931,
+      "createdAt": 1699833600,
+      "type": ["IT", "AI"],
+      "userId": "2",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Развитие ML",
+          "paragraphs": [
+            "Машинное обучение продолжает демонстрировать замечательные достижения, особенно в области глубоких нейронных сетей.",
+            "В 2023 году появились новые модели, которые стали более точными и быстрыми."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://ai.googleblog.com/images/AI%20for%20ML.jpg",
+          "title": "Искусственный интеллект в действии"
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "title": "Blockchain in Fintech",
+      "subtitle": "Революция блокчейна в финансовом секторе",
+      "img": "https://blockchainindustrygroup.org/wp-content/uploads/2019/12/blockchain-logo.jpg",
+      "views": 3620,
+      "createdAt": 1688833600,
+      "type": ["Finance", "IT"],
+      "userId": "1",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Влияние блокчейна",
+          "paragraphs": [
+            "Блокчейн продолжает трансформировать финансовую индустрию, обеспечивая прозрачность и безопасность транзакций.",
+            "Все больше финансовых институтов интегрируют блокчейн для оптимизации своих процессов."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://blockchainindustrygroup.org/wp-content/uploads/2020/01/Blockchain-1.jpg",
+          "title": "Применение блокчейна"
+        }
+      ]
+    },
+    {
+      "id": "23",
+      "title": "Quantum Computing Advances",
+      "subtitle": "Достижения в области квантовых вычислений",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/b/bb/QC_algae.jpg",
+      "views": 4098,
+      "createdAt": 1702833600,
+      "type": ["IT", "Science"],
+      "userId": "2",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Прорывы в квантовых вычислениях",
+          "paragraphs": [
+            "Квантовые вычисления могут произвести революцию в области технологий, решая задачи, которые ранее считались невозможными.",
+            "В 2023 году были сделаны значительные успехи в области квантовой коммуникации и квантовой криптографии."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "# This is a placeholder for quantum programming code\nprint('Quantum world!')"
+        }
+      ]
+    },
+    {
+      "id": "24",
+      "title": "5G Network Expansion",
+      "subtitle": "Покрытие 5G становится глобальным",
+      "img": "https://www.qualcomm.com/content/dam/qcomm-martech-global-stage/homepage/quantainc-5g.svg",
+      "views": 5873,
+      "createdAt": 1678833600,
+      "type": ["IT", "Telecommunications"],
+      "userId": "2",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Расширение 5G",
+          "paragraphs": [
+            "Сети 5G продолжают активно развиваться, обеспечивая высокую скорость передачи данных и низкую задержку.",
+            "Это открывает возможности для новых приложений в области интернета вещей и умных городов."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://www.qualcomm.com/content/dam/qcomm-martech-global-stage/homepage/5g-logo.svg",
+          "title": "5G Технологии"
+        }
+      ]
+    },
+    {
+      "id": "25",
+      "title": "Development in AR/VR",
+      "subtitle": "Искусственная реальность: что ждать в будущем?",
+      "img": "https://virtualrealityinstitute.s3.amazonaws.com/logo/how-vr-works.svg",
+      "views": 7551,
+      "createdAt": 1691833600,
+      "type": ["IT", "Entertainment"],
+      "userId": "1",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Перспективы AR/VR",
+          "paragraphs": [
+            "Технологии дополненной и виртуальной реальности становятся всё более доступными для разработчиков.",
+            "В 2023 году на рынке появилось множество новых устройств, которые делают VR/AR ещё более интерактивными и захватывающими."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://virtualrealityinstitute.s3.amazonaws.com/logo/VR-console.svg",
+          "title": "Гарнитура VR"
+        }
+      ]
     }
   ],
   "comments": [

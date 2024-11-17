@@ -12,26 +12,23 @@ interface IArticleListProps {
   view?: TArticleListView;
 }
 
+const getSkeletons = (view: TArticleListView) => {
+  const items = new Array(view === ArticleListView.LIST ? 9 : 3).fill(0);
+  return items.map((_, index) => (
+    // eslint-disable-next-line react/no-array-index-key
+    <ArticleListItemSkeleton key={index} view={view} />
+  ));
+};
+
 export const ArticleList: FC<IArticleListProps> = memo(props => {
   const { className, articles, isLoading, view = ArticleListView.SIMPLE } = props;
-
-  if (isLoading) {
-    const items = new Array(view === ArticleListView.LIST ? 9 : 3).fill(0);
-    return (
-      <div className={cn(s.articleList, className, s[view])}>
-        {items.map((_, index) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <ArticleListItemSkeleton key={index} view={view} />
-        ))}
-      </div>
-    );
-  }
 
   const renderArticle = (article: IArticle) => <ArticleListItem article={article} view={view} key={article.id} />;
 
   return (
     <div className={cn(s.articleList, className, s[view])}>
       {articles.length > 0 ? articles.map(renderArticle) : null}
+      {isLoading && getSkeletons(view)}
     </div>
   );
 });

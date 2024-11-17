@@ -19,8 +19,9 @@ import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 import { ProfilePageHeader } from './ProfilePageHeader';
 import { Text } from '@/shared/ui/Text';
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
+import { Page } from '@/shared/ui';
 
-const reducers: ReducersList = {profile: profileReducer,};
+const reducers: ReducersList = { profile: profileReducer };
 
 interface IChangeData {
   name: string;
@@ -30,7 +31,7 @@ interface IChangeData {
 
 const ProfilePage: FC = () => {
   const { t } = useTranslation();
-  const { id } = useParams<{id: string}>();
+  const { id } = useParams<{ id: string }>();
   const dispatch = useAppDispatch();
   const formData = useSelector(getProfileForm);
   const isLoading = useSelector(getProfileLoading);
@@ -56,16 +57,18 @@ const ProfilePage: FC = () => {
     }
   }, [id, dispatch]);
 
-  const onChangeData = useCallback(({ name, value, type }: IChangeData) => {
-    dispatch(profileActions.updateProfile({[name]: type === 'number' ? Number(value) : value,}));
-  }, [dispatch]);
+  const onChangeData = useCallback(
+    ({ name, value, type }: IChangeData) => {
+      dispatch(profileActions.updateProfile({ [name]: type === 'number' ? Number(value) : value }));
+    },
+    [dispatch],
+  );
 
   return (
-    <>
+    <Page>
       <ProfilePageHeader />
-      {validateErrors?.length && validateErrors.map((err) => (
-        <Text key={err} text={validateTranslates[err]} theme="error" />
-      ))}
+      {validateErrors?.length &&
+        validateErrors.map(err => <Text key={err} text={validateTranslates[err]} theme="error" />)}
       <ProfileCard
         onChangeData={onChangeData}
         data={formData}
@@ -73,7 +76,7 @@ const ProfilePage: FC = () => {
         error={error}
         isReadOnly={isReadOnly}
       />
-    </>
+    </Page>
   );
 };
 

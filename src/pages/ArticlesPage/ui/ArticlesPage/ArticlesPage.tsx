@@ -14,6 +14,8 @@ import {
   getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import { PageError } from '@/widgets/PageError';
+import { Page } from '@/shared/ui';
+import { fetchNextArticlePage } from '../../model/services/fetchNextArticlePage/fetchNextArticlePage';
 
 interface IArticlesPageProps {
   className?: string;
@@ -38,22 +40,30 @@ const ArticlesPage: FC<IArticlesPageProps> = props => {
     [dispatch],
   );
 
+  const onLoadNextPart = useCallback(() => {
+    dispatch(fetchNextArticlePage());
+  }, [dispatch]);
+
   useInitialEffect(() => {
-    dispatch(fetchArticlesList());
     dispatch(articlesPageActions.initState());
+    dispatch(fetchArticlesList({ page: 1 }));
   });
 
   if (error) {
-    return <PageError errorText={error} className={s.error} />;
+    return (
+      <Page>
+        <PageError errorText={error} className={s.error} />
+      </Page>
+    );
   }
 
   return (
-    <div className={cn(s.articlesPage, className)}>
+    <Page onScrollEnd={onLoadNextPart} className={cn(s.articlesPage, className)}>
       <div>
         <ArticleViewSelector view={view} onViewClick={onChangeView} />
       </div>
       <ArticleList view={view} isLoading={isLoading} articles={articles} />
-    </div>
+    </Page>
   );
 };
 
