@@ -20,7 +20,7 @@ const getSkeletons = (view: TArticleListView) => {
   ));
 };
 
-export const ArticleList: FC<IArticleListProps> = memo(props => {
+export const ArticleList: FC<IArticleListProps> = memo((props) => {
   const { className, articles, isLoading, view = ArticleListView.SIMPLE } = props;
 
   const renderArticle = (article: IArticle) => <ArticleListItem article={article} view={view} key={article.id} />;

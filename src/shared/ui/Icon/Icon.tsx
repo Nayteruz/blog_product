@@ -58,7 +58,7 @@ interface IIconProps extends React.SVGProps<SVGSVGElement> {
   size?: (typeof sizeIcon)[keyof typeof sizeIcon];
 }
 
-export const Icon: FC<IIconProps> = memo(props => {
+export const Icon: FC<IIconProps> = memo((props) => {
   const { className, name, size = sizeIcon.M, ...otherProps } = props;
 
   const SvgIcon = Icons[name];

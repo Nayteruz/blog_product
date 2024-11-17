@@ -1,18 +1,18 @@
 import {
-  CSSProperties, FC, memo, MutableRefObject, ReactNode, useRef 
+  CSSProperties, FC, MutableRefObject, ReactNode, useRef 
 } from 'react';
 import { cn } from '@/shared/lib';
 import s from './Page.module.scss';
 import { useInfinityScroll } from '@/shared/hooks/useInfinityScroll';
 
 interface IPageProps {
+  children: ReactNode;
   className?: string;
   style?: CSSProperties;
-  children: ReactNode;
   onScrollEnd?: () => void;
 }
 
-export const Page: FC<IPageProps> = memo(props => {
+export const Page: FC<IPageProps> = (props) => {
   const { className, children, onScrollEnd, style } = props;
   const wrapperRef = useRef<HTMLDivElement>(null) as MutableRefObject<HTMLDivElement>;
   const triggerRef = useRef<HTMLDivElement>(null) as MutableRefObject<HTMLDivElement>;
@@ -30,4 +30,4 @@ export const Page: FC<IPageProps> = memo(props => {
       <div ref={triggerRef} />
     </section>
   );
-});
+};

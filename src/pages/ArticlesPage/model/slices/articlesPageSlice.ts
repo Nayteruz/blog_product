@@ -29,7 +29,7 @@ const articlesPageSlice = createSlice({
       state.view = action.payload;
       localStorage.setItem(STORAGE_KEYS.ARTICLES_VIEW, action.payload);
     },
-    initState: state => {
+    initState: (state) => {
       const view = localStorage.getItem(STORAGE_KEYS.ARTICLES_VIEW) as TArticleListView;
       state.limit = view === ArticleListView.LIST ? 9 : 4;
     },
@@ -37,9 +37,9 @@ const articlesPageSlice = createSlice({
       state.page = action.payload;
     },
   },
-  extraReducers: builder => {
+  extraReducers: (builder) => {
     builder
-      .addCase(fetchArticlesList.pending, state => {
+      .addCase(fetchArticlesList.pending, (state) => {
         state.isLoading = true;
         state.error = undefined;
       })

@@ -18,7 +18,7 @@ interface IArticleListItemProps {
   view: TArticleListView;
 }
 
-export const ArticleListItem: FC<IArticleListItemProps> = memo(props => {
+export const ArticleListItem: FC<IArticleListItemProps> = memo((props) => {
   const { className, article, view } = props;
   const { t } = useTranslation();
   const navigate = useNavigate();

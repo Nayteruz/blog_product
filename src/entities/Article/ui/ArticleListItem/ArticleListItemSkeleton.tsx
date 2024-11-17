@@ -10,7 +10,7 @@ interface IArticleListItemSkeletonProps {
   view: TArticleListView;
 }
 
-export const ArticleListItemSkeleton: FC<IArticleListItemSkeletonProps> = memo(props => {
+export const ArticleListItemSkeleton: FC<IArticleListItemSkeletonProps> = memo((props) => {
   const { className, view } = props;
 
   switch (view) {

@@ -23,7 +23,7 @@ interface IArticlesPageProps {
 
 const reducers: ReducersList = { articlesPage: articlesPageReducer };
 
-const ArticlesPage: FC<IArticlesPageProps> = props => {
+const ArticlesPage: FC<IArticlesPageProps> = (props) => {
   const { className } = props;
   const dispatch = useAppDispatch();
   const articles = useSelector(getArticles.selectAll);

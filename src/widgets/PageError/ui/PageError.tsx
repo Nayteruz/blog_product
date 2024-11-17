@@ -9,7 +9,7 @@ interface IPageErrorProps {
   errorText?: string;
 }
 
-export const PageError: FC<IPageErrorProps> = props => {
+export const PageError: FC<IPageErrorProps> = (props) => {
   const { t } = useTranslation();
   const { className, errorText } = props;
 

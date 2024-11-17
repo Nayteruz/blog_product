@@ -21,7 +21,7 @@ export const Select: FC<ISelectProps> = memo((props) => {
   const {className, label, readOnly, placeholder, options, onChange, value, ...otherProps} = props;
   const mods = {[s.disabled]: readOnly,};
 
-  const optionsList = useMemo(() => options.map((option) => (
+  const optionsList = useMemo(() => options.map(option => (
     <option key={option.value} value={option.value}>{option.label}</option>
   )), [options]);
 

@@ -13,7 +13,7 @@ interface ICountrySelectProps {
   placeholder?: string;
 }
 
-const countryList = Object.values(Country).map((cur) => ({ value: cur, label: cur }));
+const countryList = Object.values(Country).map(cur => ({ value: cur, label: cur }));
 
 export const CountrySelect: FC<ICountrySelectProps> = memo((props) => {
   const { t } = useTranslation();

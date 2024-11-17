@@ -3,7 +3,7 @@ import { StateSchema } from '@/app/providers/StoryProvider';
 
 export const getLoginState = createSelector(
   (state: StateSchema) => state?.loginForm,
-  (loginForm) => loginForm || {
+  loginForm => loginForm || {
     username: '',
     password: '',
     error: '',

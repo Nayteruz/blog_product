@@ -26,7 +26,7 @@ const viewIcons: IItemSelectorProps[] = [
   },
 ];
 
-export const ArticleViewSelector: FC<IArticleViewSelectorProps> = memo(props => {
+export const ArticleViewSelector: FC<IArticleViewSelectorProps> = memo((props) => {
   const { className, view: selectedView, onViewClick } = props;
 
   return (

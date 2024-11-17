@@ -92,6 +92,7 @@ module.exports = {
         ExportDeclaration: 'never',
       },
     ],
+    'arrow-parens': [1, 'as-needed', { requireForBlockBody: true }],
   },
   globals: {
     __IS_DEV__: true,
