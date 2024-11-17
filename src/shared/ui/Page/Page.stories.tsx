@@ -3,11 +3,11 @@ import { Page } from './Page';
 import { defaultDark, ThemeDecorator } from '@/shared/config/storybook';
 
 const meta = {
-  title: 'nonGroup/Page',
+  title: 'Shared/Page',
   component: Page,
   tags: ['autodocs'],
   argTypes: {},
-  args: { children: 'Page' },
+  args: { children: <div>Page children in div element</div>, style: { height: 250 } },
 } satisfies Meta<typeof Page>;
 
 export default meta;
