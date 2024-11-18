@@ -11,10 +11,7 @@ interface IStoryProviderProps {
 }
 
 export const StoryProvider: FC<IStoryProviderProps> = ({ children, initialState, asyncReducers }) => {
-  const store = createReduxStore(
-    initialState as StateSchema,
-    asyncReducers as ReducersMapObject<StateSchema>,
-  );
+  const store = createReduxStore(initialState as StateSchema, asyncReducers as ReducersMapObject<StateSchema>);
 
   return <Provider store={store}>{children}</Provider>;
 };

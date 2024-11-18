@@ -7,7 +7,6 @@ import { ReducersList, useDynamicReducer } from '@/shared/hooks/useDynamicReduce
 import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import {
   getArticlesPageError,
   getArticlesPageLoading,
@@ -16,6 +15,7 @@ import {
 import { PageError } from '@/widgets/PageError';
 import { Page } from '@/shared/ui';
 import { fetchNextArticlePage } from '../../model/services/fetchNextArticlePage/fetchNextArticlePage';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 
 interface IArticlesPageProps {
   className?: string;
@@ -41,8 +41,7 @@ const ArticlesPage: FC<IArticlesPageProps> = (props) => {
   );
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initState());
-    dispatch(fetchArticlesList({ page: 1 }));
+    dispatch(initArticlesPage());
   });
 
   const onLoadNextPart = useCallback(() => {

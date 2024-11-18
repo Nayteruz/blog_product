@@ -8,14 +8,18 @@ export type ReducersList = {
   [name in StateSchemaKey]?: Reducer;
 };
 
-export const useDynamicReducer = (reducer: ReducersList, removeAfterUnmount: boolean = true) => {
+export const useDynamicReducer = (reducer: ReducersList, removeAfterUnmount: boolean = false) => {
   const store = useStore() as ReduxStoreWithManager;
   const dispatch = useAppDispatch();
 
   useEffect(() => {
+    const mountedReducers = store.reducerManager.getMountedReducers();
+
     Object.entries(reducer).forEach(([name, reducerItem]) => {
       const key = name as StateSchemaKey;
-      if (reducerItem) {
+      const mounted = mountedReducers[key];
+
+      if (reducerItem && !mounted) {
         store.reducerManager.add(key, reducerItem);
         dispatch({ type: `@INIT ${key} reducer` });
       }
