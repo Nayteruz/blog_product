@@ -10,9 +10,11 @@ import type { IArticleDetailsSchema } from '@/entities/Article';
 import type { IArticleDetailsCommentsSchema } from '@/pages/ArticleDetailsPage';
 import type { IAddCommentFormSchema } from '@/features/AddCommentForm';
 import { IArticlesPageSchema } from '@/pages/ArticlesPage';
+import { IUISchema } from '@/features/UI';
 
 export interface StateSchema {
   user: IUserSchema;
+  ui: IUISchema;
   // Async reducers
   loginForm?: ILoginSchema;
   profile?: IProfileSchema;

@@ -19,7 +19,7 @@ import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 import { ProfilePageHeader } from './ProfilePageHeader';
 import { Text } from '@/shared/ui/Text';
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
-import { Page } from '@/shared/ui';
+import { Page } from '@/widgets/Page';
 
 const reducers: ReducersList = { profile: profileReducer };
 

@@ -20,7 +20,7 @@ const articlesPageSlice = createSlice({
     error: undefined,
     ids: [],
     entities: {},
-    view: ArticleListView.LIST,
+    view: (localStorage.getItem(STORAGE_KEYS.ARTICLES_VIEW) as TArticleListView) || ArticleListView.LIST,
     page: 1,
     hasMore: true,
     _inited: false,

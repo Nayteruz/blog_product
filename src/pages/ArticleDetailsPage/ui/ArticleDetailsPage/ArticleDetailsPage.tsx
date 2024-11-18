@@ -15,8 +15,9 @@ import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByAr
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
 import { AddCommentForm } from '@/features/AddCommentForm';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
-import { Button, Page } from '@/shared/ui';
+import { Page } from '@/widgets/Page';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { Button } from '@/shared/ui';
 
 interface IArticleDetailsPageProps {
   className?: string;

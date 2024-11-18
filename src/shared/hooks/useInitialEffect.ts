@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 
 export const useInitialEffect = (callback: () => void, dependencies: any[] = []) => {
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (__PROJECT__ !== 'storybook') {
       callback();
     }

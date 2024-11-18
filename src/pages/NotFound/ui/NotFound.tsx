@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { cn } from '@/shared/lib';
-import { Page } from '@/shared/ui';
+import { Page } from '@/widgets/Page';
 import s from './NotFound.module.scss';
 
 interface INotFoundProps {

@@ -6,25 +6,24 @@ import { StateSchema, ThunkExtraArg } from './StateSchema';
 import { userReducer } from '@/entities/User';
 import { createReducerManager } from './reducerManager';
 import { $api } from '@/shared/api/api';
+import { uiSliceReducer } from '@/features/UI';
 
-export const createReduxStore = (
-  initialState?: StateSchema,
-  asyncReducers?: ReducersMapObject<StateSchema>,
-) => {
+export const createReduxStore = (initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) => {
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
     user: userReducer,
+    ui: uiSliceReducer,
   };
 
   const reducerManager = createReducerManager(rootReducers);
 
-  const extraArg: ThunkExtraArg = {api: $api,};
+  const extraArg: ThunkExtraArg = { api: $api };
 
   const store = configureStore({
     reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
     devTools: __IS_DEV__,
     preloadedState: initialState,
-    middleware: getDefaultMiddleware => getDefaultMiddleware({thunk: {extraArgument: extraArg,},}),
+    middleware: getDefaultMiddleware => getDefaultMiddleware({ thunk: { extraArgument: extraArg } }),
   });
 
   // @ts-ignore
@@ -33,5 +32,5 @@ export const createReduxStore = (
   return store;
 };
 
-export type RootState = ReturnType<typeof createReduxStore>['getState']
+export type RootState = ReturnType<typeof createReduxStore>['getState'];
 export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];

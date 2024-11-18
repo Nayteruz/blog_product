@@ -3,7 +3,7 @@ import { Page } from './Page';
 import { defaultDark, ThemeDecorator } from '@/shared/config/storybook';
 
 const meta = {
-  title: 'Shared/Page',
+  title: 'Widgets/Page',
   component: Page,
   tags: ['autodocs'],
   argTypes: {},
