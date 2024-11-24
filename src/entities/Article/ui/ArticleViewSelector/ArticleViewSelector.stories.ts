@@ -5,7 +5,7 @@ import { defaultDark, ThemeDecorator } from '@/shared/config/storybook';
 import { ArticleListView } from '../../model/types/article';
 
 const meta = {
-  title: 'Entities/ArticleViewSelector',
+  title: 'Entities/Article/ArticleViewSelector',
   component: ArticleViewSelector,
   tags: ['autodocs'],
   argTypes: {},

@@ -18,11 +18,11 @@ interface IItemSelectorProps {
 const viewIcons: IItemSelectorProps[] = [
   {
     view: ArticleListView.LIST,
-    icon: 'list',
+    icon: 'tiled',
   },
   {
     view: ArticleListView.SIMPLE,
-    icon: 'tiled',
+    icon: 'list',
   },
 ];
 

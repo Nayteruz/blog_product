@@ -1,10 +1,11 @@
 import { FC, memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
 import { cn } from '@/shared/lib';
 import s from './ArticlesPage.module.scss';
-import { ArticleList, ArticleViewSelector, TArticleListView } from '@/entities/Article';
+import { ArticleList } from '@/entities/Article';
 import { ReducersList, useDynamicReducer } from '@/shared/hooks/useDynamicReducer';
-import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice';
+import { articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
 import {
@@ -16,6 +17,7 @@ import { PageError } from '@/widgets/PageError';
 import { Page } from '@/widgets/Page';
 import { fetchNextArticlePage } from '../../model/services/fetchNextArticlePage/fetchNextArticlePage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
+import { ArticlePageFilters } from '../ArticlesPageFilters/ArticlePageFilters';
 
 interface IArticlesPageProps {
   className?: string;
@@ -26,6 +28,7 @@ const reducers: ReducersList = { articlesPage: articlesPageReducer };
 const ArticlesPage: FC<IArticlesPageProps> = (props) => {
   const { className } = props;
   const dispatch = useAppDispatch();
+  const [searchParams] = useSearchParams();
   const articles = useSelector(getArticles.selectAll);
   const isLoading = useSelector(getArticlesPageLoading);
   const error = useSelector(getArticlesPageError);
@@ -33,15 +36,8 @@ const ArticlesPage: FC<IArticlesPageProps> = (props) => {
 
   useDynamicReducer(reducers);
 
-  const onChangeView = useCallback(
-    (selectedView: TArticleListView) => {
-      dispatch(articlesPageActions.setView(selectedView));
-    },
-    [dispatch],
-  );
-
   useInitialEffect(() => {
-    dispatch(initArticlesPage());
+    dispatch(initArticlesPage(searchParams));
   });
 
   const onLoadNextPart = useCallback(() => {
@@ -58,9 +54,7 @@ const ArticlesPage: FC<IArticlesPageProps> = (props) => {
 
   return (
     <Page isLoading={isLoading} onScrollEnd={onLoadNextPart} className={cn(s.articlesPage, className)}>
-      <div>
-        <ArticleViewSelector view={view} onViewClick={onChangeView} />
-      </div>
+      <ArticlePageFilters />
       <ArticleList view={view} isLoading={isLoading} articles={articles} />
     </Page>
   );

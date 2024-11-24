@@ -2,6 +2,7 @@ import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { CombinedState, Reducer } from 'redux';
+import { TypedUseSelectorHook } from 'react-redux';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 import { userReducer } from '@/entities/User';
 import { createReducerManager } from './reducerManager';
@@ -34,3 +35,4 @@ export const createReduxStore = (initialState?: StateSchema, asyncReducers?: Red
 
 export type RootState = ReturnType<typeof createReduxStore>['getState'];
 export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];
+export type AppSelector = TypedUseSelectorHook<RootState>;

@@ -1,0 +1,19 @@
+.articlePageFilters {
+  opacity: 1;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--primary-color);
+}
+
+.sortWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.searchCard {
+  opacity: 1;
+}

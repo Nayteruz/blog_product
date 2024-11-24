@@ -1,9 +1,22 @@
 import { IUser } from '@/entities/User';
 
+export const ArticleSortField = {
+  VIEWS: 'views',
+  TITLE: 'title',
+  CREATED_AT: 'createdAt',
+} as const;
+
+export type TArticleSortField = (typeof ArticleSortField)[keyof typeof ArticleSortField];
+
 export const ArticleBlockType = {
+  ALL: 'All',
   IT: 'IT',
-  SCIENCE: 'SCIENCE',
-  EXONOMICS: 'EXONOMICS',
+  SCIENCE: 'Science',
+  SECURITY: 'Security',
+  AI: 'AI',
+  FINANCE: 'Finance',
+  TELECOMMUNICATIONS: 'Telecommunications',
+  ENTERTAINMENT: 'Entertainment',
 } as const;
 
 export type TArticleBlockType = (typeof ArticleBlockType)[keyof typeof ArticleBlockType];

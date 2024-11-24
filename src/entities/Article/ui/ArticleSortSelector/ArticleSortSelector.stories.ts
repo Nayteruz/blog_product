@@ -1,23 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { CommentCard } from './CommentCard';
+import { ArticleSortSelector } from './ArticleSortSelector';
 import { defaultDark, ThemeDecorator } from '@/shared/config/storybook';
+import { ArticleSortField } from '../../model/types/article';
 
 const meta = {
-  title: 'Entities/Comment/CommentCard',
-  component: CommentCard,
+  title: 'Entities/Article/ArticleSortSelector',
+  component: ArticleSortSelector,
   tags: ['autodocs'],
   argTypes: {},
   args: {
-    comment: {
-      id: '1',
-      text: 'Comment text',
-      user: {
-        id: '1',
-        username: 'username',
-      },
-    },
+    sort: ArticleSortField.CREATED_AT,
+    order: 'asc',
+    onChangeOrder: () => {},
+    onChangeSort: () => {},
   },
-} satisfies Meta<typeof CommentCard>;
+} satisfies Meta<typeof ArticleSortSelector>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -29,5 +26,3 @@ export const Dark: Story = {
   args: {},
   decorators: [ThemeDecorator('dark')],
 };
-
-export const IsLoading: Story = { args: { isLoading: true } };

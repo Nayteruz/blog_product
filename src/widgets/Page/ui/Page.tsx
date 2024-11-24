@@ -9,8 +9,8 @@ import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 import { getUIScrollByPath, uiSliceActions } from '@/features/UI';
 import { StateSchema } from '@/app/providers/StoryProvider';
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
-import s from './Page.module.scss';
 import { useDebounce } from '@/shared/hooks/useDebounce';
+import s from './Page.module.scss';
 
 interface IPageProps {
   children: ReactNode;
@@ -57,7 +57,7 @@ export const Page: FC<IPageProps> = (props) => {
   return (
     <section ref={wrapperRef} style={style} className={cn(s.page, className)} onScroll={scrollDebounced}>
       {children}
-      <div ref={triggerRef} />
+      {onScrollEnd && <div className={s.trigger} ref={triggerRef} />}
     </section>
   );
 };

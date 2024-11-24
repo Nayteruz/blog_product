@@ -5,6 +5,8 @@ export { Modal } from './Modal/Modal';
 export { Portal } from './Portal/Portal';
 export { Avatar } from './Avatar/Avatar';
 export { Select } from './Select/Select';
+export type { ISelectOption } from './Select/Select';
 export { Skeleton } from './Skeleton/Skeleton';
 export { Icon } from './Icon/Icon';
 export type { TIcon } from './Icon/Icon';
+export { Tabs } from './Tabs/Tabs';

@@ -3,7 +3,7 @@ import { CommentList } from './CommentList';
 import { defaultDark, ThemeDecorator } from '@/shared/config/storybook';
 
 const meta = {
-  title: 'Entities/CommentList',
+  title: 'Entities/Comment/CommentList',
   component: CommentList,
   tags: ['autodocs'],
   argTypes: {},
@@ -32,7 +32,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {args: {},};
+export const Normal: Story = { args: {} };
 
 export const Dark: Story = {
   ...defaultDark,
@@ -40,6 +40,6 @@ export const Dark: Story = {
   decorators: [ThemeDecorator('dark')],
 };
 
-export const IsLoading: Story = {args: {isLoading: true,},};
+export const IsLoading: Story = { args: { isLoading: true } };
 
-export const NoComments: Story = {args: {comments: [],},};
+export const NoComments: Story = { args: { comments: [] } };

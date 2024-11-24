@@ -49,5 +49,16 @@
   "Your comment": "Ваш комментарий",
   "Send comment": "Отправить",
   "Read more": "Читать далее ...",
-  "Back to article list": "Вернуться к списку статей"
+  "Back to article list": "Вернуться к списку статей",
+  "Sort by": "Сортировать по",
+  "Search": "Поиск ...",
+  "View by": "по",
+  "Ascending": "возрастанию",
+  "Descending": "убыванию",
+  "sort by title": "заголовку",
+  "sort by views": "просмотрам",
+  "sort by created": "дате создания",
+  "All": "Все",
+  "Articles not found": "Статьи не найдены",
+  "Articles not found text": "Статьи не найдены. Попробуйте изменить параметры фильтрации"
 }

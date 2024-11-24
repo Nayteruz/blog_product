@@ -1,23 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { CommentCard } from './CommentCard';
+import { ArticleTypeTabs } from './ArticleTypeTabs';
 import { defaultDark, ThemeDecorator } from '@/shared/config/storybook';
 
 const meta = {
-  title: 'Entities/Comment/CommentCard',
-  component: CommentCard,
+  title: 'Emtities/Article/ArticleTypeTabs',
+  component: ArticleTypeTabs,
   tags: ['autodocs'],
   argTypes: {},
-  args: {
-    comment: {
-      id: '1',
-      text: 'Comment text',
-      user: {
-        id: '1',
-        username: 'username',
-      },
-    },
-  },
-} satisfies Meta<typeof CommentCard>;
+  args: {},
+} satisfies Meta<typeof ArticleTypeTabs>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -29,5 +20,3 @@ export const Dark: Story = {
   args: {},
   decorators: [ThemeDecorator('dark')],
 };
-
-export const IsLoading: Story = { args: { isLoading: true } };

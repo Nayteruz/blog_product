@@ -34,7 +34,7 @@ const mockArticle = {
 } as IArticle;
 
 const meta = {
-  title: 'Entities/ArticleListItem',
+  title: 'Entities/Article/ArticleListItem',
   component: ArticleListItem,
   tags: ['autodocs'],
   argTypes: {},

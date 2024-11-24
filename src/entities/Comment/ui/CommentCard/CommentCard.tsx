@@ -27,8 +27,7 @@ export const CommentCard: FC<ICommentCardProps> = memo((props) => {
 
   return (
     <div className={cn(s.commentCard, className)}>
-      {comment.user.avatar
-      && (
+      {comment.user.avatar && (
         <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={s.avatar}>
           <Avatar size={30} src={comment.user.avatar || ''} />
         </AppLink>

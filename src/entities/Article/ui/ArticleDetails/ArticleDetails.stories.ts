@@ -97,11 +97,11 @@ const article: IArticle = {
 };
 
 const meta = {
-  title: 'Entities/ArticleDetails',
+  title: 'Entities/Article/ArticleDetails',
   component: ArticleDetails,
   tags: ['autodocs'],
   argTypes: {},
-  args: {id: '1',},
+  args: { id: '1' },
   decorators: [
     StoryDecorator({
       articleDetails: {
@@ -118,17 +118,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {};
 
-export const Loading: Story = {
-  decorators: [
-    StoryDecorator({articleDetails: {isLoading: true,},}),
-  ],
-};
+export const Loading: Story = {decorators: [StoryDecorator({ articleDetails: { isLoading: true } })],};
 
-export const Error: Story = {
-  decorators: [
-    StoryDecorator({articleDetails: {error: 'Some test error',},}),
-  ],
-};
+export const Error: Story = {decorators: [StoryDecorator({ articleDetails: { error: 'Some test error' } })],};
 
 export const Dark: Story = {
   ...defaultDark,

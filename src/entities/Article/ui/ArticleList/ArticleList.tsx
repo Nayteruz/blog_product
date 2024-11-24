@@ -1,9 +1,11 @@
 import { FC, memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { cn } from '@/shared/lib';
 import s from './ArticleList.module.scss';
 import { IArticle, TArticleListView, ArticleListView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
+import { Text } from '@/shared/ui/Text';
 
 interface IArticleListProps {
   className?: string;
@@ -21,9 +23,18 @@ const getSkeletons = (view: TArticleListView) => {
 };
 
 export const ArticleList: FC<IArticleListProps> = memo((props) => {
+  const { t } = useTranslation();
   const { className, articles, isLoading, view = ArticleListView.SIMPLE } = props;
 
   const renderArticle = (article: IArticle) => <ArticleListItem article={article} view={view} key={article.id} />;
+
+  if (!isLoading && !articles.length) {
+    return (
+      <div className={cn(s.articleList, className, s[view])}>
+        <Text size={24} title={t('Articles not found')} text={t('Articles not found text')} />
+      </div>
+    );
+  }
 
   return (
     <div className={cn(s.articleList, className, s[view])}>

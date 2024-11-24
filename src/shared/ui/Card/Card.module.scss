@@ -1,5 +1,24 @@
 .card {
-  padding: 15px;
   border-radius: 12px;
+}
+
+.smallSize {
+  padding: 5px;
+  border-radius: 6px;
+}
+
+.normalSize {
+  padding: 15px;
+}
+
+.largeSize {
+  padding: 25px;
+}
+
+.normal {
   background: var(--card-bg);
+}
+
+.outlined {
+  border: 1px solid var(--primary-color);
 }

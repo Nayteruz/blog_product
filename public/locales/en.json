@@ -48,5 +48,16 @@
   "Your comment": "Your comment",
   "Send comment": "Send",
   "Read more": "Read more ...",
-  "Back to article list": "Back to list"
+  "Back to article list": "Back to list",
+  "Sort by": "Sort by",
+  "Search": "Search ...",
+  "View by": "by",
+  "Ascending": "ascending",
+  "Descending": "descending",
+  "sort by title": "title",
+  "sort by views": "views",
+  "sort by created": "created at",
+  "All": "All",
+  "Articles not found": "Articles not found",
+  "Articles not found text": "Articles not found. Try to change filters"
 }
