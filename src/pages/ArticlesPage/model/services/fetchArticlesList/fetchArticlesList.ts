@@ -42,7 +42,7 @@ export const fetchArticlesList = createAsyncThunk<IArticle[], IFetchArticlesList
           _sort: sort,
           _order: order,
           q: search,
-          type: type === ArticleBlockType.ALL ? undefined : type,
+          type_like: type === ArticleBlockType.ALL ? undefined : type,
         },
       });
 
