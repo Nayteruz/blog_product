@@ -14,7 +14,7 @@ server.use(jsonServer.bodyParser);
 // Нужно для небольшой задержки, чтобы запрос проходил не мгновенно, имитация реального апи
 server.use(async (req, res, next) => {
   // eslint-disable-next-line no-shadow
-  await new Promise(res => {
+  await new Promise((res) => {
     setTimeout(res, 800);
   });
   next();
@@ -43,7 +43,7 @@ server.post('/login', (req, res) => {
 // проверяем, авторизован ли пользователь
 // eslint-disable-next-line
 server.use((req, res, next) => {
-  if (!req.headers.authorization) {
+  if (!req.headers.Authorization) {
     return res.status(403).json({ message: 'AUTH ERROR' });
   }
 
