@@ -1,4 +1,4 @@
-import { FC, memo } from 'react';
+import { FC, HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { cn } from '@/shared/lib';
 import s from './ArticleList.module.scss';
@@ -12,6 +12,7 @@ interface IArticleListProps {
   articles: IArticle[];
   isLoading?: boolean;
   view?: TArticleListView;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 const getSkeletons = (view: TArticleListView) => {
@@ -24,9 +25,11 @@ const getSkeletons = (view: TArticleListView) => {
 
 export const ArticleList: FC<IArticleListProps> = memo((props) => {
   const { t } = useTranslation();
-  const { className, articles, isLoading, view = ArticleListView.SIMPLE } = props;
+  const { className, articles, isLoading, view = ArticleListView.SIMPLE, target = '_self' } = props;
 
-  const renderArticle = (article: IArticle) => <ArticleListItem article={article} view={view} key={article.id} />;
+  const renderArticle = (article: IArticle) => (
+    <ArticleListItem article={article} view={view} key={article.id} target={target} />
+  );
 
   if (!isLoading && !articles.length) {
     return (

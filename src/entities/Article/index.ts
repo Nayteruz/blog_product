@@ -12,3 +12,4 @@ export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs';
 export { ArticleListView } from './model/types/article';
 export { ArticleViewType } from './model/types/article';
 export { ArticleBlockType } from './model/types/article';
+export { articleDetailsReducer } from './model/slice/articleDetailsSlice';

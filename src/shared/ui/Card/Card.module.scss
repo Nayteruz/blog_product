@@ -1,18 +1,19 @@
 .card {
   border-radius: 12px;
+  border: 1px solid transparent;
 }
 
 .smallSize {
-  padding: 5px;
+  padding: 2px 5px;
   border-radius: 6px;
 }
 
 .normalSize {
-  padding: 15px;
+  padding: 10px 15px;
 }
 
 .largeSize {
-  padding: 25px;
+  padding: 15px 25px;
 }
 
 .normal {

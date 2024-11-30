@@ -7,10 +7,10 @@ import type { IUserSchema } from '@/entities/User';
 import type { IProfileSchema } from '@/entities/Profile';
 import type { ILoginSchema } from '@/features/AuthByUserName';
 import type { IArticleDetailsSchema } from '@/entities/Article';
-import type { IArticleDetailsCommentsSchema } from '@/pages/ArticleDetailsPage';
 import type { IAddCommentFormSchema } from '@/features/AddCommentForm';
 import { IArticlesPageSchema } from '@/pages/ArticlesPage';
 import { IUISchema } from '@/features/UI';
+import { IArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 
 export interface StateSchema {
   user: IUserSchema;
@@ -19,9 +19,9 @@ export interface StateSchema {
   loginForm?: ILoginSchema;
   profile?: IProfileSchema;
   articleDetails?: IArticleDetailsSchema;
-  articleDetailsComments?: IArticleDetailsCommentsSchema;
   addCommentForm?: IAddCommentFormSchema;
   articlesPage?: IArticlesPageSchema;
+  articleDetailsPage?: IArticleDetailsPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

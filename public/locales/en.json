@@ -59,5 +59,6 @@
   "sort by created": "created at",
   "All": "All",
   "Articles not found": "Articles not found",
-  "Articles not found text": "Articles not found. Try to change filters"
+  "Articles not found text": "Articles not found. Try to change filters",
+  "Recommendations": "Recommendations articles"
 }

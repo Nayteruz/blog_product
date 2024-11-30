@@ -4,10 +4,10 @@ import { StateSchema } from '@/app/providers/StoryProvider';
 import { IArticleDetailsCommentsSchema } from '../types/articleDetailsCommentsSchema';
 import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 
-const commentsAdapter = createEntityAdapter<IComment>({selectId: comment => comment.id,});
+const commentsAdapter = createEntityAdapter<IComment>({ selectId: comment => comment.id });
 
 export const getArticleComments = commentsAdapter.getSelectors<StateSchema>(
-  state => state.articleDetailsComments || commentsAdapter.getInitialState(),
+  state => state.articleDetailsPage?.comments || commentsAdapter.getInitialState(),
 );
 
 const articleDetailsCommentsSlice = createSlice({

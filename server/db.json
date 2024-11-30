@@ -834,6 +834,18 @@
       "userId": "1",
       "text": "new comment 2",
       "id": "SahMYRU"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "test comment",
+      "id": "oADK9m1"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "new test comment",
+      "id": "Zs4CoS0"
     }
   ]
 }

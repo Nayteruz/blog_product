@@ -5,7 +5,23 @@
   flex-direction: column;
 }
 
+.recommendationTitle {
+  margin-top: 20px;
+}
+
+.recommendationList {
+  margin-top: 20px;
+  flex-wrap: nowrap;
+  overflow: auto hidden;
+  flex: 0 0 auto;
+  padding: 10px 0;
+}
+
 .commentTitle {
+  margin-top: 20px;
+}
+
+.commentForm {
   margin-top: 20px;
 }
 

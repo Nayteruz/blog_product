@@ -10,6 +10,8 @@
   width: 230px;
   transition: all 0.2s;
   cursor: pointer;
+  flex: 0 0 auto;
+  text-decoration: none;
 
   .date {
     position: absolute;
