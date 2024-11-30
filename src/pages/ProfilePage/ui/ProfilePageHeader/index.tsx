@@ -1,8 +1,7 @@
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { Text } from '@/shared/ui/Text';
-import { Button } from '@/shared/ui';
+import { Text, Button } from '@/shared/ui';
 import { cn } from '@/shared/lib';
 import s from './index.module.scss';
 import {
@@ -41,23 +40,21 @@ export const ProfilePageHeader: FC<IIndexProps> = ({ className }) => {
   return (
     <div className={cn(s.header, className)}>
       <Text title={t('Profile title')} />
-      {canEdit && (
-        isReadOnly ? (
+      {canEdit &&
+        (isReadOnly ? (
           <Button theme="outline" className={s.editBtn} onClick={onEdit}>
             {t('Edit profile')}
           </Button>
-        )
-          : (
-            <>
-              <Button theme="outlineRed" className={s.editBtn} onClick={onCancel}>
-                {t('Cancel edit profile')}
-              </Button>
-              <Button theme="outline" className={s.saveBtn} onClick={onSave}>
-                {t('Save profile')}
-              </Button>
-            </>
-          )
-      )}
+        ) : (
+          <>
+            <Button theme="outlineRed" className={s.editBtn} onClick={onCancel}>
+              {t('Cancel edit profile')}
+            </Button>
+            <Button theme="outline" className={s.saveBtn} onClick={onSave}>
+              {t('Save profile')}
+            </Button>
+          </>
+        ))}
     </div>
   );
 };

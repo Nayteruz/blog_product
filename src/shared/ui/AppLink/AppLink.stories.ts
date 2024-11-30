@@ -13,7 +13,9 @@ const meta = {
       options: ['primary', 'secondary'],
       defaultValue: 'primary',
     },
-    children: { control: 'text', defaultValue: 'Link' },
+    children: {
+      control: 'text', defaultValue: 'Link' 
+    },
   },
   args: {
     children: 'Link',

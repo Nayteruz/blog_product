@@ -46,13 +46,22 @@ module.exports = {
         unnamedComponents: 'arrow-function',
       },
     ],
-    'react/jsx-props-no-spreading': ['warn', { exceptions: ['input', 'button', 'select', 'SvgIcon'] }],
-    'no-underscore-dangle': [2, { allow: ['_d', '__IS_DEV__', '__API__', '__PROJECT__', '_inited'] }],
+    'react/jsx-props-no-spreading': [
+      'warn',
+      { exceptions: ['input', 'button', 'select', 'SvgIcon'] },
+    ],
+    'no-underscore-dangle': [
+      2,
+      { allow: ['_d', '__IS_DEV__', '__API__', '__PROJECT__', '_inited'] },
+    ],
     quotes: ['error', 'single', { avoidEscape: true }],
     'max-len': [
       2,
       {
         ignoreComments: true,
+        ignoreStrings: true,
+        ignoreUrls: true,
+        ignoreTemplateLiterals: true,
         code: 120,
       },
     ],
@@ -82,14 +91,17 @@ module.exports = {
       {
         ObjectExpression: {
           multiline: true,
-          minProperties: 4,
+          minProperties: 2,
         },
         ObjectPattern: { multiline: true },
         ImportDeclaration: {
           multiline: true,
           minProperties: 4,
         },
-        ExportDeclaration: 'never',
+        ExportDeclaration: {
+          multiline: true,
+          minProperties: 2,
+        },
       },
     ],
     'arrow-parens': [1, 'as-needed', { requireForBlockBody: true }],
@@ -102,10 +114,7 @@ module.exports = {
   overrides: [
     {
       files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
-      rules: {
-        'i18next/no-literal-string': 'off',
-        'max-len': 'off',
-      },
+      rules: { 'i18next/no-literal-string': 'off' },
     },
   ],
 };

@@ -36,7 +36,13 @@ describe('updateProfileData', () => {
   });
 
   test('validate error', async () => {
-    const thunk = createTestAsyncThunk(updateProfileData, { profile: { form: { ...data, lastname: '' } } });
+    const thunk = createTestAsyncThunk(updateProfileData, {
+      profile: {
+        form: {
+          ...data, lastname: '' 
+        } 
+      } 
+    });
     const result = await thunk.callThunk();
 
     expect(result.meta.requestStatus).toBe('rejected');
@@ -44,7 +50,13 @@ describe('updateProfileData', () => {
   });
 
   test('validate multiple error', async () => {
-    const thunk = createTestAsyncThunk(updateProfileData, {profile: { form: { ...data, lastname: '', age: undefined } },});
+    const thunk = createTestAsyncThunk(updateProfileData, {
+      profile: {
+        form: {
+          ...data, lastname: '', age: undefined 
+        } 
+      },
+    });
     const result = await thunk.callThunk();
 
     expect(result.meta.requestStatus).toBe('rejected');

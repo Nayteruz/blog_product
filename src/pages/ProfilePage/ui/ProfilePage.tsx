@@ -17,7 +17,7 @@ import {
 } from '@/entities/Profile';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 import { ProfilePageHeader } from './ProfilePageHeader';
-import { Text } from '@/shared/ui/Text';
+import { Text } from '@/shared/ui';
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
 import { Page } from '@/widgets/Page';
 

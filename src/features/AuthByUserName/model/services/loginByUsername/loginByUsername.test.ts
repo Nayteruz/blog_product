@@ -6,11 +6,15 @@ jest.mock('axios');
 
 describe('loginByUsername', () => {
   test('success login', async () => {
-    const userValue = { username: '123', id: '1' };
+    const userValue = {
+      username: '123', id: '1' 
+    };
 
     const thunk = createTestAsyncThunk(loginByUsername);
     thunk.api.post.mockReturnValue(Promise.resolve({ data: userValue }));
-    const result = await thunk.callThunk({ username: '123', password: '123' });
+    const result = await thunk.callThunk({
+      username: '123', password: '123' 
+    });
 
     expect(thunk.dispatch).toHaveBeenCalledTimes(3);
     expect(thunk.dispatch).toHaveBeenCalledWith(userActions.setAuthData(userValue));
@@ -22,7 +26,9 @@ describe('loginByUsername', () => {
   test('error login', async () => {
     const thunk = createTestAsyncThunk(loginByUsername);
     thunk.api.post.mockReturnValue(Promise.resolve({ status: 403 }));
-    const result = await thunk.callThunk({ username: '123', password: '123' });
+    const result = await thunk.callThunk({
+      username: '123', password: '123' 
+    });
 
     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
     expect(thunk.api.post).toHaveBeenCalled();

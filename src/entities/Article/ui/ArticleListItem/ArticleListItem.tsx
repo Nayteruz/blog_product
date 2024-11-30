@@ -5,11 +5,13 @@ import { useTranslation } from 'react-i18next';
 import { cn } from '@/shared/lib';
 import s from './ArticleListItem.module.scss';
 import {
-  ArticleListView, ArticleViewType, IArticle, TArticleListView 
+  ArticleListView,
+  ArticleViewType,
+  IArticle,
+  TArticleListView,
 } from '../../model/types/article';
-import { Text } from '@/shared/ui/Text';
 import {
-  AppLink, Avatar, Button, Icon 
+  Text, AppLink, Avatar, Button, Icon 
 } from '@/shared/ui';
 import { Card } from '@/shared/ui/Card/Card';
 import { ArticleTextBlock } from '../TextBlock/TextBlock';
@@ -40,7 +42,11 @@ export const ArticleListItem: FC<IArticleListItemProps> = memo((props) => {
   switch (view) {
   case ArticleListView.LIST:
     return (
-      <AppLink to={linkToArticle} target={target} className={cn(s.articleListItem, className, s[view])}>
+      <AppLink
+        to={linkToArticle}
+        target={target}
+        className={cn(s.articleListItem, className, s[view])}
+      >
         <Card className={s.card}>
           <div className={s.imageWrappper}>
             <img src={article.img} alt={article.title} className={s.image} />

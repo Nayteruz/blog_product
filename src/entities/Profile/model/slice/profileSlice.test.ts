@@ -16,12 +16,16 @@ const data: IProfile = {
 describe('profileSlice', () => {
   test('set readonly', () => {
     const state: DeepPartial<IProfileSchema> = { readonly: false };
-    expect(profileReducer(state as IProfileSchema, profileActions.setReadOnly(true))).toStrictEqual({ readonly: true });
+    expect(profileReducer(state as IProfileSchema, profileActions.setReadOnly(true))).toStrictEqual(
+      { readonly: true },
+    );
   });
 
   test('update profile', () => {
     const state: DeepPartial<IProfileSchema> = { form: { age: 30 } };
-    expect(profileReducer(state as IProfileSchema, profileActions.updateProfile({ age: 32 }))).toStrictEqual({form: { age: 32 },});
+    expect(
+      profileReducer(state as IProfileSchema, profileActions.updateProfile({ age: 32 })),
+    ).toStrictEqual({ form: { age: 32 } });
   });
 
   test('cancel edit', () => {
@@ -54,7 +58,9 @@ describe('profileSlice', () => {
       isLoading: true,
       readonly: false,
     };
-    expect(profileReducer(state as IProfileSchema, updateProfileData.fulfilled(data, ''))).toStrictEqual({
+    expect(
+      profileReducer(state as IProfileSchema, updateProfileData.fulfilled(data, '')),
+    ).toStrictEqual({
       isLoading: false,
       readonly: true,
       data,

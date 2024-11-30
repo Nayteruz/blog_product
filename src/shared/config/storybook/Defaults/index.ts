@@ -14,9 +14,15 @@ export const themes = {
   backgrounds: {
     default: themeNames.LIGHT,
     values: [
-      { name: themeNames.LIGHT, value: colors.LIGHT },
-      { name: themeNames.DARK, value: colors.DARK },
-      { name: themeNames.PURPLE, value: colors.PURPLE },
+      {
+        name: themeNames.LIGHT, value: colors.LIGHT 
+      },
+      {
+        name: themeNames.DARK, value: colors.DARK 
+      },
+      {
+        name: themeNames.PURPLE, value: colors.PURPLE 
+      },
     ],
   },
 };

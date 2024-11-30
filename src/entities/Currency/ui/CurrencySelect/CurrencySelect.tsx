@@ -13,7 +13,9 @@ interface ICurrencySelectProps {
   placeholder?: string;
 }
 
-const currencyList = Object.values(Currency).map(cur => ({ value: cur, label: cur }));
+const currencyList = Object.values(Currency).map(cur => ({
+  value: cur, label: cur 
+}));
 
 export const CurrencySelect: FC<ICurrencySelectProps> = memo((props) => {
   const { t } = useTranslation();

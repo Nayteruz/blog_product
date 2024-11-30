@@ -1,5 +1,5 @@
 import {
-  FC, memo, ReactNode, useCallback, useEffect,
+  FC, memo, ReactNode, useCallback, useEffect 
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -13,8 +13,9 @@ import {
   getArticleDetailsError,
   getArticleDetailsLoading,
 } from '../../model/selectors/articleDetails';
-import { Text } from '@/shared/ui/Text';
-import { Avatar, Skeleton, Icon } from '@/shared/ui';
+import {
+  Text, Avatar, Skeleton, Icon 
+} from '@/shared/ui';
 import s from './ArticleDetails.module.scss';
 import { ArticleViewType, TArticleBlock } from '../../model/types/article';
 import { ArticleCodeBlock } from '../CodeBlock/CodeBlock';
@@ -31,15 +32,11 @@ interface IArticleContentProps {
   className?: string;
 }
 
-const reducers: ReducersList = {articleDetails: articleDetailsReducer,};
+const reducers: ReducersList = { articleDetails: articleDetailsReducer };
 
 const ArticleContent: FC<IArticleContentProps> = (props) => {
   const { children, className } = props;
-  return (
-    <div className={className}>
-      {children}
-    </div>
-  );
+  return <div className={className}>{children}</div>;
 };
 
 export const ArticleDetails: FC<IArticleDetailsProps> = memo(({ className, id }) => {

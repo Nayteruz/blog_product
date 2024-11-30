@@ -27,7 +27,9 @@ const meta = {
       control: 'radio',
       options: ['M', 'L', 'XL'],
     },
-    children: { control: 'text', defaultValue: 'Button' },
+    children: {
+      control: 'text', defaultValue: 'Button' 
+    },
   },
   args: {children: 'Button',},
 } satisfies Meta<typeof Button>;

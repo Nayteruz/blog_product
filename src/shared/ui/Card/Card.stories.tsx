@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Text } from '@/shared/ui/Text';
+import { Text } from '@/shared/ui';
 import { Card } from './Card';
 import { defaultDark, defaultPurple, ThemeDecorator } from '@/shared/config/storybook';
 

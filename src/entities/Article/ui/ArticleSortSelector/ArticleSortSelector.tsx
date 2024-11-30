@@ -22,17 +22,27 @@ export const ArticleSortSelector: FC<IArticleSortSelectorProps> = memo((props) =
 
   const orderOptions = useMemo<ISelectOption<TSortOrder>[]>(
     () => [
-      { value: 'asc', label: t('Ascending') },
-      { value: 'desc', label: t('Descending') },
+      {
+        value: 'asc', label: t('Ascending') 
+      },
+      {
+        value: 'desc', label: t('Descending') 
+      },
     ],
     [t],
   );
 
   const sortFieldOptions = useMemo<ISelectOption<TArticleSortField>[]>(
     () => [
-      { value: ArticleSortField.CREATED_AT, label: t('sort by created') },
-      { value: ArticleSortField.TITLE, label: t('sort by title') },
-      { value: ArticleSortField.VIEWS, label: t('sort by views') },
+      {
+        value: ArticleSortField.CREATED_AT, label: t('sort by created') 
+      },
+      {
+        value: ArticleSortField.TITLE, label: t('sort by title') 
+      },
+      {
+        value: ArticleSortField.VIEWS, label: t('sort by views') 
+      },
     ],
     [t],
   );

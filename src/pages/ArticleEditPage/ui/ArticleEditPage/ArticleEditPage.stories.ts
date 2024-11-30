@@ -1,18 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
-import { ArticleTypeTabs } from './ArticleTypeTabs';
+import ArticleEditPage from './ArticleEditPage';
 import { defaultDark, ThemeDecorator } from '@/shared/config/storybook';
-import { ArticleBlockType } from '../../model/types/article';
 
 const meta = {
-  title: 'Emtities/Article/ArticleTypeTabs',
-  component: ArticleTypeTabs,
+  title: 'Pages/ArticleEditPage',
+  component: ArticleEditPage,
   tags: ['autodocs'],
   argTypes: {},
-  args: {
-    type: ArticleBlockType.ALL, onChangeType: fn() 
-  },
-} satisfies Meta<typeof ArticleTypeTabs>;
+  args: {},
+} satisfies Meta<typeof ArticleEditPage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

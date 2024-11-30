@@ -61,5 +61,8 @@
   "All": "Все",
   "Articles not found": "Статьи не найдены",
   "Articles not found text": "Статьи не найдены. Попробуйте изменить параметры фильтрации",
-  "Recommendations": "Рекомендуемые статьи"
+  "Recommendations": "Рекомендуемые статьи",
+  "Edit article page": "Редактировать статью",
+  "Create article": "Добавить статью",
+  "Edit article": "Редактировать статью"
 }

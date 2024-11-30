@@ -19,7 +19,9 @@ const meta = {
     // @ts-ignore
     container: null,
     isOpen: true,
-    style: { position: 'static', minHeight: '500px', display: 'grid' },
+    style: {
+      position: 'static', minHeight: '500px', display: 'grid' 
+    },
   },
 } satisfies Meta<typeof Modal>;
 

@@ -1,10 +1,10 @@
 import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { cn } from '@/shared/lib';
 import { ArticleDetails, ArticleList } from '@/entities/Article';
-import { Text } from '@/shared/ui/Text';
+import { Text } from '@/shared/ui';
 import { CommentList } from '@/entities/Comment';
 import s from './ArticleDetailsPage.module.scss';
 import { ReducersList, useDynamicReducer } from '@/shared/hooks/useDynamicReducer';
@@ -16,13 +16,11 @@ import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
 import { AddCommentForm } from '@/features/AddCommentForm';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { Page } from '@/widgets/Page';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
-import { Button } from '@/shared/ui';
 import { getArticleRecommendations } from '../../model/slices/articleDetailsPageRecommendationsSlice';
-// eslint-disable-next-line max-len
 import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
 import { articleDetailsPageReducer } from '../../model/slices';
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
 interface IArticleDetailsPageProps {
   className?: string;
@@ -33,7 +31,6 @@ const reducers: ReducersList = { articleDetailsPage: articleDetailsPageReducer }
 const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
   const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const comments = useSelector(getArticleComments.selectAll);
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
@@ -49,10 +46,6 @@ const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
     [dispatch],
   );
 
-  const navigateToList = useCallback(() => {
-    navigate(RoutePath.articles);
-  }, [navigate]);
-
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
     dispatch(fetchArticleRecommendations());
@@ -64,9 +57,7 @@ const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
 
   return (
     <Page className={cn(s.articleDetailsPage, className)}>
-      <Button className={s.back} onClick={navigateToList}>
-        {t('Back to article list')}
-      </Button>
+      <ArticleDetailsPageHeader />
       <ArticleDetails id={id || '0'} />
       <Text size={24} className={s.recommendationTitle} title={t('Recommendations')} />
       <ArticleList

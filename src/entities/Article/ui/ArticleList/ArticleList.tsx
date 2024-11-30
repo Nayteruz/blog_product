@@ -5,7 +5,7 @@ import s from './ArticleList.module.scss';
 import { IArticle, TArticleListView, ArticleListView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
-import { Text } from '@/shared/ui/Text';
+import { Text } from '@/shared/ui';
 
 interface IArticleListProps {
   className?: string;

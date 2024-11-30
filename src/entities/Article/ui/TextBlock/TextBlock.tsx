@@ -1,7 +1,7 @@
 import { FC, memo } from 'react';
 import { cn } from '@/shared/lib';
 import s from './TextBlock.module.scss';
-import { Text } from '@/shared/ui/Text';
+import { Text } from '@/shared/ui';
 import { IArticleTextBlock } from '../../model/types/article';
 
 interface ITextBlockProps {

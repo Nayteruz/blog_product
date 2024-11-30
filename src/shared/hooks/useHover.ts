@@ -13,5 +13,7 @@ export const useHover = (): UseHoverResult => {
   const onMouseEnter = useCallback(() => setIsHovered(true), []);
   const onMouseLeave = useCallback(() => setIsHovered(false), []);
 
-  return useMemo(() => [isHovered, { onMouseEnter, onMouseLeave }], [isHovered, onMouseEnter, onMouseLeave]);
+  return useMemo(() => [isHovered, {
+    onMouseEnter, onMouseLeave 
+  }], [isHovered, onMouseEnter, onMouseLeave]);
 };

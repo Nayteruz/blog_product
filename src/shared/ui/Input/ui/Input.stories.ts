@@ -7,7 +7,11 @@ const meta = {
   title: 'Shared/Input',
   component: Input,
   tags: ['autodocs'],
-  argTypes: {children: { control: 'text', defaultValue: '' },},
+  argTypes: {
+    children: {
+      control: 'text', defaultValue: '' 
+    },
+  },
 } satisfies Meta<typeof Input>;
 
 export default meta;

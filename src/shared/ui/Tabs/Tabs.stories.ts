@@ -17,9 +17,15 @@ const meta = {
   },
   args: {
     tabs: [
-      { value: '1', content: 'Tab 1' },
-      { value: '2', content: 'Tab 2' },
-      { value: '3', content: 'Tab 3' },
+      {
+        value: '1', content: 'Tab 1' 
+      },
+      {
+        value: '2', content: 'Tab 2' 
+      },
+      {
+        value: '3', content: 'Tab 3' 
+      },
     ],
     value: '1',
     onTabClick: fn(),

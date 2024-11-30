@@ -2,7 +2,7 @@ import { FC, memo } from 'react';
 import { cn } from '@/shared/lib';
 import s from './ImageBlock.module.scss';
 import { IArticleImageBlock } from '../../model/types/article';
-import { Text } from '@/shared/ui/Text';
+import { Text } from '@/shared/ui';
 
 interface IImageBlockProps {
   className?: string;

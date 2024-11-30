@@ -1,21 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Page } from './Page';
+import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';
 import { defaultDark, ThemeDecorator } from '@/shared/config/storybook';
 
 const meta = {
-  title: 'Widgets/Page',
-  component: Page,
+  title: 'nonGroup/ArticleDetailsPageHeader',
+  component: ArticleDetailsPageHeader,
   tags: ['autodocs'],
   argTypes: {},
-  args: {
-    children: <div>Page children in div element</div>, style: { height: 250 } 
-  },
-} satisfies Meta<typeof Page>;
+  args: {},
+} satisfies Meta<typeof ArticleDetailsPageHeader>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = { args: {} };
+export const Normal: Story = {args: {},};
 
 export const Dark: Story = {
   ...defaultDark,

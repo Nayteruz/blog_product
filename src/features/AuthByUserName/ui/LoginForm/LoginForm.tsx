@@ -1,15 +1,14 @@
 import {
-  ChangeEvent, FC, memo, useCallback,
+  ChangeEvent, FC, memo, useCallback 
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { cn } from '@/shared/lib';
-import { Button } from '@/shared/ui';
+import { Button, Text } from '@/shared/ui';
 import { Input } from '@/shared/ui/Input/ui/Input';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
-import { Text } from '@/shared/ui/Text';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 import { ReducersList, useDynamicReducer } from '@/shared/hooks/useDynamicReducer';
 import s from './LoginForm.module.scss';
@@ -19,13 +18,13 @@ export interface ILoginFormProps {
   onSuccess?: () => void;
 }
 
-const initialReducers: ReducersList = {loginForm: loginReducer,};
+const initialReducers: ReducersList = { loginForm: loginReducer };
 
 const LoginForm: FC<ILoginFormProps> = memo(({ className, onSuccess }) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
 
-  const {username, password, error, isLoading,} = useSelector(getLoginState);
+  const { username, password, error, isLoading } = useSelector(getLoginState);
 
   useDynamicReducer(initialReducers);
 
@@ -44,7 +43,12 @@ const LoginForm: FC<ILoginFormProps> = memo(({ className, onSuccess }) => {
   );
 
   const onLogin = useCallback(async () => {
-    const result = await dispatch(loginByUsername({ username, password }));
+    const result = await dispatch(
+      loginByUsername({
+        username,
+        password,
+      }),
+    );
 
     if (result.meta.requestStatus === 'fulfilled') {
       onSuccess?.();
@@ -55,7 +59,13 @@ const LoginForm: FC<ILoginFormProps> = memo(({ className, onSuccess }) => {
     <div className={cn(s.loginForm, className)}>
       <Text title={t('Login title')} />
       {error && <Text text={t(error)} theme="error" />}
-      <Input placeholder={t('Username')} title={t('Username')} autofocus onChange={onChangeUsername} value={username} />
+      <Input
+        placeholder={t('Username')}
+        title={t('Username')}
+        autofocus
+        onChange={onChangeUsername}
+        value={username}
+      />
       <Input
         type="password"
         placeholder={t('Password')}

@@ -1,8 +1,7 @@
-import {ChangeEvent, FC, useCallback,} from 'react';
+import { ChangeEvent, FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { cn } from '@/shared/lib';
-import { Text } from '@/shared/ui/Text';
-import { Avatar, Loader } from '@/shared/ui';
+import { Text, Avatar, Loader } from '@/shared/ui';
 import { Input } from '@/shared/ui/Input/ui/Input';
 import { IProfile } from '../../model/types/profile';
 import s from './ProfileCard.module.scss';
@@ -23,15 +22,26 @@ interface IProfileCardProps {
   onChangeData?: (props: IChangeData) => void;
 }
 
-export const ProfileCard: FC<IProfileCardProps> = ({className, data, isLoading, error, isReadOnly, onChangeData,}) => {
+export const ProfileCard: FC<IProfileCardProps> = ({
+  className,
+  data,
+  isLoading,
+  error,
+  isReadOnly,
+  onChangeData,
+}) => {
   const { t } = useTranslation();
 
   const onChange = useCallback(
-  <T extends HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>(e: ChangeEvent<T>) => {
-    const { name, value, type } = e.target;
-    onChangeData?.({ name, value, type });
-  },
-  [onChangeData],
+    <T extends HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>(e: ChangeEvent<T>) => {
+      const { name, value, type } = e.target;
+      onChangeData?.({
+        name,
+        value,
+        type,
+      });
+    },
+    [onChangeData],
   );
 
   if (isLoading) {

@@ -2,8 +2,9 @@ import { FC, memo } from 'react';
 import { cn } from '@/shared/lib';
 import s from './CommentCard.module.scss';
 import { IComment } from '../../model/types/comment';
-import { AppLink, Avatar, Skeleton } from '@/shared/ui';
-import { Text } from '@/shared/ui/Text';
+import {
+  AppLink, Avatar, Skeleton, Text 
+} from '@/shared/ui';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 
 interface ICommentCardProps {

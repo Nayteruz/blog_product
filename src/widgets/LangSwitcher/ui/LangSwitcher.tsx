@@ -11,8 +11,12 @@ interface ILangProps {
 }
 
 const languageList = [
-  { lang: 'ru', name: 'RU', icon: RuIcon },
-  { lang: 'en', name: 'EN', icon: EnIcon },
+  {
+    lang: 'ru', name: 'RU', icon: RuIcon 
+  },
+  {
+    lang: 'en', name: 'EN', icon: EnIcon 
+  },
 ];
 
 export const LangSwitcher: FC<ILangProps> = memo(({ className }) => {
