@@ -51,6 +51,7 @@ export const Navbar: FC<INavbarProps> = memo(({ className, style }) => {
 
   return (
     <header className={cn(s.navbar, className)}>
+      <Text className={s.appName} title="My blog app" theme="inverted" />
       <Button className={s.links} theme="clearInverted" style={style} onClick={onOpen}>
         {t('Sign in')}
       </Button>

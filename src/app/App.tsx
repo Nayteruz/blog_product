@@ -8,7 +8,9 @@ import { Footer } from '@/widgets/Footer';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 import { getUserInited, userActions } from '@/entities/User';
 
-function App() {
+// https://blog-prod.netlify.app/  мое приложение в сети
+
+const App = () => {
   const dispatch = useAppDispatch();
   const inited = useSelector(getUserInited);
 
@@ -28,6 +30,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;

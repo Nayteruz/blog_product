@@ -43,7 +43,16 @@ server.post('/login', (req, res) => {
 // проверяем, авторизован ли пользователь
 // eslint-disable-next-line
 server.use((req, res, next) => {
-  if (!req.headers.Authorization) {
+  const authHeader = req.headers.authorization;
+  let user;
+
+  try {
+    user = JSON.parse(authHeader);
+  } catch (e) {
+    return res.status(400).json({ message: 'Invalid authorization format' });
+  }
+
+  if (!user || !user.username || !user.password) {
     return res.status(403).json({ message: 'AUTH ERROR' });
   }
 
