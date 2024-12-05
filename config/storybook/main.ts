@@ -16,22 +16,12 @@ const configStorybook: StorybookConfig = {
     name: '@storybook/react-webpack5',
     options: {},
   },
-  core: {
-    disableTelemetry: true,
-  },
-  swc: () => ({
-    jsc: {
-      transform: {
-        react: {
-          runtime: 'automatic',
-        },
-      },
-    },
-  }),
+  core: { disableTelemetry: true },
+  swc: () => ({ jsc: { transform: { react: { runtime: 'automatic' } } } }),
   webpackFinal(config) {
     return webpackConfig(config);
   },
-  previewBody: (body) => `
+  previewBody: body => `
     <div class="theme">${body}</div>
     `,
 };

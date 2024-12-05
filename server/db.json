@@ -30,11 +30,11 @@
   "profile": [
     {
       "id": "1",
-      "first": "Alex2222",
+      "first": "Alex",
       "lastname": "Pankov",
       "age": 50,
       "currency": "EUR",
-      "country": "UK",
+      "country": "Russia",
       "city": "Barnaul333333",
       "username": "admin333333",
       "avatar": "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg"
@@ -60,7 +60,9 @@
       "views": 1500,
       "createdAt": 1698833600,
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -146,7 +148,9 @@
       "img": "https://vuejs.org/images/logo.png",
       "views": 1800,
       "createdAt": 1655833600,
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "userId": "1",
       "blocks": [
         {
@@ -172,7 +176,9 @@
       "img": "https://www.rust-lang.org/static/images/rust-logo-blk.svg",
       "views": 620,
       "createdAt": 1665833600,
-      "type": ["Science"],
+      "type": [
+        "Science"
+      ],
       "userId": "1",
       "blocks": [
         {
@@ -198,7 +204,9 @@
       "img": "https://www.oracle.com/a/ocom/img/cb71-java-logo.png",
       "views": 830,
       "createdAt": 1675833600,
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "userId": "2",
       "blocks": [
         {
@@ -224,7 +232,9 @@
       "img": "https://www.cisco.com/c/dam/assets/swa/img/anchor-info/what-is-it-security-628x353.jpg",
       "views": 2104,
       "createdAt": 1685833600,
-      "type": ["Security"],
+      "type": [
+        "Security"
+      ],
       "userId": "1",
       "blocks": [
         {
@@ -251,7 +261,10 @@
       "img": "https://incubator.ucf.edu/wp-content/uploads/2023/07/artificial-intelligence-new-technology-science-futuristic-abstract-human-brain-ai-technology-cpu-central-processor-unit-chipset-big-data-machine-learning-cyber-mind-domination-generative-ai-scaled-1.jpg",
       "views": 4931,
       "createdAt": 1699833600,
-      "type": ["IT", "AI"],
+      "type": [
+        "IT",
+        "AI"
+      ],
       "userId": "2",
       "blocks": [
         {
@@ -278,7 +291,10 @@
       "img": "https://plus.unsplash.com/premium_photo-1681487769650-a0c3fbaed85a?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZmluYW5jZXxlbnwwfHwwfHx8MA%3D%3D",
       "views": 3620,
       "createdAt": 1688833600,
-      "type": ["Finance", "IT"],
+      "type": [
+        "Finance",
+        "IT"
+      ],
       "userId": "1",
       "blocks": [
         {
@@ -305,7 +321,10 @@
       "img": "https://static.vecteezy.com/system/resources/previews/022/006/618/non_2x/science-background-illustration-scientific-design-flasks-glass-and-chemistry-physics-elements-generative-ai-photo.jpeg",
       "views": 4098,
       "createdAt": 1702833600,
-      "type": ["IT", "Science"],
+      "type": [
+        "IT",
+        "Science"
+      ],
       "userId": "2",
       "blocks": [
         {
@@ -331,7 +350,10 @@
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrpMaDJETIlY1NKgBo5V5JHRDEY1SVrrdGUA&s",
       "views": 5873,
       "createdAt": 1678833600,
-      "type": ["IT", "Telecommunications"],
+      "type": [
+        "IT",
+        "Telecommunications"
+      ],
       "userId": "2",
       "blocks": [
         {
@@ -358,7 +380,9 @@
       "img": "https://media.assettype.com/analyticsinsight%2F2024-07%2F0f810864-1c7c-492a-b315-3ff9a3d95fce%2FAR_and_VR_in_Entertainment_is_Expected_to_Reach_US45_20_Billion_by_2027.jpg",
       "views": 7551,
       "createdAt": 1691833600,
-      "type": ["Entertainment"],
+      "type": [
+        "Entertainment"
+      ],
       "userId": "1",
       "blocks": [
         {
@@ -385,7 +409,9 @@
       "img": "https://www.oracle.com/a/ocom/img/cb71-java-logo.png",
       "views": 830,
       "createdAt": 1675833600,
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "userId": "1",
       "blocks": [
         {
@@ -411,7 +437,10 @@
       "img": "https://assets.datamation.com/uploads/2023/02/it-security-policy.jpg",
       "views": 2104,
       "createdAt": 1685833600,
-      "type": ["IT", "Security"],
+      "type": [
+        "IT",
+        "Security"
+      ],
       "userId": "1",
       "blocks": [
         {
@@ -438,7 +467,10 @@
       "img": "https://imageio.forbes.com/specials-images/imageserve/64b5825a5b9b4d3225e9bd15/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds",
       "views": 4931,
       "createdAt": 1699833600,
-      "type": ["IT", "AI"],
+      "type": [
+        "IT",
+        "AI"
+      ],
       "userId": "2",
       "blocks": [
         {
@@ -465,7 +497,10 @@
       "img": "https://img.freepik.com/premium-photo/poster-that-says-financial-services-is-top-it_1115474-122292.jpg",
       "views": 3620,
       "createdAt": 1688833600,
-      "type": ["Finance", "IT"],
+      "type": [
+        "Finance",
+        "IT"
+      ],
       "userId": "1",
       "blocks": [
         {
@@ -492,7 +527,10 @@
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSokckVwyokva3ZRVjY_Wm51Eim3m8UUh3jnQ&s",
       "views": 4098,
       "createdAt": 1702833600,
-      "type": ["IT", "Science"],
+      "type": [
+        "IT",
+        "Science"
+      ],
       "userId": "2",
       "blocks": [
         {
@@ -518,7 +556,10 @@
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3m7_95cmUiLDl2fC7kGczIPGmt3X_uBw92w&s",
       "views": 5873,
       "createdAt": 1678833600,
-      "type": ["IT", "Telecommunications"],
+      "type": [
+        "IT",
+        "Telecommunications"
+      ],
       "userId": "2",
       "blocks": [
         {
@@ -545,7 +586,10 @@
       "img": "https://www.shutterstock.com/image-vector/website-maintenance-banner-concept-update-260nw-1802692498.jpg",
       "views": 7551,
       "createdAt": 1691833600,
-      "type": ["IT", "Entertainment"],
+      "type": [
+        "IT",
+        "Entertainment"
+      ],
       "userId": "1",
       "blocks": [
         {
@@ -572,7 +616,10 @@
       "img": "https://media.gettyimages.com/id/1479449423/vector/ai-deep-learning.jpg?s=612x612&w=gi&k=20&c=geGW7vGYG3bEyVXtL8rWHLe_KiXFrGkYZH-B8sRew1g=",
       "views": 7551,
       "createdAt": 1691833600,
-      "type": ["IT", "Entertainment"],
+      "type": [
+        "IT",
+        "Entertainment"
+      ],
       "userId": "1",
       "blocks": [
         {
@@ -599,7 +646,9 @@
       "img": "https://www.oracle.com/a/ocom/img/cb71-java-logo.png",
       "views": 830,
       "createdAt": 1675833600,
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "userId": "1",
       "blocks": [
         {
@@ -625,7 +674,10 @@
       "img": "https://cybersecurityventures.com/wp-content/uploads/2020/04/cybersecurity-ventures.jpg",
       "views": 2104,
       "createdAt": 1685833600,
-      "type": ["IT", "Security"],
+      "type": [
+        "IT",
+        "Security"
+      ],
       "userId": "1",
       "blocks": [
         {
@@ -652,7 +704,10 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Machine_learning.png",
       "views": 4931,
       "createdAt": 1699833600,
-      "type": ["IT", "AI"],
+      "type": [
+        "IT",
+        "AI"
+      ],
       "userId": "2",
       "blocks": [
         {
@@ -679,7 +734,10 @@
       "img": "https://blockchainindustrygroup.org/wp-content/uploads/2019/12/blockchain-logo.jpg",
       "views": 3620,
       "createdAt": 1688833600,
-      "type": ["Finance", "IT"],
+      "type": [
+        "Finance",
+        "IT"
+      ],
       "userId": "1",
       "blocks": [
         {
@@ -706,7 +764,10 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/b/bb/QC_algae.jpg",
       "views": 4098,
       "createdAt": 1702833600,
-      "type": ["IT", "Science"],
+      "type": [
+        "IT",
+        "Science"
+      ],
       "userId": "2",
       "blocks": [
         {
@@ -732,7 +793,10 @@
       "img": "https://www.qualcomm.com/content/dam/qcomm-martech-global-stage/homepage/quantainc-5g.svg",
       "views": 5873,
       "createdAt": 1678833600,
-      "type": ["IT", "Telecommunications"],
+      "type": [
+        "IT",
+        "Telecommunications"
+      ],
       "userId": "2",
       "blocks": [
         {
@@ -759,7 +823,10 @@
       "img": "https://virtualrealityinstitute.s3.amazonaws.com/logo/how-vr-works.svg",
       "views": 7551,
       "createdAt": 1691833600,
-      "type": ["IT", "Entertainment"],
+      "type": [
+        "IT",
+        "Entertainment"
+      ],
       "userId": "1",
       "blocks": [
         {
