@@ -2,6 +2,8 @@ import { CSSProperties, FC, memo } from 'react';
 import { cn } from '../../../lib';
 import s from './Text.module.scss';
 
+type THeaderTagType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+
 export const TextTheme = {
   PRIMARY: 'primary',
   INVERTED: 'inverted',
@@ -28,6 +30,13 @@ const sizeClass = {
   [TextSize.XL]: 'sizeXl',
 };
 
+const mapSizeToHeaderTag: Record<(typeof TextSize)[keyof typeof TextSize], THeaderTagType> = {
+  [TextSize.S]: 'h4',
+  [TextSize.M]: 'h3',
+  [TextSize.L]: 'h2',
+  [TextSize.XL]: 'h1',
+};
+
 interface ITextProps {
   className?: string;
   title?: string;
@@ -41,10 +50,11 @@ interface ITextProps {
 export const Text: FC<ITextProps> = memo((props) => {
   const { className, title, text, theme = TextTheme.PRIMARY, align = TextAlign.LEFT, size = TextSize.M, style } = props;
   const mods = [s[theme], s[align]];
+  const HeaderTag = mapSizeToHeaderTag[size];
 
   return (
     <div className={cn(s.textComponent, ...mods, s[sizeClass[size]], className)} style={style}>
-      {title && <h3 className={s.title}>{title}</h3>}
+      {title && <HeaderTag className={s.title}>{title}</HeaderTag>}
       {text && <p className={s.text}>{text}</p>}
     </div>
   );

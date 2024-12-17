@@ -40,7 +40,7 @@ export const Sidebar: FC<ISidebarProps> = memo(({ className, style }) => {
       >
         <Icon name={collapsed ? 'circle-right' : 'circle-left'} />
       </Button>
-      <VStack gap="4" className={s.items}>
+      <VStack role="navigation" gap="4" className={s.items}>
         {items}
       </VStack>
       <div className={s.switchers}>

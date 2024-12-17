@@ -1,5 +1,5 @@
 import {
-  CSSProperties, FC, memo, ReactNode 
+  CSSProperties, DetailedHTMLProps, FC, HTMLAttributes, memo, ReactNode 
 } from 'react';
 import { cn } from '../../../lib';
 import s from './Flex.module.scss';
@@ -49,7 +49,9 @@ export const wrapClasses: Record<FlexWrap, string> = {
   wrap: s.flexWrap,
 };
 
-export interface IFlexProps {
+type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+
+export interface IFlexProps extends DivProps {
   className?: string;
   children: ReactNode;
   justify?: FlexJustify;
@@ -61,7 +63,17 @@ export interface IFlexProps {
 }
 
 export const Flex: FC<IFlexProps> = memo((props) => {
-  const { className, children, justify = 'start', align = 'center', direction = 'row', gap = 0, wrap, style } = props;
+  const {
+    className,
+    children,
+    justify = 'start',
+    align = 'center',
+    direction = 'row',
+    gap = 0,
+    wrap,
+    style,
+    ...other
+  } = props;
 
   const classes = [
     s.flex,
@@ -74,7 +86,7 @@ export const Flex: FC<IFlexProps> = memo((props) => {
   ].join(' ');
 
   return (
-    <div className={cn(classes)} style={{ ...style }}>
+    <div className={cn(classes)} style={{ ...style }} {...other}>
       {children}
     </div>
   );

@@ -55,9 +55,9 @@ export const Page: FC<IPageProps> = (props) => {
   const scrollDebounced = useDebounce(onScroll, 300);
 
   return (
-    <section ref={wrapperRef} style={style} className={cn(s.page, className)} onScroll={scrollDebounced}>
+    <main ref={wrapperRef} style={style} className={cn(s.page, className)} onScroll={scrollDebounced}>
       {children}
       {onScrollEnd && <div className={s.trigger} ref={triggerRef} />}
-    </section>
+    </main>
   );
 };
