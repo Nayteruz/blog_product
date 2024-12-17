@@ -10,7 +10,9 @@ import { TArticleBlockType } from '@/entities/Article/model/types/article';
 export const initArticlesPage = createAsyncThunk<void, URLSearchParams, ThunkConfig<string>>(
   'articlesPage/initArticlesPage',
   async (searchParams, thunkAPI) => {
-    const { getState, dispatch } = thunkAPI;
+    const {
+      getState, dispatch 
+    } = thunkAPI;
     const inited = getArticlesPageInited(getState());
 
     if (!inited) {

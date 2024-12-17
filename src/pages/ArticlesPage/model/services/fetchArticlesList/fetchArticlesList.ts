@@ -18,7 +18,9 @@ interface IFetchArticlesListProps {
 export const fetchArticlesList = createAsyncThunk<IArticle[], IFetchArticlesListProps | void, ThunkConfig<string>>(
   'articlesPage/fetchArticlesList',
   async (_, thunkAPI) => {
-    const { extra, rejectWithValue, getState } = thunkAPI;
+    const {
+      extra, rejectWithValue, getState 
+    } = thunkAPI;
     const limit = getArticlesPageLimit(getState());
     const sort = getArticlesPageSort(getState());
     const order = getArticlesPageOrder(getState());

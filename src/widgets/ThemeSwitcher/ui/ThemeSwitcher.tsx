@@ -17,8 +17,12 @@ const toggleBodyTheme = (theme: TTheme) => {
   documentBody.classList.add(theme || Theme.LIGHT);
 };
 
-export const ThemeSwitcher: FC<IThemeSwitcherProps> = memo(({ className, themeDefault }) => {
-  const { theme, toggleTheme } = useTheme();
+export const ThemeSwitcher: FC<IThemeSwitcherProps> = memo(({
+  className, themeDefault 
+}) => {
+  const {
+    theme, toggleTheme 
+  } = useTheme();
 
   const themeIcon = {
     [Theme.LIGHT]: 'sun',

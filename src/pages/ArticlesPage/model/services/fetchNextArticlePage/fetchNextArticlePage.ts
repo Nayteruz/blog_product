@@ -11,7 +11,9 @@ import { articlesPageActions } from '../../slices/articlesPageSlice';
 export const fetchNextArticlePage = createAsyncThunk<void, void, ThunkConfig<string>>(
   'articlesPage/fetchNextArticlePage',
   async (_, thunkAPI) => {
-    const { getState, dispatch } = thunkAPI;
+    const {
+      getState, dispatch 
+    } = thunkAPI;
     const isLoading = getArticlesPageLoading(getState());
     const hasMore = getArticlesPageHasMore(getState());
     const page = getArticlesPageNumber(getState());

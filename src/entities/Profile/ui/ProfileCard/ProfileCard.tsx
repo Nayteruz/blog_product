@@ -24,12 +24,16 @@ interface IProfileCardProps {
   onChangeData?: (props: IChangeData) => void;
 }
 
-export const ProfileCard: FC<IProfileCardProps> = ({ className, data, isLoading, error, isReadOnly, onChangeData }) => {
+export const ProfileCard: FC<IProfileCardProps> = ({
+  className, data, isLoading, error, isReadOnly, onChangeData 
+}) => {
   const { t } = useTranslation();
 
   const onChange = useCallback(
     <T extends HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>(e: ChangeEvent<T>) => {
-      const { name, value, type } = e.target;
+      const {
+        name, value, type 
+      } = e.target;
       onChangeData?.({
         name,
         value,

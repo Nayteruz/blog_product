@@ -48,7 +48,9 @@ interface ITextProps {
 }
 
 export const Text: FC<ITextProps> = memo((props) => {
-  const { className, title, text, theme = TextTheme.PRIMARY, align = TextAlign.LEFT, size = TextSize.M, style } = props;
+  const {
+    className, title, text, theme = TextTheme.PRIMARY, align = TextAlign.LEFT, size = TextSize.M, style 
+  } = props;
   const mods = [s[theme], s[align]];
   const HeaderTag = mapSizeToHeaderTag[size];
 

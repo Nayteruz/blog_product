@@ -11,7 +11,9 @@ interface IArticleListItemSkeletonProps {
 }
 
 export const ArticleListItemSkeleton: FC<IArticleListItemSkeletonProps> = memo((props) => {
-  const { className, view } = props;
+  const {
+    className, view 
+  } = props;
 
   switch (view) {
   case ArticleListView.LIST:

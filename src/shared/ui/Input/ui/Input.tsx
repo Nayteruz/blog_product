@@ -16,7 +16,9 @@ interface IInputProps extends HTMLInputProps {
 }
 
 export const Input: FC<IInputProps> = memo((props) => {
-  const { value, onChange, className, title, autofocus, type = 'text', readOnly, ...otherProps } = props;
+  const {
+    value, onChange, className, title, autofocus, type = 'text', readOnly, ...otherProps 
+  } = props;
   const inputRef = useRef<HTMLInputElement>(null);
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {

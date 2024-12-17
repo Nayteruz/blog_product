@@ -29,7 +29,9 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button: FC<IButtonProps> = memo((props) => {
-  const { className, children, theme = ButtonTheme.OUTLINE, square, size = 'M', disabled, ...other } = props;
+  const {
+    className, children, theme = ButtonTheme.OUTLINE, square, size = 'M', disabled, ...other 
+  } = props;
 
   const mods = [
     { [s[theme]]: theme },

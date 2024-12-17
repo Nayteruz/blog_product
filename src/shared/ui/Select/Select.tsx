@@ -23,7 +23,9 @@ interface ISelectProps<T extends string = string> extends HTMLSelectProps {
 }
 
 export const Select: FC<ISelectProps> = <T extends string>(props: ISelectProps<T>) => {
-  const { className, label, readOnly, placeholder, options, onChange, value, ...otherProps } = props;
+  const {
+    className, label, readOnly, placeholder, options, onChange, value, ...otherProps 
+  } = props;
   const mods = { [s.disabled]: readOnly };
 
   const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {

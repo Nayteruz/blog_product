@@ -9,7 +9,9 @@ interface ICodeProps {
   text: string;
 }
 
-export const Code: FC<ICodeProps> = memo(({ className, text }) => {
+export const Code: FC<ICodeProps> = memo(({
+  className, text 
+}) => {
   const onCopy = useCallback(() => {
     navigator.clipboard.writeText(text);
   }, [text]);

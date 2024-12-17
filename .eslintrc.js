@@ -46,7 +46,7 @@ module.exports = {
         unnamedComponents: 'arrow-function',
       },
     ],
-    'react/jsx-props-no-spreading': ['warn', { exceptions: ['input', 'button', 'select', 'SvgIcon', 'Flex'] }],
+    'react/jsx-props-no-spreading': ['warn', { exceptions: ['input', 'button', 'select', 'SvgIcon', 'Flex', 'div'] }],
     'no-underscore-dangle': [2, { allow: ['_d', '__IS_DEV__', '__API__', '__PROJECT__', '_inited'] }],
     quotes: ['error', 'single', { avoidEscape: true }],
     'max-len': [
@@ -87,7 +87,10 @@ module.exports = {
           multiline: true,
           minProperties: 2,
         },
-        ObjectPattern: { multiline: true },
+        ObjectPattern: {
+          multiline: true,
+          minProperties: 2,
+        },
         ImportDeclaration: {
           multiline: true,
           minProperties: 4,

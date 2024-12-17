@@ -9,6 +9,8 @@ interface ICodeBlockProps {
   block: IArticleCodeBlock;
 }
 
-export const ArticleCodeBlock: FC<ICodeBlockProps> = memo(({ className, block }) => (
+export const ArticleCodeBlock: FC<ICodeBlockProps> = memo(({
+  className, block 
+}) => (
   <Code className={cn(s.codeBlock, className)} text={block.code} />
 ));

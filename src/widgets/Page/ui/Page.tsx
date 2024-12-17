@@ -21,7 +21,9 @@ interface IPageProps {
 }
 
 export const Page: FC<IPageProps> = (props) => {
-  const { className, children, onScrollEnd, style, isLoading } = props;
+  const {
+    className, children, onScrollEnd, style, isLoading 
+  } = props;
   const wrapperRef = useRef<HTMLDivElement>(null) as MutableRefObject<HTMLDivElement>;
   const triggerRef = useRef<HTMLDivElement>(null) as MutableRefObject<HTMLDivElement>;
   const dispatch = useAppDispatch();

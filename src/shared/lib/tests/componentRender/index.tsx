@@ -17,7 +17,9 @@ export const componentRender = (options?: IComponentRenderOptions) => {
     throw new Error('Options must be provided.');
   }
 
-  const { component, route = '/', initialState } = options;
+  const {
+    component, route = '/', initialState 
+  } = options;
 
   render(
     <MemoryRouter initialEntries={[route]}>

@@ -12,7 +12,9 @@ interface IThemeProps {
   initialTheme?: TTheme;
 }
 
-const ThemeProvider: FC<IThemeProps> = ({ children, initialTheme }) => {
+const ThemeProvider: FC<IThemeProps> = ({
+  children, initialTheme 
+}) => {
   const [theme, setTheme] = useState<TTheme>(initialTheme || defaultTheme);
 
   const defaultProps = useMemo(() => ({

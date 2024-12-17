@@ -58,7 +58,9 @@ const ProfilePage: FC = () => {
   }, [id, dispatch]);
 
   const onChangeData = useCallback(
-    ({ name, value, type }: IChangeData) => {
+    ({
+      name, value, type 
+    }: IChangeData) => {
       dispatch(profileActions.updateProfile({ [name]: type === 'number' ? Number(value) : value }));
     },
     [dispatch],

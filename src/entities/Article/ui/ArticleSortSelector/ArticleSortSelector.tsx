@@ -15,7 +15,9 @@ interface IArticleSortSelectorProps {
 }
 
 export const ArticleSortSelector: FC<IArticleSortSelectorProps> = memo((props) => {
-  const { className, sort, order, onChangeOrder, onChangeSort } = props;
+  const {
+    className, sort, order, onChangeOrder, onChangeSort 
+  } = props;
   const { t } = useTranslation();
 
   const orderOptions = useMemo<ISelectOption<TSortOrder>[]>(

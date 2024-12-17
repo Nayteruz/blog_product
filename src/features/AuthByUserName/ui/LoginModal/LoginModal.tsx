@@ -10,7 +10,9 @@ interface ILoginModalProps {
   onClose?: () => void;
 }
 
-export const LoginModal: FC<ILoginModalProps> = ({ className, isOpen, onClose }) => (
+export const LoginModal: FC<ILoginModalProps> = ({
+  className, isOpen, onClose 
+}) => (
   <Modal lazy isOpen={isOpen} onClose={onClose} className={cn(s.loginModal, className)}>
     <Suspense fallback={<Loader />}>
       <LoginFormAsync onSuccess={onClose} />

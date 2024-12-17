@@ -4,7 +4,9 @@ import {
 } from './ThemeContext';
 
 export const useTheme = () => {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const {
+    theme, setTheme 
+  } = useContext(ThemeContext);
 
   const toggleTheme = () => {
     let newTheme: TTheme;

@@ -14,6 +14,8 @@ interface ILoaderProps {
   size?: (typeof loaderSize)[keyof typeof loaderSize];
 }
 
-export const Loader: FC<ILoaderProps> = memo(({ className, style, size = loaderSize.NORMAL }) => (
+export const Loader: FC<ILoaderProps> = memo(({
+  className, style, size = loaderSize.NORMAL 
+}) => (
   <div className={cn(s.loader, s[size], className)} style={style} />
 ));

@@ -29,11 +29,15 @@ const viewIcons: IItemSelectorProps[] = [
 ];
 
 export const ArticleViewSelector: FC<IArticleViewSelectorProps> = memo((props) => {
-  const { className, view: selectedView, onViewClick } = props;
+  const {
+    className, view: selectedView, onViewClick 
+  } = props;
 
   return (
     <HStack gap="16" className={className}>
-      {viewIcons.map(({ view, icon }) => (
+      {viewIcons.map(({
+        view, icon 
+      }) => (
         <Button
           className={cn(s.itemSelector, { [s.selected]: view === selectedView })}
           key={view}

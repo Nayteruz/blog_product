@@ -24,7 +24,9 @@ export const LangSwitcher: FC<ILangProps> = memo(({ className }) => {
 
   return (
     <ul className={cn(s.lang, className)}>
-      {languageList.map(({ lang, name, icon }) => (
+      {languageList.map(({
+        lang, name, icon 
+      }) => (
         <li key={lang}>
           <Button
             className={cn(s.button, { [s.active]: i18n.language === lang })}

@@ -5,7 +5,9 @@ import { IArticle } from '../../types/article';
 export const fetchArticleById = createAsyncThunk<IArticle, string, ThunkConfig<string>>(
   'articleDetails/fetchArticleById',
   async (articleId, thunkAPI) => {
-    const { extra, rejectWithValue } = thunkAPI;
+    const {
+      extra, rejectWithValue 
+    } = thunkAPI;
 
     try {
       const response = await extra.api.get<IArticle>(`/articles/${articleId}`, {params: { _expand: 'user' },});

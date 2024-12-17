@@ -29,7 +29,9 @@ interface IArticleDetailsProps {
 
 const reducers: ReducersList = { articleDetails: articleDetailsReducer };
 
-export const ArticleDetails: FC<IArticleDetailsProps> = memo(({ className, id }) => {
+export const ArticleDetails: FC<IArticleDetailsProps> = memo(({
+  className, id 
+}) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const isLoading = useSelector(getArticleDetailsLoading);

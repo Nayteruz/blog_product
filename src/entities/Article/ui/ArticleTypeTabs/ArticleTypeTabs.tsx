@@ -11,7 +11,9 @@ interface IArticleTypeTabsProps {
 }
 
 export const ArticleTypeTabs: FC<IArticleTypeTabsProps> = memo((props) => {
-  const { className, type: typeArticle, onChangeType } = props;
+  const {
+    className, type: typeArticle, onChangeType 
+  } = props;
 
   const typeTabs = useMemo(
     () => [

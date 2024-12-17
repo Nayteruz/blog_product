@@ -15,7 +15,9 @@ interface ISidebarProps {
   style?: CSSProperties;
 }
 
-export const Sidebar: FC<ISidebarProps> = memo(({ className, style }) => {
+export const Sidebar: FC<ISidebarProps> = memo(({
+  className, style 
+}) => {
   const [collapsed, setCollapsed] = useState(false);
   const sidebarMenuList = useSelector(getSidebarItems);
 

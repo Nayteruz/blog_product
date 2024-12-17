@@ -10,7 +10,9 @@ interface IStoryProviderProps {
   asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>;
 }
 
-export const StoryProvider: FC<IStoryProviderProps> = ({ children, initialState, asyncReducers }) => {
+export const StoryProvider: FC<IStoryProviderProps> = ({
+  children, initialState, asyncReducers 
+}) => {
   const store = createReduxStore(initialState as StateSchema, asyncReducers as ReducersMapObject<StateSchema>);
 
   return <Provider store={store}>{children}</Provider>;

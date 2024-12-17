@@ -8,7 +8,9 @@ interface IImageBlockProps {
   block: IArticleImageBlock;
 }
 
-export const ArticleImageBlock: FC<IImageBlockProps> = memo(({ className, block }) => (
+export const ArticleImageBlock: FC<IImageBlockProps> = memo(({
+  className, block 
+}) => (
   <VStack align="center" className={className}>
     <div className={s.imageWrapper}>
       <img src={block.src} alt={block.title} className={s.image} />

@@ -15,7 +15,9 @@ interface IAppLinkProps extends LinkProps {
 }
 
 export const AppLink: FC<IAppLinkProps> = memo((props: IAppLinkProps) => {
-  const { to, className, children, theme = AppLinkTheme.PRIMARY, ...other } = props;
+  const {
+    to, className, children, theme = AppLinkTheme.PRIMARY, ...other 
+  } = props;
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading
     <Link to={to} className={cn(s.appLink, className, s[theme])} {...other}>

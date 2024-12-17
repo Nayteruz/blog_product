@@ -14,7 +14,9 @@ const meta = {
     title: 'Test title',
     text: 'Test text',
   },
-  render: ({ title, text, ...args }) => (
+  render: ({
+    title, text, ...args 
+  }) => (
     // eslint-disable-next-line react/jsx-props-no-spreading
     <Card {...args}>
       <Text title={title} text={text} />

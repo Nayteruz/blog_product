@@ -10,7 +10,9 @@ interface ISkeletonProps {
 }
 
 export const Skeleton: FC<ISkeletonProps> = memo((props) => {
-  const { className, width, height, border } = props;
+  const {
+    className, width, height, border 
+  } = props;
 
   const styles: CSSProperties = {
     width,

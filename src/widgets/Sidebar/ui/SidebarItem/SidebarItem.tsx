@@ -12,9 +12,13 @@ interface ISidebarItemProps {
   collapsed?: boolean;
 }
 
-export const SidebarItem: FC<ISidebarItemProps> = memo(({ item, collapsed }) => {
+export const SidebarItem: FC<ISidebarItemProps> = memo(({
+  item, collapsed 
+}) => {
   const { t } = useTranslation();
-  const { path, text, icon } = item;
+  const {
+    path, text, icon 
+  } = item;
   const isAuth = useSelector(getUserAuthData);
 
   if (item.authOnly && !isAuth) {

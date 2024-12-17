@@ -7,7 +7,9 @@ export interface IUseInfinityScroll {
   isLoading?: boolean;
 }
 
-export const useInfinityScroll = ({ callback, triggerRef, wrapperRef, isLoading }: IUseInfinityScroll) => {
+export const useInfinityScroll = ({
+  callback, triggerRef, wrapperRef, isLoading 
+}: IUseInfinityScroll) => {
   useEffect(() => {
     const wrapperElement = wrapperRef.current;
     const triggerElement = triggerRef.current;

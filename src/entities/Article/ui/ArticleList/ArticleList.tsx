@@ -24,7 +24,9 @@ const getSkeletons = (view: TArticleListView) => {
 
 export const ArticleList: FC<IArticleListProps> = memo((props) => {
   const { t } = useTranslation();
-  const { className, articles, isLoading, view = ArticleListView.SIMPLE, target = '_self', isWrap = true } = props;
+  const {
+    className, articles, isLoading, view = ArticleListView.SIMPLE, target = '_self', isWrap = true 
+  } = props;
   const isList = view === ArticleListView.LIST;
   const direction = isList ? 'row' : 'column';
   const wrap = isList && isWrap ? 'wrap' : undefined;

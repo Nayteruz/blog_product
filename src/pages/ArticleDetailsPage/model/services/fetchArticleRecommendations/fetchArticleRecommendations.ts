@@ -5,7 +5,9 @@ import { IArticle } from '@/entities/Article';
 export const fetchArticleRecommendations = createAsyncThunk<IArticle[], void, ThunkConfig<string>>(
   'articleDetailsPage/fetchArticleRecommendations',
   async (_, thunkAPI) => {
-    const { extra, rejectWithValue } = thunkAPI;
+    const {
+      extra, rejectWithValue 
+    } = thunkAPI;
     const apiUrl = '/articles';
 
     try {

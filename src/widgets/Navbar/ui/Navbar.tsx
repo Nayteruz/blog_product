@@ -16,7 +16,9 @@ interface INavbarProps {
   style?: CSSProperties;
 }
 
-export const Navbar: FC<INavbarProps> = memo(({ className, style }) => {
+export const Navbar: FC<INavbarProps> = memo(({
+  className, style 
+}) => {
   const dispatch = useAppDispatch();
   const authData = useSelector(getUserAuthData);
   const [isAuthModal, setIsAuthModal] = useState(false);

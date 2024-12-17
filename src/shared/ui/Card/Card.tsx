@@ -23,7 +23,9 @@ interface ICardProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const Card: FC<ICardProps> = memo((props) => {
-  const { className, children, theme = cardTheme.NORMAL, size = cardSize.S, ...otherProps } = props;
+  const {
+    className, children, theme = cardTheme.NORMAL, size = cardSize.S, ...otherProps 
+  } = props;
 
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading

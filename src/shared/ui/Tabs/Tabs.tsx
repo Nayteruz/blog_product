@@ -17,7 +17,9 @@ interface ITabsProps {
 }
 
 export const Tabs: FC<ITabsProps> = memo((props) => {
-  const { className, tabs, value, onTabClick } = props;
+  const {
+    className, tabs, value, onTabClick 
+  } = props;
 
   return (
     <HStack gap="8" wrap="wrap" className={className}>

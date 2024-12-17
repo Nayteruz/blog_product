@@ -22,7 +22,9 @@ interface IArticleListItemProps {
 }
 
 export const ArticleListItem: FC<IArticleListItemProps> = memo((props) => {
-  const { className, article, view, target = '_self' } = props;
+  const {
+    className, article, view, target = '_self' 
+  } = props;
   const { t } = useTranslation();
 
   const types = <Text text={(article?.type || [])?.join(', ')} className={s.type} />;

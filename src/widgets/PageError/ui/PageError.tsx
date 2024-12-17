@@ -11,7 +11,9 @@ interface IPageErrorProps {
 
 export const PageError: FC<IPageErrorProps> = (props) => {
   const { t } = useTranslation();
-  const { className, errorText } = props;
+  const {
+    className, errorText 
+  } = props;
 
   return (
     <div className={cn(s.pageError, className)}>
