@@ -17,7 +17,7 @@ import {
 } from '@/entities/Profile';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 import { ProfilePageHeader } from './ProfilePageHeader';
-import { Text } from '@/shared/ui';
+import { Text, VStack } from '@/shared/ui';
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
 import { Page } from '@/widgets/Page';
 
@@ -66,16 +66,18 @@ const ProfilePage: FC = () => {
 
   return (
     <Page>
-      <ProfilePageHeader />
-      {validateErrors?.length &&
-        validateErrors.map(err => <Text key={err} text={validateTranslates[err]} theme="error" />)}
-      <ProfileCard
-        onChangeData={onChangeData}
-        data={formData}
-        isLoading={isLoading}
-        error={error}
-        isReadOnly={isReadOnly}
-      />
+      <VStack gap="32" align="stretch">
+        <ProfilePageHeader />
+        {validateErrors?.length &&
+          validateErrors.map(err => <Text key={err} text={validateTranslates[err]} theme="error" />)}
+        <ProfileCard
+          onChangeData={onChangeData}
+          data={formData}
+          isLoading={isLoading}
+          error={error}
+          isReadOnly={isReadOnly}
+        />
+      </VStack>
     </Page>
   );
 };

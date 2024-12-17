@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { cn } from '@/shared/lib';
 import { ArticleDetails, ArticleList } from '@/entities/Article';
-import { Text } from '@/shared/ui';
+import { Text, VStack } from '@/shared/ui';
 import { CommentList } from '@/entities/Comment';
 import s from './ArticleDetailsPage.module.scss';
 import { ReducersList, useDynamicReducer } from '@/shared/hooks/useDynamicReducer';
@@ -56,20 +56,23 @@ const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
   }
 
   return (
-    <Page className={cn(s.articleDetailsPage, className)}>
-      <ArticleDetailsPageHeader />
-      <ArticleDetails id={id || '0'} />
-      <Text size={24} className={s.recommendationTitle} title={t('Recommendations')} />
-      <ArticleList
-        className={s.recommendationList}
-        isLoading={recommendationsIsLoading}
-        articles={recommendations}
-        view="list"
-        target="_blank"
-      />
-      <Text size={24} className={s.commentTitle} title={t('Comments')} />
-      <AddCommentForm className={s.commentForm} onSendComment={onSendComment} />
-      <CommentList isLoading={commentsIsLoading} comments={comments} />
+    <Page className={className}>
+      <VStack gap="16">
+        <ArticleDetailsPageHeader />
+        <ArticleDetails id={id || '0'} />
+        <Text size={24} title={t('Recommendations')} />
+        <ArticleList
+          className={s.recommendationList}
+          isLoading={recommendationsIsLoading}
+          articles={recommendations}
+          view="list"
+          target="_blank"
+          isWrap={false}
+        />
+        <Text size={24} title={t('Comments')} />
+        <AddCommentForm onSendComment={onSendComment} />
+        <CommentList isLoading={commentsIsLoading} comments={comments} />
+      </VStack>
     </Page>
   );
 };

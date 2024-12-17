@@ -2,9 +2,7 @@ import {
   ChangeEvent, FC, memo, useMemo 
 } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Select, ISelectOption } from '@/shared/ui';
-import { cn } from '@/shared/lib';
-import s from './ArticleSortSelector.module.scss';
+import { Select, ISelectOption, HStack } from '@/shared/ui';
 import { ArticleSortField, TArticleSortField } from '../../model/types/article';
 import { TSortOrder } from '@/shared/types';
 
@@ -23,10 +21,12 @@ export const ArticleSortSelector: FC<IArticleSortSelectorProps> = memo((props) =
   const orderOptions = useMemo<ISelectOption<TSortOrder>[]>(
     () => [
       {
-        value: 'asc', label: t('Ascending') 
+        value: 'asc',
+        label: t('Ascending'),
       },
       {
-        value: 'desc', label: t('Descending') 
+        value: 'desc',
+        label: t('Descending'),
       },
     ],
     [t],
@@ -35,13 +35,16 @@ export const ArticleSortSelector: FC<IArticleSortSelectorProps> = memo((props) =
   const sortFieldOptions = useMemo<ISelectOption<TArticleSortField>[]>(
     () => [
       {
-        value: ArticleSortField.CREATED_AT, label: t('sort by created') 
+        value: ArticleSortField.CREATED_AT,
+        label: t('sort by created'),
       },
       {
-        value: ArticleSortField.TITLE, label: t('sort by title') 
+        value: ArticleSortField.TITLE,
+        label: t('sort by title'),
       },
       {
-        value: ArticleSortField.VIEWS, label: t('sort by views') 
+        value: ArticleSortField.VIEWS,
+        label: t('sort by views'),
       },
     ],
     [t],
@@ -56,9 +59,9 @@ export const ArticleSortSelector: FC<IArticleSortSelectorProps> = memo((props) =
   };
 
   return (
-    <div className={cn(s.articleSortSelector, className)}>
-      <Select value={sort} onChange={onSort} label={t('Sort by')} options={sortFieldOptions} className={s.select} />
-      <Select value={order} onChange={onOrder} label={t('View by')} options={orderOptions} className={s.select} />
-    </div>
+    <HStack gap="8" className={className}>
+      <Select value={sort} onChange={onSort} label={t('Sort by')} options={sortFieldOptions} />
+      <Select value={order} onChange={onOrder} label={t('View by')} options={orderOptions} />
+    </HStack>
   );
 });

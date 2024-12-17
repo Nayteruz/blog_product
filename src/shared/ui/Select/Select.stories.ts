@@ -1,23 +1,28 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Select } from './Select';
-import { defaultDark, ThemeDecorator } from '@/shared/config/storybook';
+import { defaultDark, ThemeDecorator } from '../../config/storybook';
 
 const list = [
   {
-    value: '1', label: 'label 1' 
+    value: '1',
+    label: 'label 1',
   },
   {
-    value: '2', label: 'label 2' 
+    value: '2',
+    label: 'label 2',
   },
   {
-    value: '3', label: 'label 3' 
+    value: '3',
+    label: 'label 3',
   },
   {
-    value: '4', label: 'label 4' 
+    value: '4',
+    label: 'label 4',
   },
   {
-    value: '5', label: 'label 5' 
+    value: '5',
+    label: 'label 5',
   },
 ];
 
@@ -26,7 +31,7 @@ const meta = {
   component: Select,
   tags: ['autodocs'],
   argTypes: {},
-  args: {options: list,},
+  args: { options: list },
 } satisfies Meta<typeof Select>;
 
 export default meta;
@@ -40,8 +45,8 @@ export const Dark: Story = {
   decorators: [ThemeDecorator('dark')],
 };
 
-export const WithLabel: Story = {args: {label: 'label',},};
+export const WithLabel: Story = { args: { label: 'label' } };
 
-export const WithPlaceholder: Story = {args: {placeholder: 'label placeholder',},};
+export const WithPlaceholder: Story = { args: { placeholder: 'label placeholder' } };
 
-export const WithSelectedValue: Story = {args: {value: list[2].value,},};
+export const WithSelectedValue: Story = { args: { value: list[2].value } };

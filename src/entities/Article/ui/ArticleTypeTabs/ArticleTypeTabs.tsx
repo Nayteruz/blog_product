@@ -14,9 +14,12 @@ export const ArticleTypeTabs: FC<IArticleTypeTabsProps> = memo((props) => {
   const { className, type: typeArticle, onChangeType } = props;
 
   const typeTabs = useMemo(
-    () => [...Object.values(ArticleBlockType).map(type => ({
-      value: type, content: type 
-    }))],
+    () => [
+      ...Object.values(ArticleBlockType).map(type => ({
+        value: type,
+        content: type,
+      })),
+    ],
     [],
   );
 

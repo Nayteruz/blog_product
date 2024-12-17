@@ -2,7 +2,9 @@ import { FC, memo } from 'react';
 import { cn } from '@/shared/lib';
 import s from './ArticleViewSelector.module.scss';
 import { ArticleListView, TArticleListView } from '../../model/types/article';
-import { Button, Icon, TIcon } from '@/shared/ui';
+import {
+  Button, HStack, Icon, TIcon 
+} from '@/shared/ui';
 
 interface IArticleViewSelectorProps {
   className?: string;
@@ -30,7 +32,7 @@ export const ArticleViewSelector: FC<IArticleViewSelectorProps> = memo((props) =
   const { className, view: selectedView, onViewClick } = props;
 
   return (
-    <div className={cn(s.articleViewSelector, className)}>
+    <HStack gap="16" className={className}>
       {viewIcons.map(({ view, icon }) => (
         <Button
           className={cn(s.itemSelector, { [s.selected]: view === selectedView })}
@@ -42,6 +44,6 @@ export const ArticleViewSelector: FC<IArticleViewSelectorProps> = memo((props) =
           <Icon name={icon} />
         </Button>
       ))}
-    </div>
+    </HStack>
   );
 });

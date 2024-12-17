@@ -28,6 +28,7 @@ import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchA
 import { useDebounce } from '@/shared/hooks/useDebounce';
 import { TArticleBlockType } from '@/entities/Article/model/types/article';
 import { ITabItem } from '@/shared/ui/Tabs/Tabs';
+import { HStack, VStack } from '@/shared/ui';
 
 interface IArticlePageFiltersProps {
   className?: string;
@@ -92,15 +93,15 @@ export const ArticlePageFilters: FC<IArticlePageFiltersProps> = memo(({ classNam
   );
 
   return (
-    <div className={cn(s.articlePageFilters, className)}>
-      <div className={s.sortWrapper}>
+    <VStack gap="8" className={cn(s.articlePageFilters, className)}>
+      <HStack justify="space-between" align="center" gap="16">
         <ArticleSortSelector sort={sort} order={order} onChangeOrder={onChangeOrder} onChangeSort={onChangeSort} />
         <ArticleViewSelector view={view} onViewClick={onChangeView} />
-      </div>
+      </HStack>
       <Card className={s.searchCard}>
         <Input value={search} onChange={onChangeSearch} placeholder={t('Search')} />
       </Card>
       <ArticleTypeTabs type={articleType} onChangeType={onArticleType} />
-    </div>
+    </VStack>
   );
 });

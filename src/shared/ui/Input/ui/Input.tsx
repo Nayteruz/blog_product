@@ -1,7 +1,7 @@
 import {
-  ChangeEvent, FC, InputHTMLAttributes, memo, useEffect, useRef,
+  ChangeEvent, FC, InputHTMLAttributes, memo, useEffect, useRef 
 } from 'react';
-import { cn } from '@/shared/lib';
+import { cn } from '../../../lib';
 import s from './Input.module.scss';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>;
@@ -16,7 +16,7 @@ interface IInputProps extends HTMLInputProps {
 }
 
 export const Input: FC<IInputProps> = memo((props) => {
-  const {value, onChange, className, title, autofocus, type = 'text', readOnly, ...otherProps} = props;
+  const { value, onChange, className, title, autofocus, type = 'text', readOnly, ...otherProps } = props;
   const inputRef = useRef<HTMLInputElement>(null);
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {

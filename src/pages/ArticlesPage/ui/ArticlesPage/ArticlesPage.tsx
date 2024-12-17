@@ -18,6 +18,7 @@ import { Page } from '@/widgets/Page';
 import { fetchNextArticlePage } from '../../model/services/fetchNextArticlePage/fetchNextArticlePage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { ArticlePageFilters } from '../ArticlesPageFilters/ArticlePageFilters';
+import { VStack } from '@/shared/ui';
 
 interface IArticlesPageProps {
   className?: string;
@@ -54,8 +55,10 @@ const ArticlesPage: FC<IArticlesPageProps> = (props) => {
 
   return (
     <Page isLoading={isLoading} onScrollEnd={onLoadNextPart} className={cn(s.articlesPage, className)}>
-      <ArticlePageFilters />
-      <ArticleList view={view} isLoading={isLoading} articles={articles} />
+      <VStack gap="16">
+        <ArticlePageFilters />
+        <ArticleList view={view} isLoading={isLoading} articles={articles} />
+      </VStack>
     </Page>
   );
 };

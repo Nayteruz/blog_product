@@ -5,13 +5,10 @@ import { useTranslation } from 'react-i18next';
 import { cn } from '@/shared/lib';
 import s from './ArticleListItem.module.scss';
 import {
-  ArticleListView,
-  ArticleViewType,
-  IArticle,
-  TArticleListView,
+  ArticleListView, ArticleViewType, IArticle, TArticleListView 
 } from '../../model/types/article';
 import {
-  Text, AppLink, Avatar, Button, Icon 
+  Text, AppLink, Avatar, Button, Icon, HStack 
 } from '@/shared/ui';
 import { Card } from '@/shared/ui/Card/Card';
 import { ArticleTextBlock } from '../TextBlock/TextBlock';
@@ -30,10 +27,10 @@ export const ArticleListItem: FC<IArticleListItemProps> = memo((props) => {
 
   const types = <Text text={(article?.type || [])?.join(', ')} className={s.type} />;
   const views = (
-    <>
-      <Text text={String(article.views)} className={s.views} />
+    <HStack align="center" gap="8">
+      <Text text={String(article.views)} />
       <Icon name="eye" size="sizeS" className={s.icon} />
-    </>
+    </HStack>
   );
   const firstTextBlock = article.blocks?.find(block => block.type === ArticleViewType.TEXT);
 
@@ -42,20 +39,16 @@ export const ArticleListItem: FC<IArticleListItemProps> = memo((props) => {
   switch (view) {
   case ArticleListView.LIST:
     return (
-      <AppLink
-        to={linkToArticle}
-        target={target}
-        className={cn(s.articleListItem, className, s[view])}
-      >
+      <AppLink to={linkToArticle} target={target} className={cn(s.articleListItem, className, s[view])}>
         <Card className={s.card}>
           <div className={s.imageWrappper}>
             <img src={article.img} alt={article.title} className={s.image} />
             <Text text={new Date(article.createdAt).toLocaleDateString()} className={s.date} />
           </div>
-          <div className={s.info}>
+          <HStack align="center" gap="8">
             {types}
             {views}
-          </div>
+          </HStack>
           <Text text={article.title} className={s.title} />
         </Card>
       </AppLink>
@@ -64,21 +57,23 @@ export const ArticleListItem: FC<IArticleListItemProps> = memo((props) => {
     return (
       <div className={cn(s.articleListItem, className, s[view])}>
         <Card className={s.card}>
-          <div className={s.header}>
-            {article?.user?.avatar && <Avatar size={30} src={article?.user?.avatar || ''} />}
-            <Text text={article?.user?.username || ''} className={s.username} />
+          <HStack align="center" justify="space-between" gap="8">
+            <HStack gap="16">
+              {article?.user?.avatar && <Avatar size={30} src={article?.user?.avatar || ''} />}
+              <Text text={article?.user?.username || ''} />
+            </HStack>
             <Text text={new Date(article.createdAt).toLocaleDateString()} className={s.date} />
-          </div>
+          </HStack>
           <Text title={article.title} className={s.title} />
           {types}
           <img src={article.img} alt={article.title} className={s.image} />
           {firstTextBlock && <ArticleTextBlock block={firstTextBlock} className={s.textBlock} />}
-          <div className={s.footer}>
+          <HStack justify="space-between" align="center" className={s.footer}>
             <AppLink to={linkToArticle} target={target}>
               <Button theme="outline">{t('Read more')}</Button>
             </AppLink>
             {views}
-          </div>
+          </HStack>
         </Card>
       </div>
     );

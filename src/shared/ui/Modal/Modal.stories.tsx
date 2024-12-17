@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Modal } from './Modal';
-import { defaultDark, ThemeDecorator } from '@/shared/config/storybook';
+import { defaultDark, ThemeDecorator } from '../../config/storybook';
 
 const meta = {
   title: 'Shared/Modal',
@@ -20,7 +20,9 @@ const meta = {
     container: null,
     isOpen: true,
     style: {
-      position: 'static', minHeight: '500px', display: 'grid' 
+      position: 'static',
+      minHeight: '500px',
+      display: 'grid',
     },
   },
 } satisfies Meta<typeof Modal>;
@@ -28,7 +30,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const NormalPrimary: Story = {args: {},};
+export const NormalPrimary: Story = { args: {} };
 
 export const DarkPrimary: Story = {
   ...defaultDark,

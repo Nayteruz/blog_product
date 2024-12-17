@@ -1,5 +1,5 @@
-import {FC, memo, useCallback,} from 'react';
-import { cn } from '@/shared/lib';
+import { FC, memo, useCallback } from 'react';
+import { cn } from '../../lib';
 import s from './Code.module.scss';
 import { Button } from '../Button/Button';
 import { Icon } from '../Icon/Icon';
@@ -16,10 +16,10 @@ export const Code: FC<ICodeProps> = memo(({ className, text }) => {
 
   return (
     <pre className={cn(s.code, className)}>
-      <Button onClick={onCopy} className={s.copyBtn} theme="clear"><Icon name="copy" /></Button>
-      <code>
-        {text}
-      </code>
+      <Button onClick={onCopy} className={s.copyBtn} theme="clear">
+        <Icon name="copy" />
+      </Button>
+      <code>{text}</code>
     </pre>
   );
 });

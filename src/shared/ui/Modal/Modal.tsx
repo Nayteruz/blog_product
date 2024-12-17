@@ -1,10 +1,10 @@
 import {
-  CSSProperties, MouseEvent, ReactNode, useCallback, useEffect, useState,
+  CSSProperties, MouseEvent, ReactNode, useCallback, useEffect, useState 
 } from 'react';
-import { cn } from '@/shared/lib';
-import { Portal } from '@/shared/ui/Portal/Portal';
+import { cn } from '../../lib';
+import { Portal } from '../Portal/Portal';
 import s from './Modal.module.scss';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import { Icon } from '../Icon/Icon';
 
 interface IModalProps {
   className?: string;
@@ -17,7 +17,7 @@ interface IModalProps {
   lazy?: boolean;
 }
 
-export const Modal = ({className, children, isOpen, onClose, container, modalKey, style, lazy,}: IModalProps) => {
+export const Modal = ({ className, children, isOpen, onClose, container, modalKey, style, lazy }: IModalProps) => {
   const [isMounted, setIsMounted] = useState(false);
   const onCloseHandler = useCallback(() => {
     if (onClose) {

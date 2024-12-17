@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Code } from './Code';
-import { defaultDark, ThemeDecorator } from '@/shared/config/storybook';
+import { defaultDark, ThemeDecorator } from '../../config/storybook';
 
 const meta = {
   title: 'Shared/Code',
@@ -32,7 +32,7 @@ type Story = StoryObj<typeof meta>;`,
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {args: {},};
+export const Normal: Story = { args: {} };
 
 export const Dark: Story = {
   ...defaultDark,

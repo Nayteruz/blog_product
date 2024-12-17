@@ -1,5 +1,5 @@
 import { CSSProperties, FC, memo } from 'react';
-import { cn } from '@/shared/lib';
+import { cn } from '../../lib';
 import s from './Skeleton.module.scss';
 
 interface ISkeletonProps {
@@ -10,7 +10,7 @@ interface ISkeletonProps {
 }
 
 export const Skeleton: FC<ISkeletonProps> = memo((props) => {
-  const {className, width, height, border,} = props;
+  const { className, width, height, border } = props;
 
   const styles: CSSProperties = {
     width,
@@ -18,7 +18,5 @@ export const Skeleton: FC<ISkeletonProps> = memo((props) => {
     borderRadius: border,
   };
 
-  return (
-    <div className={cn(s.skeleton, className)} style={styles} />
-  );
+  return <div className={cn(s.skeleton, className)} style={styles} />;
 });

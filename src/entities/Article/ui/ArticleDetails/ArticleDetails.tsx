@@ -1,5 +1,5 @@
 import {
-  FC, memo, ReactNode, useCallback, useEffect 
+  FC, memo, useCallback, useEffect 
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -14,7 +14,7 @@ import {
   getArticleDetailsLoading,
 } from '../../model/selectors/articleDetails';
 import {
-  Text, Avatar, Skeleton, Icon 
+  Text, Avatar, Skeleton, Icon, VStack, HStack 
 } from '@/shared/ui';
 import s from './ArticleDetails.module.scss';
 import { ArticleViewType, TArticleBlock } from '../../model/types/article';
@@ -27,17 +27,7 @@ interface IArticleDetailsProps {
   className?: string;
 }
 
-interface IArticleContentProps {
-  children?: ReactNode;
-  className?: string;
-}
-
 const reducers: ReducersList = { articleDetails: articleDetailsReducer };
-
-const ArticleContent: FC<IArticleContentProps> = (props) => {
-  const { children, className } = props;
-  return <div className={className}>{children}</div>;
-};
 
 export const ArticleDetails: FC<IArticleDetailsProps> = memo(({ className, id }) => {
   const { t } = useTranslation();
@@ -49,11 +39,11 @@ export const ArticleDetails: FC<IArticleDetailsProps> = memo(({ className, id })
   const renderBlock = useCallback((block: TArticleBlock) => {
     switch (block.type) {
     case ArticleViewType.CODE:
-      return <ArticleCodeBlock key={block.id} block={block} className={s.block} />;
+      return <ArticleCodeBlock key={block.id} block={block} />;
     case ArticleViewType.IMAGE:
-      return <ArticleImageBlock key={block.id} block={block} className={s.block} />;
+      return <ArticleImageBlock key={block.id} block={block} />;
     case ArticleViewType.TEXT:
-      return <ArticleTextBlock key={block.id} block={block} className={s.block} />;
+      return <ArticleTextBlock key={block.id} block={block} />;
     default:
       return null;
     }
@@ -69,53 +59,47 @@ export const ArticleDetails: FC<IArticleDetailsProps> = memo(({ className, id })
 
   if (error) {
     return (
-      <ArticleContent className={cn(s.error, className)}>
+      <VStack align="center" justify="center" gap="16" className={className}>
         <Text title="Something went wrong" text={error} theme="error" align="center" />
-      </ArticleContent>
+      </VStack>
     );
   }
 
   if (!article || isLoading) {
     return (
-      <ArticleContent className={cn(s.loading, className)}>
+      <VStack gap="16" className={className}>
         <Skeleton className={s.avatar} width={200} height={200} border="50%" />
         <Skeleton className={s.skeleton} width="85%" height={50} />
         <Skeleton className={s.skeleton} width="95%" height={30} />
         <Skeleton className={s.skeleton} width="90%" height={150} />
         <Skeleton className={s.skeleton} width="93%" height={100} />
-      </ArticleContent>
+      </VStack>
     );
   }
 
   if (!article) {
     return (
-      <ArticleContent className={cn(s.loading, className)}>
+      <VStack gap="16" className={className}>
         <Text title={t('Not found article title')} theme="error" align="center" />
-      </ArticleContent>
+      </VStack>
     );
   }
 
   return (
-    <ArticleContent className={cn(s.articleDetails, className)}>
+    <VStack gap="16" className={cn(s.articleDetails, className)}>
       {article?.img && (
-        <Avatar
-          size={200}
-          src={article?.img}
-          alt={article?.title}
-          title={article?.title}
-          className={s.avatar}
-        />
+        <Avatar size={200} src={article?.img} alt={article?.title} title={article?.title} className={s.avatar} />
       )}
       <Text title={article.title} text={article.subtitle} size={24} />
-      <div className={s.views}>
+      <HStack align="center" gap="16">
         <Icon name="eye" />
         {article.views}
-      </div>
-      <div className={s.date}>
+      </HStack>
+      <HStack align="center" gap="16">
         <Icon name="calendar" />
         {new Date(article.createdAt).toLocaleDateString()}
-      </div>
-      {article?.blocks?.map(renderBlock)}
-    </ArticleContent>
+      </HStack>
+      <VStack gap="16">{article?.blocks?.map(renderBlock)}</VStack>
+    </VStack>
   );
 });

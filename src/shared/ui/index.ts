@@ -11,3 +11,6 @@ export { Skeleton } from './Skeleton/Skeleton';
 export { Icon } from './Icon/Icon';
 export type { TIcon } from './Icon/Icon';
 export { Tabs } from './Tabs/Tabs';
+export { Flex } from './Stack/Flex/Flex';
+export { HStack } from './Stack/HStack/HStack';
+export { VStack } from './Stack/VStack/VStack';

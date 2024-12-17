@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Text } from './Text';
-import { defaultDark, ThemeDecorator } from '@/shared/config/storybook';
+import { defaultDark, ThemeDecorator } from '../../../config/storybook';
 
 const meta = {
   title: 'Shared/Text',
@@ -38,7 +38,7 @@ export const OnlyText: Story = {
   },
 };
 
-export const ThemePrimary: Story = {args: {theme: 'primary',},};
+export const ThemePrimary: Story = { args: { theme: 'primary' } };
 
 export const ThemeError: Story = {
   args: {
@@ -48,10 +48,10 @@ export const ThemeError: Story = {
   },
 };
 
-export const SizeS: Story = {args: {size: 12,},};
+export const SizeS: Story = { args: { size: 12 } };
 
-export const SizeM: Story = {args: {size: 16,},};
+export const SizeM: Story = { args: { size: 16 } };
 
-export const SizeL: Story = {args: {size: 24,},};
+export const SizeL: Story = { args: { size: 24 } };
 
-export const SizeXL: Story = {args: {size: 36,},};
+export const SizeXL: Story = { args: { size: 36 } };

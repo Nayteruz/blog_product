@@ -1,6 +1,6 @@
 import { StoryFn } from '@storybook/react';
 import { StateSchema, StoryProvider } from '@/app/providers/StoryProvider';
-import { ReducersList } from '@/shared/hooks/useDynamicReducer';
+import { ReducersList } from '../../../hooks/useDynamicReducer';
 import { loginReducer } from '@/features/AuthByUserName';
 import { profileReducer } from '@/entities/Profile';
 import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage';
@@ -17,9 +17,13 @@ const defaultAsyncReducers: ReducersList = {
 
 export const StoryDecorator =
   (initialState: DeepPartial<StateSchema>, asyncReducers?: ReducersList) => (Story: StoryFn) => (
-    <StoryProvider initialState={initialState} asyncReducers={{
-      ...defaultAsyncReducers, ...asyncReducers 
-    }}>
+    <StoryProvider
+      initialState={initialState}
+      asyncReducers={{
+        ...defaultAsyncReducers,
+        ...asyncReducers,
+      }}
+    >
       <Story />
     </StoryProvider>
   );

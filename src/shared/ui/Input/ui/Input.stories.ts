@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Input } from './Input';
-import { defaultDark, ThemeDecorator } from '@/shared/config/storybook';
+import { defaultDark, ThemeDecorator } from '../../../config/storybook';
 
 const meta = {
   title: 'Shared/Input',
@@ -9,7 +9,8 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     children: {
-      control: 'text', defaultValue: '' 
+      control: 'text',
+      defaultValue: '',
     },
   },
 } satisfies Meta<typeof Input>;
@@ -17,9 +18,9 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {args: {},};
+export const Normal: Story = { args: {} };
 
-export const NormalValue: Story = {args: {value: 'Test value',},};
+export const NormalValue: Story = { args: { value: 'Test value' } };
 
 export const Dark: Story = {
   ...defaultDark,
@@ -27,9 +28,9 @@ export const Dark: Story = {
   decorators: [ThemeDecorator('dark')],
 };
 
-export const Placeholder: Story = {args: {placeholder: 'Placeholder',},};
+export const Placeholder: Story = { args: { placeholder: 'Placeholder' } };
 
-export const Title: Story = {args: {title: 'Title',},};
+export const Title: Story = { args: { title: 'Title' } };
 
 export const PlaceholderTitle: Story = {
   args: {

@@ -1,9 +1,8 @@
 import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { cn } from '@/shared/lib';
-import s from './CommentList.module.scss';
 import { IComment } from '../../model/types/comment';
 import { CommentCard } from '../CommentCard/CommentCard';
+import { VStack } from '@/shared/ui';
 
 interface ICommentListProps {
   className?: string;
@@ -16,19 +15,12 @@ export const CommentList: FC<ICommentListProps> = memo((props) => {
   const { t } = useTranslation();
 
   return (
-    <div className={cn(s.commentList, className)}>
+    <VStack gap="16" className={className}>
       {comments?.length ? (
-        comments.map(comment => (
-          <CommentCard
-            className={s.comment}
-            key={comment.id}
-            comment={comment}
-            isLoading={isLoading}
-          />
-        ))
+        comments.map(comment => <CommentCard key={comment.id} comment={comment} isLoading={isLoading} />)
       ) : (
         <div>{t('No comments')}</div>
       )}
-    </div>
+    </VStack>
   );
 });

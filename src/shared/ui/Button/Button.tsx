@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, FC, memo } from 'react';
-import { cn } from '@/shared/lib';
+import { cn } from '../../lib';
 import s from './Button.module.scss';
 
 const ButtonTheme = {
@@ -29,7 +29,7 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button: FC<IButtonProps> = memo((props) => {
-  const {className, children, theme = ButtonTheme.OUTLINE, square, size = 'M', disabled, ...other} = props;
+  const { className, children, theme = ButtonTheme.OUTLINE, square, size = 'M', disabled, ...other } = props;
 
   const mods = [
     { [s[theme]]: theme },
@@ -39,12 +39,7 @@ export const Button: FC<IButtonProps> = memo((props) => {
   ];
 
   return (
-    <button
-      type="button"
-      disabled={disabled}
-      className={cn(s.button, ...mods, className)}
-      {...other}
-    >
+    <button type="button" disabled={disabled} className={cn(s.button, ...mods, className)} {...other}>
       {children}
     </button>
   );

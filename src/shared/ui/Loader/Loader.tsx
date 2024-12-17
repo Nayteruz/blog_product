@@ -1,5 +1,5 @@
 import { CSSProperties, FC, memo } from 'react';
-import { cn } from '@/shared/lib';
+import { cn } from '../../lib';
 import s from './Loader.module.scss';
 
 const loaderSize = {
@@ -11,7 +11,7 @@ const loaderSize = {
 interface ILoaderProps {
   className?: string;
   style?: CSSProperties;
-  size?: typeof loaderSize[keyof typeof loaderSize];
+  size?: (typeof loaderSize)[keyof typeof loaderSize];
 }
 
 export const Loader: FC<ILoaderProps> = memo(({ className, style, size = loaderSize.NORMAL }) => (

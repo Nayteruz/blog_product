@@ -1,7 +1,8 @@
 import { FC, memo, ReactNode } from 'react';
-import { cn } from '@/shared/lib';
+import { cn } from '../../lib';
 import s from './Tabs.module.scss';
 import { Card } from '../Card/Card';
+import { HStack } from '../Stack/HStack/HStack';
 
 export interface ITabItem {
   value: string;
@@ -19,7 +20,7 @@ export const Tabs: FC<ITabsProps> = memo((props) => {
   const { className, tabs, value, onTabClick } = props;
 
   return (
-    <div className={cn(s.tabs, className)}>
+    <HStack gap="8" wrap="wrap" className={className}>
       {tabs.map(tab => (
         <Card
           key={tab.value + tab.content}
@@ -31,6 +32,6 @@ export const Tabs: FC<ITabsProps> = memo((props) => {
           {tab.content}
         </Card>
       ))}
-    </div>
+    </HStack>
   );
 });

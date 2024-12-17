@@ -10,6 +10,8 @@ export const webpackConfig = (config) => {
     html: '',
     entry: '',
     src: path.resolve(__dirname, '..', '..', 'src'),
+    locales: '',
+    buildLocales: '',
   };
 
   const updatedConfig = { ...config };
@@ -21,7 +23,10 @@ export const webpackConfig = (config) => {
     }
 
     if (rule.test instanceof RegExp && /svg/.test(rule.test.source)) {
-      return { ...rule, exclude: /\.svg$/i };
+      return {
+        ...rule,
+        exclude: /\.svg$/i,
+      };
     }
 
     return rule;

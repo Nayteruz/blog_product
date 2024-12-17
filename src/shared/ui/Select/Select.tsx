@@ -1,8 +1,9 @@
 import {
   ChangeEvent, FC, SelectHTMLAttributes, useMemo 
 } from 'react';
-import { cn } from '@/shared/lib';
+import { cn } from '../../lib';
 import s from './Select.module.scss';
+import { HStack } from '../Stack/HStack/HStack';
 
 type HTMLSelectProps = Omit<SelectHTMLAttributes<HTMLSelectElement>, 'value' | 'onChange' | 'readOnly'>;
 
@@ -42,7 +43,7 @@ export const Select: FC<ISelectProps> = <T extends string>(props: ISelectProps<T
   );
 
   return (
-    <div className={cn(s.wrapper, className)}>
+    <HStack gap="8" className={cn(s.wrapper, className)}>
       {label && <span className={s.label}>{label}</span>}
       <select
         value={value}
@@ -58,6 +59,6 @@ export const Select: FC<ISelectProps> = <T extends string>(props: ISelectProps<T
         )}
         {optionsList}
       </select>
-    </div>
+    </HStack>
   );
 };

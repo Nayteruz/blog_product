@@ -1,12 +1,12 @@
 import {
-  ChangeEvent, FC, memo, useCallback,
+  ChangeEvent, FC, memo, useCallback 
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { cn } from '@/shared/lib';
 import s from './AddCommentForm.module.scss';
 import { Input } from '@/shared/ui/Input/ui/Input';
-import { Button } from '@/shared/ui';
+import { Button, HStack } from '@/shared/ui';
 import { getAddCommentFormError, getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slices/AddCommentFormSlice';
@@ -17,7 +17,7 @@ export interface IAddCommentFormProps {
   onSendComment: (text: string) => void;
 }
 
-const initialReducers: ReducersList = {addCommentForm: addCommentFormReducer,};
+const initialReducers: ReducersList = { addCommentForm: addCommentFormReducer };
 
 const AddCommentForm: FC<IAddCommentFormProps> = memo(({ className, onSendComment }) => {
   const { t } = useTranslation();
@@ -27,9 +27,12 @@ const AddCommentForm: FC<IAddCommentFormProps> = memo(({ className, onSendCommen
 
   useDynamicReducer(initialReducers);
 
-  const onChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    dispatch(addCommentFormActions.setText(e.target.value));
-  }, [dispatch]);
+  const onChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      dispatch(addCommentFormActions.setText(e.target.value));
+    },
+    [dispatch],
+  );
 
   const handlerSendComment = useCallback(() => {
     onSendComment(text);
@@ -41,10 +44,12 @@ const AddCommentForm: FC<IAddCommentFormProps> = memo(({ className, onSendCommen
   }
 
   return (
-    <div className={cn(s.addCommentForm, className)}>
+    <HStack gap="16" className={cn(s.addCommentForm, className)}>
       <Input placeholder={t('Your comment')} value={text} onChange={onChange} className={s.input} />
-      <Button type="button" theme="outline" onClick={handlerSendComment}>{t('Send comment')}</Button>
-    </div>
+      <Button type="button" theme="outline" onClick={handlerSendComment}>
+        {t('Send comment')}
+      </Button>
+    </HStack>
   );
 });
 

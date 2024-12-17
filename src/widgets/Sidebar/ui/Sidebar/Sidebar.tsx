@@ -3,7 +3,7 @@ import {
 } from 'react';
 import { useSelector } from 'react-redux';
 import { cn } from '@/shared/lib';
-import { Button, Icon } from '@/shared/ui';
+import { Button, Icon, VStack } from '@/shared/ui';
 import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
 import { LangSwitcher } from '@/widgets/LangSwitcher';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
@@ -40,7 +40,9 @@ export const Sidebar: FC<ISidebarProps> = memo(({ className, style }) => {
       >
         <Icon name={collapsed ? 'circle-right' : 'circle-left'} />
       </Button>
-      <div className={s.items}>{items}</div>
+      <VStack gap="4" className={s.items}>
+        {items}
+      </VStack>
       <div className={s.switchers}>
         <ThemeSwitcher />
         <LangSwitcher />

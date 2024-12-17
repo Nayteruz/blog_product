@@ -1,5 +1,5 @@
 import { CSSProperties, FC, memo } from 'react';
-import { cn } from '@/shared/lib';
+import { cn } from '../../../lib';
 import s from './Text.module.scss';
 
 export const TextTheme = {
@@ -39,15 +39,7 @@ interface ITextProps {
 }
 
 export const Text: FC<ITextProps> = memo((props) => {
-  const {
-    className,
-    title,
-    text,
-    theme = TextTheme.PRIMARY,
-    align = TextAlign.LEFT,
-    size = TextSize.M,
-    style,
-  } = props;
+  const { className, title, text, theme = TextTheme.PRIMARY, align = TextAlign.LEFT, size = TextSize.M, style } = props;
   const mods = [s[theme], s[align]];
 
   return (

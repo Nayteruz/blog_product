@@ -1,7 +1,7 @@
 import {
   FC, HTMLAttributes, memo, ReactNode 
 } from 'react';
-import { cn } from '@/shared/lib';
+import { cn } from '../../lib';
 import s from './Card.module.scss';
 
 const cardTheme = {

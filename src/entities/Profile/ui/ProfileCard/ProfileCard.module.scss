@@ -1,36 +1,15 @@
 .profileCard {
-  width: 100%;
   padding: 20px;
   border: 2px solid var(--inverted-bg-color);
-}
-
-.data {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.avatarWrapper {
-  display: grid;
-  place-content: center;
 }
 
 .input {
   width: 100%;
 }
 
-.loading {
-  display: grid;
-  place-content: center;
-  min-height: 200px;
-  width: 100%;
-}
-
+.loading,
 .error {
-  display: grid;
-  place-content: center;
-  min-height: 200px;
-  text-align: center;
+  height: 50vh;
 }
 
 .editing {

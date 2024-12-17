@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Text } from '@/shared/ui';
+import { Text } from '..';
 import { Card } from './Card';
-import { defaultDark, defaultPurple, ThemeDecorator } from '@/shared/config/storybook';
+import { defaultDark, defaultPurple, ThemeDecorator } from '../../config/storybook';
 
 type CardPropsAndCustomArgs = React.ComponentProps<typeof Card> & { title?: string; text?: string };
 

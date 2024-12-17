@@ -1,14 +1,9 @@
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { Text, Button } from '@/shared/ui';
-import { cn } from '@/shared/lib';
-import s from './index.module.scss';
+import { Text, Button, HStack } from '@/shared/ui';
 import {
-  getProfileData,
-  getProfileReadOnly,
-  profileActions,
-  updateProfileData,
+  getProfileData, getProfileReadOnly, profileActions, updateProfileData 
 } from '@/entities/Profile';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 import { getUserAuthData } from '@/entities/User';
@@ -38,23 +33,23 @@ export const ProfilePageHeader: FC<IIndexProps> = ({ className }) => {
   }, [dispatch]);
 
   return (
-    <div className={cn(s.header, className)}>
+    <HStack className={className} justify="space-between">
       <Text title={t('Profile title')} />
       {canEdit &&
         (isReadOnly ? (
-          <Button theme="outline" className={s.editBtn} onClick={onEdit}>
+          <Button theme="outline" onClick={onEdit}>
             {t('Edit profile')}
           </Button>
         ) : (
-          <>
-            <Button theme="outlineRed" className={s.editBtn} onClick={onCancel}>
+          <HStack gap="16">
+            <Button theme="outlineRed" onClick={onCancel}>
               {t('Cancel edit profile')}
             </Button>
-            <Button theme="outline" className={s.saveBtn} onClick={onSave}>
+            <Button theme="outline" onClick={onSave}>
               {t('Save profile')}
             </Button>
-          </>
+          </HStack>
         ))}
-    </div>
+    </HStack>
   );
 };

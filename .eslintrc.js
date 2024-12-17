@@ -17,7 +17,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'react-hooks'],
+  plugins: ['react', '@typescript-eslint', 'react-hooks', 'nayteruz-test-production-plugin'],
   rules: {
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
@@ -46,14 +46,8 @@ module.exports = {
         unnamedComponents: 'arrow-function',
       },
     ],
-    'react/jsx-props-no-spreading': [
-      'warn',
-      { exceptions: ['input', 'button', 'select', 'SvgIcon'] },
-    ],
-    'no-underscore-dangle': [
-      2,
-      { allow: ['_d', '__IS_DEV__', '__API__', '__PROJECT__', '_inited'] },
-    ],
+    'react/jsx-props-no-spreading': ['warn', { exceptions: ['input', 'button', 'select', 'SvgIcon', 'Flex'] }],
+    'no-underscore-dangle': [2, { allow: ['_d', '__IS_DEV__', '__API__', '__PROJECT__', '_inited'] }],
     quotes: ['error', 'single', { avoidEscape: true }],
     'max-len': [
       2,
@@ -105,6 +99,7 @@ module.exports = {
       },
     ],
     'arrow-parens': [1, 'as-needed', { requireForBlockBody: true }],
+    'nayteruz-test-production-plugin/path-checker': ['error', { alias: '@' }],
   },
   globals: {
     __IS_DEV__: true,
